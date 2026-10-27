@@ -1,52 +1,43 @@
-# Berlin · Webspecial-Bewertung
+# Bewertung des Berlin Thriller Webspecials
 
-Eigenständiges deutschsprachiges Bewertungstool auf Maturaniveau, statisch und ohne externe Abhängigkeiten. Zwei analytische Kriterienkataloge: Gruppenprodukt 50 Punkte und individuelle 10-Minuten-Prüfung 28 Punkte. 34 Produktpunkte entfallen auf Synthese, Analyse und kreative Erkenntnisleistung.
+Statische Anwendung für die Produktbewertung und eine zehnminütige mündliche Einzelprüfung. Produktnote auf 50 Punkte und Prüfungsnote auf 28 Punkte werden unabhängig berechnet. 34 Produktpunkte gelten Synthese, Analyse und kreativer Erkenntnisleistung.
 
-## Starten
+## Bewertung mit dokumentierten Nachweisen
 
-Im Projektordner `npm start` oder `python3 -m http.server 8080` ausführen; danach http://localhost:8080 öffnen. ES-Module erfordern einen HTTP-Server; Doppelklick auf index.html reicht nicht. Node.js wird nur für die Tests benötigt, Python für den lokalen Vorschau-Server.
+Das Nachweisraster 2 ersetzt die freie Wahl einer Stufe durch 40 überprüfbare Nachweise: vier je Kriterium. Jeder Nachweis besitzt eine genaue Erfüllungsregel und eine Abgrenzung mit Gegenbeispielen. Nur ein begründetes Urteil mit Fundstelle bzw. benannter Fehlstelle gilt als abgeschlossen. Jeder bestätigte Nachweis zählt Gewicht / 4 Punkte; keine halben Nachweise oder Zusatzpunkte. Die Reihenfolge ist keine Voraussetzungskette.
 
-## GitHub Pages
+Die Anwendung prüft die Vollständigkeit der Einträge. Ob der Beleg die geforderte Leistung tatsächlich zeigt, beurteilt die Prüfperson anhand der Regel. Streitfälle bleiben bis zur Klärung offen. Die vollständigen Regeln, Stichproben, Fehlertypen und Gesprächsgelegenheiten stehen im [Kriterienkatalog](KRITERIENKATALOG.md) und im Bereich **Massstab & Ablauf**. Vor der Leistungserbringung bekanntgeben, nicht rückwirkend anwenden.
 
-1. Inhalt dieses Ordners in ein neues GitHub-Repository hochladen (einschliesslich `.github/workflows/pages.yml`). `main` als Standardbranch verwenden.
-2. Unter **Settings → Pages → Build and deployment → Source** die Option **GitHub Actions** wählen.
-3. Workflow über **Actions → Test and deploy GitHub Pages → Run workflow** starten oder auf `main` pushen.
-4. Die veröffentlichte Adresse erscheint beim Deployment. Das Tool funktioniert auch unter einem Repository-Unterpfad.
+## Word Export
 
-Der Workflow publiziert ausschliesslich die Anwendungsdateien und den Kriterienkatalog, keine Bewertungsdateien oder Transkripte.
+Unter **Auswertung → Bewertung als Word (.docx)** ein echtes editierbares Word-Dokument herunterladen. Es enthält Stammdaten, beide getrennten Noten, das verwendete Raster, alle 40 Nachweisregeln und Abgrenzungen, Urteile, Punkte, Begründungen, ergänzende Notizen, ausgewählte Fragen und Zeitmarken. Das vollständige Transkript ist über eine Checkbox optional. Offene Bewertungen werden klar als offen ausgewiesen; ein Export erfindet keine fehlenden Urteile. Noten werden aus den Nachweisen neu berechnet. Die Datei wird vollständig im Browser erstellt.
 
-## Bewertungsablauf
+Die DOCX-Bibliothek `docx` 9.6.1 ist lokal unter `vendor/` eingebunden. Ihre MIT-Lizenz liegt bei. Kein CDN, keine Serververarbeitung und kein externer API-Dienst. Word-Dokumente können lokal verändert werden; JSON bleibt das wieder einlesbare Bewertungsformat.
 
-- Ein Dossier pro geprüfte Person; Gruppe und Roman angeben.
-- Pro Kriterium eine der fünf Stufen wählen und eine konkrete Begründung notieren. Leer bleibt unbewertet, 0 ist ein Urteil.
-- Produkt einmal als Gruppe bewerten; **Nur Gruppenbewertung exportieren**. Für jede Person ein neues Dossier starten und diese Datei laden. Die individuelle Prüfung bleibt bei Gruppenimporten unberührt.
-- Für das Einzelgespräch Fragen markieren. Timer und separates schulisches Aufnahmegerät zeitgleich starten. Aufnahme-ID und Zeitmarken eintragen. Zeitfenster: 2 Minuten Defense, 4 Minuten Inhalt, 2 Minuten Transfer, 2 Minuten Reflexion.
-- Auswertung ergänzen, vollständiges Dossier als JSON sichern und bei Bedarf als PDF drucken. Für andere Personen oder andere Geräte JSON importieren.
+## Transkript
 
-Das Tool nimmt selbst kein Audio auf. Die Uhr bleibt nach zehn Minuten sichtbar und signalisiert das Ende. Sie kann für die Zuordnung einer überzogenen Prüfung weiterlaufen. Uhr wird beim Neuladen nicht fortgesetzt; bestehende Zeitmarken bleiben gespeichert. Abweichungen zum Mitschnitt protokollieren.
+Unter **Einzelprüfung** TXT, Markdown, SRT oder VTT in UTF-8 einlesen (bis 1 MB und 500’000 Zeichen) oder direkt einfügen. Zeitmarken und Sprecherangaben bleiben erhalten. Der Text ist bearbeitbar, separat als TXT sicherbar und im vollständigen JSON enthalten. Markierte Passagen können als ergänzende Begründung einem Gesprächskriterium zugeordnet werden; sie bestätigen keine Einzelnachweise automatisch. PDF und Word zuerst als Text exportieren. Keine automatische Audiotranskription.
 
-## Inhalt und Bewertungsregeln
+## Daten und ältere Dossiers
 
-Der vollständige [Kriterienkatalog](KRITERIENKATALOG.md) dokumentiert Deskriptoren, Beleganker, Fragenbank und Beurteilungsregeln. Grundlage ist die lokale Fassung des [Auftrags](https://berlin-thriller-werkstatt.patrickoliverfischer.chatgpt.site/) vom 25.10.2026. Der Live-Auftrag konnte beim Erstellen nicht abgerufen werden. Abweichung gegenüber dieser Fassung: Gespräch 10 statt ca. 8 Minuten, differenziertere Kriterien und neue Gewichtung innerhalb der 50 bzw. 28 Punkte. Vorgängig bekanntgeben.
+Das aktuelle Dossier wird lokal im Browser unter `berlin-rubric-v1` gespeichert. Der Schlüssel bleibt aus Kompatibilitätsgründen erhalten, die neue JSON-Dateiversion ist 2. Alte Dateien der Version 1 werden eingelesen: frühere Stufen bleiben als frühere Urteile sichtbar, Notizen und Transkripte erhalten. Neue Nachweise bleiben offen, weil aus einer früheren Stufe keine vier Belege rekonstruiert werden können. Dateien der Version 2 enthalten die Einzelurteile und werden daraus neu berechnet.
 
-Zwei getrennte Notenvorschläge CH: Produktnote = `1 + 5 × Produktpunkte / 50`; Note mündliche Prüfung = `1 + 5 × Gesprächspunkte / 28`. Jede Note wird unabhängig auf eine Dezimalstelle gerundet und erscheint, sobald ihr eigener Bereich vollständig bewertet ist. Es wird keine Gesamtnote berechnet. Formeln vor dem Einsatz mit den schulischen Vorgaben abgleichen. Fehlende Begründungen werden angezeigt; die Bewertung bleibt eine fachliche Entscheidung der Prüfperson.
+Ein Dossier je Person anlegen. Gruppenbewertung separat exportieren und für weitere Personen importieren; dabei bleiben individuelle Prüfung, Transkript und Zeitmarken erhalten. Gruppenexporte enthalten keine individuellen Daten. Vollständige JSON-Sicherungen bis 6 MB lassen sich wieder laden. Regelmässig sichern: Löschen der Browserdaten entfernt das lokale Dossier. Keine Personendaten, Mitschnitte, Transkripte oder Bewertungsdateien ins öffentliche Repository hochladen.
 
-## Speicherung
+## Prüfung und Noten
 
-Ein aktuelles Dossier wird unter `berlin-rubric-v1` in localStorage des Browsers gespeichert. Keine Übertragung an einen Server, keine Konten, keine Analyse-Dienste. Ein gemeinsam verwendeter Browser kann die Daten anderer Prüfpersonen anzeigen. Browserdaten löschen entfernt das Dossier; JSON regelmässig sichern. Exporte enthalten Personendaten und gehören in die schulische Ablage, nicht ins öffentliche Repository. Aufbewahrung und Zugriff auf Mitschnitt und Protokoll nach schulischer Regelung organisieren.
+10 Minuten: 2 Minuten Defense, 4 Minuten Inhaltsanalyse, 2 Minuten Transfer, 2 Minuten Quellen-/Eigenbeitragsreflexion. Die Lehrperson eröffnet alle 16 mündlichen Nachweise; eine Antwort darf mehrere liefern. Neutrale Nachfrage ist zulässig; vorgegebene Deutungen sind kein eigener Nachweis. Nicht eröffnete Antwortgelegenheiten bleiben offen und werden vor Abschluss unter vergleichbaren Bedingungen nachgeholt. Mitschnitt separat führen, Aufnahme-ID und Zeitmarken eintragen. Der Timer zeichnet kein Audio auf und wird nach Neuladen nicht fortgesetzt.
 
-## Prüfen und anpassen
+Produktnote = `1 + 5 × Produktpunkte / 50`. Mündliche Note = `1 + 5 × Gesprächspunkte / 28`. Jeweils auf eine Dezimalstelle gerundet. Bereichsnote erst bei allen begründeten Einzelurteilen. Keine Gesamtnote. Formel mit den schulischen Vorgaben abgleichen.
 
-`npm test` prüft Gewichtung, Punkteberechnung, Null-/Leerwertbehandlung und Importvalidierung. `data.js` enthält Kriterien und Fragen, `scoring.js` die Rechen- und Importlogik, `style.css` das responsive Layout samt Druckansicht. Kein Build und keine Installation nötig.
+## Start und Veröffentlichung
 
-## Transkript hochladen
+`python3 -m http.server 8080` im Projektordner, dann http://localhost:8080 öffnen. Kein Build und keine Installation erforderlich. ES-Module benötigen HTTP; Doppelklick auf index.html genügt nicht.
 
-Im Bereich **02 Einzelprüfung** eine TXT-, Markdown-, SRT- oder VTT-Datei in UTF-8 auswählen (bis 1 MB und 500’000 Zeichen) oder Text direkt ins Transkriptfeld einfügen. Zeitstempel und Sprecherbezeichnungen bleiben erhalten. Das Transkript kann bearbeitet und als TXT heruntergeladen werden; es ist ausserdem im vollständigen JSON-Dossier enthalten. Alte Dossiers ohne Transkript bleiben kompatibel. Ein Gruppenexport enthält keine Transkripte; Gruppenimporte verändern das individuelle Transkript nicht.
+[Veröffentlichtes Tool](https://patrickfischerksa.github.io/berlin-webspecial-bewertung/) · [Repository](https://github.com/PatrickFischerKSA/berlin-webspecial-bewertung)
 
-Eine Passage im Transkript markieren, ein Gesprächskriterium wählen und **Markierung als Beleg übernehmen** anklicken. Dies ergänzt dessen Begründungsfeld, ohne die Bewertungsstufe zu verändern. Es gibt keine automatische Bewertung. Ersetzende Uploads fragen nach; ungültige Dateien lassen das vorhandene Transkript unverändert. Die Druckfassung enthält das Transkript.
+GitHub Pages verwendet **Settings → Pages → Source → GitHub Actions**. Der mitgelieferte Workflow testet und publiziert auf jedem Push auf `main`. Nur aufgelistete Anwendungsdateien, Kriterienkatalog und `vendor/` werden publiziert. Tests mit `npm test` (Node 22 oder neuer).
 
-Uploads werden ausschliesslich lokal eingelesen. Der Inhalt wird mit dem Dossier im Browser gespeichert; bei Speicherproblemen das JSON exportieren. Keine automatische Transkription von Audiodateien, kein Upload an GitHub und kein KI-Dienst. PDF-/Word-Transkripte zuerst als UTF-8-Text exportieren.
+## Grundlage
 
-## Inhaltliche Bewertungsstufen
-
-Alle zehn Kriterien verwenden eigene, beobachtbare Stufenbeschreibungen. Die Auswahlfelder nennen die fachliche Leistung direkt (z. B. bei Synthese: «Roman, Geschichte und Gegenwart zur These verbinden»). Unter jedem Kriterium stehen inhaltliche Prüffragen. Die allgemeine Bezeichnung «Maturaziel erreicht» wurde entfernt. Fachlicher Bezug: EDK-Rahmenlehrplan Deutsch S. 27–30; das konkrete Raster und die Gewichtungen sind aufgabenspezifisch.
+Lokale Auftragsfassung der Berlin-Thriller-Werkstatt vom 25.10.2026; bei der ersten Erstellung war die Live-Seite nicht abrufbar. Fachlicher Bezug: EDK-Rahmenlehrplan Deutsch S. 27–30. Die konkretisierten Nachweise und Gewichtungen sind die eigenständige Ausarbeitung für diesen Auftrag und keine amtliche Skala.

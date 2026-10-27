@@ -6,7 +6,7 @@ test('Gewichte entsprechen dem Auftrag',()=>{assert.equal(calculate(criteria,{},
 test('vollständige Bewertungen auf drei Punktestufen',()=>{for(const level of [0,3,4]){const r=Object.fromEntries(criteria.map(c=>[c.id,level]));const p=calculate(criteria,r,'product'),o=calculate(criteria,r,'oral');assert.equal(p.points+o.points,78*level/4);assert.equal(p.complete&&o.complete,true);}});
 test('fehlende Stufe bleibt offen, Null ist bewertet',()=>{assert.equal(calculate(criteria,{},'product').count,0);assert.equal(calculate(criteria,{p1:0},'product').count,1);assert.equal(calculate(criteria,{p1:0},'product').complete,false);});
 test('Import weist ungültige Werte zurück',()=>{assert.throws(()=>validateImport({version:1,kind:'dossier',ratings:{p1:5}},criteria));assert.throws(()=>validateImport({version:1,kind:'dossier',ratings:{p1:2.5}},criteria));assert.throws(()=>validateImport({},criteria));});
-test('Gruppenimport übernimmt keine Einzelbewertung',()=>{const r=validateImport({version:1,kind:'group',ratings:{p1:3,o1:4},notes:{o1:'privat'}},criteria);assert.deepEqual(r.ratings,{p1:3});assert.equal(r.notes.o1,undefined);});
+test('Gruppenimport übernimmt keine Einzelbewertung',()=>{const r=validateImport({version:1,kind:'group',ratings:{p1:3,o1:4},notes:{o1:'privat'}},criteria);assert.deepEqual(r.legacyRatings,{p1:3});assert.deepEqual(r.ratings,{});assert.equal(r.notes.o1,undefined);});
 
 test('Produktnote ist ohne mündliche Bewertung verfügbar',()=>{
  const ratings=Object.fromEntries(criteria.filter(c=>c.part==='product').map(c=>[c.id,3]));

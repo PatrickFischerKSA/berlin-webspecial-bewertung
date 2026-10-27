@@ -1,277 +1,417 @@
-# Kriterienkatalog · Berlin-Thriller-Webspecial
+# Bewertungskatalog für das Berlin Thriller Webspecial
 
-Vorschlag zur vorgängigen Bekanntgabe, auf Maturaniveau. Grundlage: lokale Auftragsfassung `berlin-thriller-werkstatt/app/page.tsx`, Stand 25.10.2026; die Live-Seite war beim Erstellen nicht abrufbar. Die bestehenden 50 Produkt- und 28 Gesprächspunkte bleiben erhalten; Gewichtung und Deskriptoren werden anspruchsvoller gefasst. Die Prüfungsdauer wird gemäss neuem Auftrag von ca. 8 auf genau 10 Minuten geändert.
+Stand 27. Oktober 2026 · Nachweisraster 2 · vor der Leistungserbringung bekanntgeben
 
-## Bewertungslogik
+## Zwei getrennte Noten
 
-Jedes Kriterium enthält eigene inhaltliche Stufen von 0 bis 4. Ihre Beschreibungen nennen die beobachtbare Leistung: etwa Material nebeneinanderstellen, Zusammenhänge belegen oder eine These an Gegenbefunden weiterentwickeln. Es gibt keine pauschalen Qualitätsattribute. Punkte = Gewicht × Stufe / 4; erst die jeweilige Bereichsnote runden. Nicht bewertet ist nicht 0. Für jedes Urteil eine konkrete Produktstelle oder Gesprächsantwort dokumentieren. Wenn eine Leistung Merkmale mehrerer Stufen zeigt, die am Beleg überwiegende Stufe wählen und die Abwägung erläutern.
+Produkt: Gruppenleistung, 50 Punkte. Mündliche Einzelprüfung: 10 Minuten, 28 Punkte. Produktnote = 1 + 5 × Produktpunkte / 50. Prüfungsnote = 1 + 5 × Gesprächspunkte / 28. Jeweils erst zum Schluss auf eine Dezimalstelle runden. Keine Gesamtnote und keine Verrechnung. Die Formeln sind Vorschläge; schulische Vorgaben gehen vor.
 
-Produkt: Gruppenleistung mit 50 Punkten und eigener Produktnote. Mündliche Prüfung: individuelle Leistung mit 28 Punkten und eigener Prüfungsnote. Produktnote = 1 + 5 × Produktpunkte / 50. Note mündliche Prüfung = 1 + 5 × Gesprächspunkte / 28. Beide Noten unabhängig auf eine Dezimalstelle runden; keine Gesamtnote und keine Verrechnung zwischen den Bereichen. Eine Note wird erst angezeigt, wenn alle Kriterien ihres Bereichs bewertet sind. Ungerundete Note 4 ab 30 Produktpunkten bzw. 16,8 Gesprächspunkten. Diese Formeln sind Vorschläge, keine Aussage über schulische Vorgaben.
+## Verbindliche Regeln
 
-Die fünf geforderten Perspektiven sind Fall, historischer Kontext, Thema, freier Aspekt und Gegenwart. Es gibt weder Medienquote noch vorgeschriebenen Produktionsweg. Freiwillige Entscheidungsnotizen werden nicht zur Pflicht. Erlaubte KI-Nutzung wird nicht abgewertet; geprüft werden Verständnis, Kontrolle und Verantwortung. Fehlende Belege senken das jeweilige Kriterium, nicht pauschal mehrere Kategorien. Keine zusätzlichen globalen Abzüge oder verdeckten Notendeckel. Ein Merkmal nur dann in mehreren Kriterien berücksichtigen, wenn unterschiedliche Folgen konkret nachgewiesen werden.
+1. Jedes der zehn Kriterien enthält vier unabhängig geprüfte Nachweise. Ein bestätigter Nachweis zählt genau ein Viertel des Kriteriumsgewichts. Bei Synthese mit 14 Punkten ergeben drei bestätigte Nachweise 10,5 Punkte. Die vier Nachweise sind keine Voraussetzungskette; die Anzahl bestimmt den Wert 0 bis 4.
+2. **Nachgewiesen:** Alle im Nachweis ausdrücklich genannten Bestandteile liegen vor, widersprechen dem Material nicht und sind durch eine konkrete Fundstelle plus Erklärung dokumentiert. Eine blosse Fundstellenangabe ohne den passenden Befund genügt nicht.
+3. **Nicht nachgewiesen:** Der Nachweis wurde tatsächlich geprüft. Die Begründung benennt am geprüften Material den konkret fehlenden oder falschen Bestandteil. «Ungenügend» ist keine hinreichende Begründung.
+4. **Offen:** Material noch nicht geprüft, Begründung noch nicht dokumentiert oder Antwortgelegenheit im Gespräch nicht eröffnet. Offen ist nicht 0. Das Tool zeigt eine Bereichsnote erst bei allen abgeschlossenen Nachweisen dieses Bereichs. Punktesummen enthalten nur abgeschlossene Kriterien.
+5. Keine halben Nachweise, keine freien Stufen, kein Aufrunden einzelner Kriterien, keine Bonuspunkte für Umfang, Technik, Auftreten oder Überraschung. Ein mehrteiliger Nachweis zählt nur, wenn alle Bestandteile vorliegen. Inhaltliche Prüfentscheidungen bleiben fachliche Urteile; die Anwendung kontrolliert deren Dokumentation.
+6. Dieselbe Fundstelle darf verschiedene Nachweise stützen, wenn deren unterschiedliche Leistungen jeweils separat erklärt werden. Ein Fehler sperrt nur die Nachweise, deren geforderte Aussage er widerlegt. Keine pauschalen Mehrfachabzüge oder globalen Notendeckel. Ein bedeutungsloser Schreibfehler sperrt keinen Nachweis.
+7. Bei strittiger Regelauslegung bleibt der Nachweis offen. Regel, Fundstelle und Streitpunkt dokumentieren und vor Abschluss mit einer zweiten Prüfperson abgleichen. Eine einvernehmlich geklärte Auslegung auf alle vergleichbaren Dossiers anwenden.
+8. In der mündlichen Prüfung neutrale Nachfragen zulassen. Wenn die Lehrperson die entscheidende Deutung vorgibt, zählt deren Wiederholung nicht; an einer anderen Stelle muss eine eigene Erklärung folgen. Frage, relevante Hilfen und Antwort mit Zeitmarke dokumentieren. Fehlende Prüfungsgelegenheiten müssen vor Abschluss unter vergleichbaren Bedingungen nachgeholt werden.
+9. Nur P4-1 verwendet eine feste Stichprobe von drei historischen Behauptungen. P2 verlangt zwei verschiedene Analyseketten. Die übrigen Nachweise gelten an mindestens einer geeigneten Stelle, soweit ihre Beschreibung nichts anderes verlangt. Kein Mindestumfang für Medien oder Routen; alternative Formen sind ausdrücklich zugelassen.
+10. Dieses präzisierte Raster enthält konkretisierte Anforderungen und wird nicht rückwirkend auf bereits abgeschlossene Leistungen angewendet. Frühere Stufen und Notizen bleiben beim Import als frühere Urteile erhalten. Eine automatische Übertragung auf neue Einzelnachweise ist fachlich nicht zulässig.
 
-## Produkt · 50 Punkte
+## Vergleichbare mündliche Prüfung in zehn Minuten
 
-### Synthese & eigenständige Erkenntnis · 14 Punkte
+- **0:00–2:00 Defense:** Produktstelle und beabsichtigte Aussage zeigen; Materialgrund nennen; umsetzbare Alternative mit Folgen vergleichen; auf einen konkreten Einwand entscheiden.
+- **2:00–6:00 Inhalt:** Szene identifizieren; Gestaltung, Wirkung und Deutung erklären; historische Bedingung auf den Konflikt beziehen; eine andere Lesart anhand des Texts prüfen.
+- **6:00–8:00 Transfer:** Neue Gegenquelle oder Frage vorlegen; veränderte Annahme benennen; passenden Befund einsetzen; Folgerung herleiten und geänderte gegenüber weiterhin tragfähiger Aussage abgrenzen.
+- **8:00–10:00 Reflexion:** Eigenen Bearbeitungsschritt zeigen; verwendete Grundlage identifizieren; konkreten Prüfweg samt Ergebnis schildern; offene Frage und geeigneten Prüfschritt benennen.
+
+Die Nachweise werden nicht als 16 isolierte Kurzfragen abgearbeitet. Eine zusammenhängende Antwort darf mehrere Nachweise liefern, sofern alle Elemente protokolliert werden. Die Prüfperson muss alle vier Blöcke und darin alle geforderten Denkgelegenheiten eröffnen. Vorbereitete Informationen aus einem Gruppenprodukt ersetzen keine eigene mündliche Antwort. Ein Mitschnitt dient zum Belegabgleich; automatisch erstellte Transkripte daran kontrollieren.
+
+## Produkt mit 50 Punkten
+
+### P1 Synthese & eigenständige Erkenntnis
 
 Verbindet alle fünf Perspektiven durch eine tragfähige Leitfrage. Roman, historische Quellen und Berliner Gegenwart verändern wechselseitig die Interpretation.
 
-**Inhaltliche Prüffragen:**
+Gewicht: 14 Punkte. Jeder der vier Nachweise: 3.5 Punkte.
 
-- Welche beantwortbare Leitfrage hält die fünf Perspektiven zusammen?
-- Welche Schlussfolgerung entsteht erst aus Romanstelle + historischem Befund + Ortsbeobachtung?
-- Welche Differenz oder Gegenquelle begrenzt den Vergleich mit heute?
+#### P1-1 Leitfrage mit überprüfbarer Antwort
 
-- **4 · These an Widersprüchen weiterentwickeln:** Entwickelt eine eigene Antwort auf die Leitfrage aus Romanpassage, historischem Befund und eigener Berlin-Beobachtung. Ein Widerspruch oder Gegenbefund wird untersucht und führt zur Präzisierung der These; Unterschiede zur Gegenwart werden erklärt.
-- **3 · Roman, Geschichte und Gegenwart zur These verbinden:** Führt Romanpassage, historischen Befund und eigene Berlin-Beobachtung argumentativ auf eine Antwort zur Leitfrage zusammen. Fall, Kontext, Thema, freier Aspekt und Gegenwart erfüllen erkennbare Funktionen; die Schlussfolgerung folgt aus den Belegen.
-- **2 · Einzelne Verbindungen herstellen:** Verbindet einzelne Perspektiven mit nachvollziehbaren Bezügen. In der Schlussfolgerung wird jedoch überwiegend wiederholt, was die Materialien einzeln aussagen; ein gemeinsamer Erklärungszusammenhang bleibt lückenhaft.
-- **1 · Material nebeneinanderstellen:** Stellt Handlung, Epocheninformationen und Gegenwartsbezug in getrennten Blöcken dar. Übergänge behaupten Ähnlichkeiten, erklären aber nicht, weshalb diese die Leitfrage beantworten.
-- **0 · Keine Verbindung zur Leitfrage:** Entwickelt keine Antwort auf die Leitfrage und keine überprüfbare Beziehung zwischen Roman, historischem Kontext und Gegenwart.
+**Zählt genau dann:** Eine explizite Frage verbindet Roman und historische oder heutige Verhältnisse; eine ausdrücklich formulierte Antwort benennt einen Zusammenhang und verweist auf eine konkrete Produktstation.
 
-**Beleganker:** Leitfrage, Schlussstation, Verknüpfung einer Romanstelle mit historischer Quelle und heutiger Ortsbeobachtung
+**Genügt nicht:** Ein Thema als Überschrift oder eine offene Schlussfrage ohne eigene Antwort genügt nicht.
 
-### Literarische & historische Analyse · 12 Punkte
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P1-2 Schlussfolgerung aus drei Materialarten
+
+**Zählt genau dann:** Eine bezeichnete Argumentationsstelle verknüpft eine genaue Romanstelle, einen belegten historischen Befund und eine eigene Berliner Ortsbeobachtung. Ein Erklärungssatz zeigt, was daraus gemeinsam folgt.
+
+**Genügt nicht:** Drei nebeneinanderstehende Materialien oder die Behauptung «passt zusammen» ohne erklärten Zusammenhang genügen nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P1-3 Freier Aspekt verändert die Antwort
+
+**Zählt genau dann:** Der frei gewählte Aspekt wird benannt; an einer konkreten Stelle wird erklärt, wie er die Antwort auf die Leitfrage ergänzt, einschränkt oder verändert.
+
+**Genügt nicht:** Ein separates Kapitel über eine Figur oder einen Ort ohne erklärte Rückwirkung auf die Leitfrage genügt nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P1-4 Gegenbefund und Grenze des Gegenwartsvergleichs
+
+**Zählt genau dann:** Ein konkreter Befund oder eine alternative Lesart, die gegen die eigene These spricht, wird genannt und mit einer begründeten Präzisierung beantwortet. Zusätzlich wird eine konkrete historische Bedingung benannt, die eine Gleichsetzung mit heute begrenzt.
+
+**Genügt nicht:** Allgemeine Sätze wie «damals war vieles anders» oder ein folgenlos erwähnter Widerspruch genügen nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+### P2 Literarische & historische Analyse
 
 Untersucht das Wie der Darstellung und erklärt historische Bedingungen, statt Handlung und Epoche nur wiederzugeben. Der freie Aspekt erhält analytische Tiefe.
 
-**Inhaltliche Prüffragen:**
+Gewicht: 12 Punkte. Jeder der vier Nachweise: 3 Punkte.
 
-- Welche Perspektive, Sprachwahl, Raumdarstellung oder Figurenkonstellation erzeugt welche Wirkung?
-- Welche Textbeobachtung trägt die Deutung, und wie erklärt sie das zentrale Thema bzw. den freien Aspekt?
-- Welche historischen Bedingungen erklären den Konflikt, ohne die Fiktion zur historischen Quelle umzufunktionieren?
+#### P2-1 Erste literarische Analysekette
 
-- **4 · Formwirkung deuten und Gegenlesart prüfen:** Zeigt an genau bezeichneten Passagen, wie Erzählperspektive, Sprache, Raum oder Figurenkonstellation eine Deutung erzeugen. Prüft einen Textbefund, der eine andere Lesart erlaubt, und erklärt den Konflikt aus konkreten historischen Bedingungen. Fiktion und historischer Befund bleiben unterscheidbar.
-- **3 · Formwirkung am Text und Kontext erklären:** Verknüpft genaue Textbeobachtung, ihre Wirkung und eine daraus abgeleitete Deutung des Themas bzw. freien Aspekts. Erklärt den Zusammenhang mit konkreten historischen Bedingungen; Fachbegriffe leisten Erklärung statt nur Benennung.
-- **2 · Textmerkmale benennen, Deutung nur teilweise belegen:** Benennt zutreffende Textmerkmale und relevante historische Fakten. Erklärt deren Wirkung und Zusammenhang jedoch nur stellenweise; die Deutung ist nur teilweise an Textstellen entwickelt.
-- **1 · Handlung nacherzählen, Kontext pauschalisieren:** Ersetzt Interpretation weitgehend durch Inhaltsangabe. Fachbegriffe bleiben ohne Wirkungsanalyse; historischer Kontext erscheint als pauschale Epochenkulisse.
-- **0 · Text und Geschichte sachlich verkennen:** Verkennt zentrale Textzusammenhänge oder historische Verhältnisse und entwickelt daraus keine belastbare Deutung.
+**Zählt genau dann:** Eine genaue Romanstelle wird zitiert oder eindeutig verortet. Ein dort beobachtbares Gestaltungsmittel wird beschrieben; seine Wirkung wird erklärt und mit der Deutung von Thema oder Konflikt verknüpft.
 
-**Beleganker:** Mindestens eine im Detail ausgelegte Passage mit Stellenangabe; historische Einordnung und Gegeninterpretation
+**Genügt nicht:** Inhaltsangabe, blosses Benennen von «personaler Perspektive» oder eine Deutung ohne Bezug zum genannten Textdetail genügen nicht.
 
-### Kreativität als Erkenntnisleistung · 8 Punkte
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P2-2 Zweite literarische Analysekette
+
+**Zählt genau dann:** Eine andere genau verortete Passage wird mit Textbeobachtung, Wirkung und Deutungsfolge analysiert. Sie untersucht ein anderes Gestaltungsmittel oder prüft dieselbe Deutung an einem abweichenden Textbefund.
+
+**Genügt nicht:** Ein zweites Zitat mit derselben unveränderten Erklärung oder blosses Wiederholen der ersten Passage genügt nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P2-3 Historischen Mechanismus erklären
+
+**Zählt genau dann:** Ein konkreter politischer oder gesellschaftlicher Zustand wird durch eine identifizierbare historische Quelle belegt. Es wird erklärt, wie dieser Zustand Handlungsmöglichkeiten, Interessen oder Risiken einer Romanfigur beeinflusst.
+
+**Genügt nicht:** Eine Jahreszahl oder die Epochenbezeichnung «Diktatur» ohne Erklärung der Wirkung auf den Konflikt genügt nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P2-4 Fiktion und historischen Befund auseinanderhalten
+
+**Zählt genau dann:** An einem benannten Detail wird ausdrücklich unterschieden, was der Roman darstellt und was eine historische Quelle belegt. Eine Übereinstimmung, Abweichung oder nicht überprüfbare Ergänzung wird korrekt als solche ausgewiesen.
+
+**Genügt nicht:** Die Romanhandlung als Beweis für ein historisches Ereignis zu behandeln oder nur allgemein «der Roman ist erfunden» zu sagen genügt nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+### P3 Kreativität als Erkenntnisleistung
 
 Eine eigenständige mediale Idee macht einen inhaltlichen Zusammenhang erfahrbar. Bewertet wird ihr begründeter Mehrwert, nicht technischer Aufwand.
 
-**Inhaltliche Prüffragen:**
+Gewicht: 8 Punkte. Jeder der vier Nachweise: 2 Punkte.
 
-- Welche Deutung wird durch Perspektivwechsel, Montage, Raumführung oder Interaktion erfahrbar?
-- Was gewinnt das Publikum durch diese Form gegenüber einer blossen Zusammenfassung?
-- Wie konsequent wird die eigene Idee vom Auftakt bis zur Schlussstation entwickelt?
+#### P3-1 Formentscheidung vermittelt eine benannte Aussage
 
-- **4 · Durch die Form eine neue Einsicht ermöglichen:** Eine überraschende, konsequent entwickelte Form eröffnet neue Einsichten; Dramaturgie, Perspektivwechsel und Interaktion lassen das Publikum eine zentrale Spannung selbst erschliessen.
-- **3 · Medien für eine Deutung gezielt gestalten:** Die eigenständige Form passt zum Thema und vermittelt durch gezielten Medieneinsatz einen erkennbaren Erkenntnisgewinn.
-- **2 · Eigene Ideen vorwiegend illustrieren lassen:** Es gibt passende eigene Ideen; wesentliche Teile folgen einer Vorlage oder bleiben illustrativ.
-- **1 · Effekte ohne inhaltliche Funktion einsetzen:** Effekte und Medien sind überwiegend dekorativ; Form und Aussage passen nur teilweise zusammen.
-- **0 · Keine erkennbare gestalterische Aussage:** Keine erkennbare eigene Gestaltung oder eine Form, die das Verständnis verhindert.
+**Zählt genau dann:** Eine am Produkt erkennbare Gestaltungsidee wird einer konkreten Aussage zugeordnet. Die Auswahl oder Anordnung von Text, Bild, Ton oder Raum macht diese Aussage tatsächlich zugänglich.
 
-**Beleganker:** Konkrete Station: Was lässt sich hier erfahren, das ein linearer Text weniger gut vermittelt?
+**Genügt nicht:** Eine im Kommentar behauptete Absicht ohne Umsetzung oder ausschliesslich dekorative Gestaltung genügt nicht.
 
-### Quellenkritik & epistemische Sorgfalt · 6 Punkte
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P3-2 Perspektiven durch Gestaltung vergleichbar machen
+
+**Zählt genau dann:** Zwei inhaltlich verschiedene Sichtweisen oder Zeitebenen werden im Produkt durch eine erkennbare Anordnung auf denselben Gegenstand bezogen; das Publikum kann den Unterschied am Material feststellen.
+
+**Genügt nicht:** Zwei Medien ohne gemeinsamen Vergleichsgegenstand oder ein nur behaupteter Perspektivwechsel genügen nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P3-3 Publikum erschliesst einen Zusammenhang am Material
+
+**Zählt genau dann:** Eine konkrete Station lässt das Publikum durch Vergleich, Reihenfolge, Enthüllung, Montage oder Interaktion einen Zusammenhang aus benannten Materialdetails erschliessen. Der Zusammenhang wird nicht nur als fertige Behauptung mitgeteilt.
+
+**Genügt nicht:** Ein Quiz, Button oder Video ohne Zusammenhang zwischen seiner konkreten Gestaltung und der erschliessbaren Einsicht genügt nicht. Eine technische Interaktion ist nicht vorgeschrieben.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P3-4 Dramaturgischer Wendepunkt mit Deutungsfolge
+
+**Zählt genau dann:** Ein später eingeführter Materialbefund verändert eine vorher aufgebaute Erwartung oder Sichtweise. Eine anschliessende Passage benennt, welche Deutung deshalb ergänzt oder revidiert werden muss.
+
+**Genügt nicht:** Ein überraschendes Bild oder ein Handlungscliffhanger ohne ausgeführte Deutungsfolge genügt nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+### P4 Quellenkritik & epistemische Sorgfalt
 
 Prüft Herkunft, Zeit, Absicht und Grenzen der verwendeten Quellen. Zitate, Fakten, Rekonstruktionen und KI-Anteile bleiben unterscheidbar.
 
-**Inhaltliche Prüffragen:**
+Gewicht: 6 Punkte. Jeder der vier Nachweise: 1.5 Punkte.
 
-- Lässt sich eine zentrale Behauptung zur verwendeten Textstelle bzw. Originalquelle zurückverfolgen?
-- Wie beeinflussen Entstehungszeit, Urheber und Absicht den Aussagewert?
-- Wie wurden widersprüchliche Angaben oder KI-Vorschläge überprüft?
+#### P4-1 Drei zentrale Sachbehauptungen zurückverfolgen
 
-- **4 · Quellen gegeneinander prüfen und Grenzen ausweisen:** Kontrastiert geeignete Primär- und Sekundärquellen, erklärt Interessengebundenheit und Lücken; zentrale Aussagen sind direkt nachprüfbar, Rechte und KI-Prüfwege transparent.
-- **3 · Zentrale Aussagen belegen und Quellen einordnen:** Nutzt geeignete Quellen kritisch; zentrale Fakten und Zitate sind auffindbar belegt, Mediennachweise und KI-Verwendung nachvollziehbar.
-- **2 · Belege liefern, Quellenperspektive kaum prüfen:** Belege sind überwiegend vorhanden; Quellenbewertung und Prüfung von KI-Aussagen bleiben punktuell.
-- **1 · Angaben übernehmen, Herkunft unklar lassen:** Unklare Herkunft, fehlende Stellenangaben oder unkritische Übernahmen erschweren die Überprüfung.
-- **0 · Zentrale Aussagen ohne prüfbare Grundlage:** Zentrale Aussagen sind unbelegt oder Quellen werden als Nachweise erfunden.
+**Zählt genau dann:** Geprüft werden die erste historische Behauptung zur Hauptthese und die zwei folgenden unterschiedlichen historischen Sachbehauptungen in Leserichtung. Alle drei besitzen einen zuordenbaren Nachweis mit Urheber oder Institution, Titel und Fundstelle bzw. direkt erreichbarer Originalseite; der Nachweis trägt die jeweilige Aussage.
 
-**Beleganker:** Quellennachweis an der Aussage, Romanseite/Kapitel, Urheber und Lizenz; ein dokumentierter Prüfweg
+**Genügt nicht:** Eine allgemeine Linkliste, ein Suchmaschinenlink, ein KI-Output oder ein Nachweis, der die Aussage nicht enthält, genügt nicht. Sind weniger als drei historische Sachbehauptungen vorhanden, ist dieser Nachweis nicht erfüllt.
 
-### Berlin als untersuchter Raum · 5 Punkte
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P4-2 Perspektive einer Quelle für ihre Aussagekraft auswerten
+
+**Zählt genau dann:** Für eine konkret verwendete historische Quelle sind Entstehungszeit, Urheber und Adressat oder Zweck genannt. Daraus wird eine konkrete Folgerung gezogen, welche Aussage die Quelle stützen kann und welche nicht.
+
+**Genügt nicht:** Eine Quellenbeschreibung ohne Folgerung für den Aussagewert oder pauschales «seriös/unseriös» genügt nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P4-3 Zentrale Aussage an unabhängiger Quelle gegenprüfen
+
+**Zählt genau dann:** Eine benannte Sachbehauptung wird an zwei identifizierbaren, voneinander unabhängigen Quellen geprüft. Übereinstimmung oder Abweichung und die daraus folgende Verwendung der Aussage werden festgehalten; eine KI-Ausgabe zählt nicht als unabhängige Quelle.
+
+**Genügt nicht:** Zwei Seiten, die dieselbe Meldung oder Vorlage übernehmen, oder bloss zwei Links ohne Vergleichsergebnis genügen nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P4-4 Herkunft der Medien und Hilfsmittel ausweisen
+
+**Zählt genau dann:** Für jedes im Produkt verwendete fremde Bild-, Ton- oder Videoelement sind Herkunft und Nutzungsgrundlage angegeben; eigene Medien sind als eigene erkennbar. Zusätzlich ist angegeben, ob und wofür KI eingesetzt wurde, oder dass keine KI eingesetzt wurde.
+
+**Genügt nicht:** Ein pauschales «Bilder: Internet» oder eine nicht zuordenbare KI-Angabe genügt nicht. Wenn nur eigene Medien vorkommen, genügt deren eindeutige Kennzeichnung plus die KI-Angabe.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+### P5 Berlin als untersuchter Raum
 
 Eigenes Bild-, Video- oder Tonmaterial übernimmt eine begründete Funktion für die Interpretation. Keine feste Anzahl oder Route.
 
-**Inhaltliche Prüffragen:**
+Gewicht: 5 Punkte. Jeder der vier Nachweise: 1.25 Punkte.
 
-- Was zeigt die eigene Aufnahme über Nutzung, Grenze, Spur oder Leerstelle des Orts?
-- Welche Deutung stützt, verändert oder widerlegt diese Beobachtung?
-- Werden heutiger Zustand und historisch rekonstruierte Situation auseinandergehalten?
+#### P5-1 Eigenes Material am identifizierten Ort
 
-- **4 · Ortsbeobachtung zur Prüfung einer Deutung nutzen:** Eigene Beobachtungen von Raum, Spuren oder Leerstellen prüfen und verändern eine Deutung; historische und heutige Raumnutzung werden differenziert lesbar.
-- **3 · Eigene Aufnahme als inhaltlichen Beleg einsetzen:** Eigenes Berlin-Material ist gezielt ausgewählt, verständlich eingeordnet und trägt eine inhaltliche Aussage.
-- **2 · Ort zeigen, Deutung kaum vertiefen:** Eigenes Material passt zum Ort, bleibt aber meist Illustration statt Untersuchung.
-- **1 · Berlin-Material ohne Bezug zur Leitfrage zeigen:** Aufnahmen wirken austauschbar; Ortsbezug oder Bezug zur Leitfrage bleibt unklar.
-- **0 · Kein eigenes Material mit Ortsbezug:** Kein eigenes Berlin-Material oder keine erkennbare Verbindung zum untersuchten Raum.
+**Zählt genau dann:** Mindestens eine eigene Aufnahme oder eine eigene dokumentierte Ortsbeobachtung ist im Produkt einem konkreten Berliner Ort und einem Aufnahmedatum zugeordnet; die Urheberschaft ist ausgewiesen.
 
-**Beleganker:** Aufnahme mit Ort, Datum und Kommentar: Welche Behauptung stützt oder irritiert sie?
+**Genügt nicht:** Ein fremdes Bild, eine austauschbare Stadtansicht ohne Ortszuordnung oder eine reine Erinnerung ohne dokumentierte Beobachtung genügt nicht.
 
-### Mediale Kohärenz & Zugänglichkeit · 5 Punkte
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P5-2 Beobachtbaren Befund im Material zeigen
+
+**Zählt genau dann:** Eine am eigenen Material erkennbare Spur, räumliche Beziehung, Nutzung oder Leerstelle wird mit einem konkreten Detail beschrieben; die Fundstelle erlaubt, Beschreibung und Material abzugleichen.
+
+**Genügt nicht:** Eine Stimmung wie «bedrohlich» ohne beschriebenes sicht- oder hörbares Detail genügt nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P5-3 Historischen und heutigen Ort unterscheiden
+
+**Zählt genau dann:** Das eigene Ortsmaterial wird mit einer bezeichneten historischen Quelle auf denselben Ort bezogen. Mindestens ein konkretes Merkmal der früheren und heutigen Situation wird verglichen; Rekonstruktion und heutige Aufnahme bleiben erkennbar.
+
+**Genügt nicht:** Eine historische Geschichte neben einem heutigen Foto ohne Vergleich eines konkreten Ortsmerkmals genügt nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P5-4 Ortsbefund deuten und Aussagegrenze benennen
+
+**Zählt genau dann:** Aus dem beobachteten Detail wird eine explizite Folgerung für eine benannte Roman- oder Gegenwartsfrage gezogen. Zusätzlich wird erklärt, was sich aus dieser heutigen Beobachtung historisch nicht nachweisen lässt.
+
+**Genügt nicht:** Eine Aussage über damalige Motive allein aus einer heutigen Aufnahme oder ein allgemeines «Aufnahmen sind subjektiv» genügt nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+### P6 Mediale Kohärenz & Zugänglichkeit
 
 Das Publikum kann dem Argument folgen. Medien, Navigation und Lesbarkeit dienen der Aussage; technische Komplexität bringt keinen Bonus.
 
-**Inhaltliche Prüffragen:**
+Gewicht: 5 Punkte. Jeder der vier Nachweise: 1.25 Punkte.
 
-- Kann ein Publikum ohne Romankenntnis Fall, Argument und Schlussfolgerung nachvollziehen?
-- Übernehmen Text, Bild, Ton und Interaktion verschiedene inhaltliche Aufgaben?
-- Bleiben zentrale Aussagen mobil, ohne Ton und über zugängliche Medienalternativen verständlich?
+#### P6-1 Fünf Perspektiven für das Publikum auffindbar
 
-- **4 · Medienfolge führt durch ein nachvollziehbares Argument:** Dramaturgie steuert Aufmerksamkeit und Verständnis präzise; Text und Medien ergänzen sich; mobile Bedienung, Untertitel bzw. Textalternativen und Quellenzugang funktionieren durchgehend.
-- **3 · Inhalte schlüssig und zugänglich vermitteln:** Das Webspecial ist schlüssig, gut lesbar und mobil nutzbar; zentrale Medien sind zugänglich und sinnvoll eingebettet.
-- **2 · Argument trotz medialer Brüche erkennbar halten:** Die Argumentation bleibt nachvollziehbar; einzelne Brüche, Bedienprobleme oder fehlende Alternativen stören.
-- **1 · Verständnis durch Aufbau und Bedienung erschweren:** Navigation, Textdichte oder Medienfehler behindern das Verständnis mehrfach.
-- **0 · Zentrale Inhalte nicht zugänglich machen:** Wesentliche Inhalte sind nicht zugänglich oder das Produkt lässt sich nicht sinnvoll nutzen.
+**Zählt genau dann:** In der vorgesehenen Leseroute lassen sich Fall, historischer Kontext, zentrales Thema, freier Aspekt und Gegenwartsbezug jeweils einer konkreten Station zuordnen. Der Fallabschnitt klärt beteiligte Figuren und zentralen Konflikt.
 
-**Beleganker:** Test auf Smartphone und Desktop; Ton aus; Navigation und Medienlinks
+**Genügt nicht:** Eine nur in Notizen vorhandene Perspektive oder ein Kapitelname ohne den entsprechenden Inhalt genügt nicht. Die Reihenfolge ist frei.
 
-## Mündliche Einzelprüfung · 28 Punkte
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
 
-### Inhaltliche Analyse: Roman & Geschichte · 8 Punkte
+#### P6-2 Leseroute am Desktop und Mobilgerät bedienen
+
+**Zählt genau dann:** Die vorgesehene Route wird bei 1280 und 360 CSS-Pixel Breite vollständig durchlaufen. Alle dafür benötigten Bedienelemente sind erreichbar; kein überlagerter oder abgeschnittener Text und kein horizontaler Bildlauf des Fliesstexts blockiert das Lesen. Beide Testbreiten und gefundene Fehler werden protokolliert.
+
+**Genügt nicht:** Ein Desktop-Test allein oder «mobil getestet» ohne Testbreite und Ergebnis genügt nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P6-3 Kernaussagen ohne Ton zugänglich
+
+**Zählt genau dann:** Alle für die Argumentation notwendigen gesprochenen Informationen sind als Untertitel oder Textfassung zugänglich. Inhaltstragende Bilder besitzen beschreibenden Alternativtext oder eine Textfassung ihres Befunds. Falls solche Medien nicht vorkommen, wird festgehalten, dass alle Kernaussagen bereits als Text vorliegen.
+
+**Genügt nicht:** Automatisch erzeugte, sinnentstellende Untertitel oder ein Alternativtext wie «Bild1» genügen nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### P6-4 Medien und Quellen auf der Leseroute öffnen
+
+**Zählt genau dann:** Alle auf der vorgesehenen Route benötigten Medien starten oder haben eine inhaltlich gleichwertige zugängliche Ersatzfassung. Alle dort verwendeten Quellenverweise öffnen die bezeichnete Fundstelle oder eine vollständige abrufbare bibliografische Angabe. Die geprüfte Route und Fehlerfreiheit werden protokolliert.
+
+**Genügt nicht:** Ein nicht ersetzter Ausfall eines für das Argument nötigen Mediums oder ein leerer Quellenlink genügt nicht. Technische Effekte ausserhalb dieser Route zählen nicht.
+
+**Zu dokumentieren:** Produktstation oder Quellenstelle und beobachtbarer Befund; bei negativem Urteil der konkret fehlende Bestandteil.
+
+## Mündliche Prüfung mit 28 Punkten
+
+### O1 Inhaltliche Analyse: Roman & Geschichte
 
 Beantwortet inhaltliche Fragen präzise und am Text; erklärt historische Zusammenhänge und das Verhältnis von Fiktion und Geschichte.
 
-**Inhaltliche Prüffragen:**
+Gewicht: 8 Punkte. Jeder der vier Nachweise: 2 Punkte.
 
-- Wird aus Textdetail → Wirkung → Deutung argumentiert?
-- Werden historische Bedingungen erklärt, statt nur Jahreszahlen genannt?
-- Kann eine andere Lesart anhand eines Textbefunds geprüft werden?
+#### O1-1 Romanbeobachtung exakt bezeichnen
 
-- **4 · Textdeutung gegen alternative Erklärung abwägen:** Entwickelt aus einer konkreten Passage den Zusammenhang von Gestaltung, Wirkung und Deutung. Erklärt historische Bedingungen des Konflikts und prüft auf Nachfrage, welche Textbeobachtung für eine alternative Erklärung spricht.
-- **3 · Textbeobachtung und historischen Zusammenhang erklären:** Erklärt eine Deutung durch genaue Textbeobachtung und deren Wirkung. Verknüpft den Konflikt fachlich korrekt mit historischen Bedingungen und unterscheidet Romanhandlung von historischem Wissen.
-- **2 · Inhalt kennen, Erklärung nur teilweise belegen:** Kennt wesentliche Handlung und historische Eckpunkte. Bei der Erklärung von Gestaltung, Wirkung oder historischem Zusammenhang bleiben Belege und Folgerungen teilweise offen.
-- **1 · Inhalt wiedergeben, Zusammenhänge nicht erklären:** Gibt Handlung oder Epochenwissen wieder, kann aber auch nach Nachfrage nicht erklären, wie ein Textdetail die Deutung oder der historische Kontext den Konflikt trägt.
-- **0 · Zentrale Text- und Kontextfragen nicht klären:** Kann zentrale Fragen zum Text und zu den historischen Verhältnissen trotz Klärungsfragen nicht sachlich beantworten.
+**Zählt genau dann:** Die Person nennt eine konkrete Szene mit so genauen Figuren-, Situations- oder Textangaben, dass sie im Roman eindeutig auffindbar ist; die Darstellung stimmt mit dem Text überein.
 
-**Beleganker:** Frage, Antwortkern, Romanstelle und historische Erklärung protokollieren
+**Genügt nicht:** Eine Seitenzahl ohne Aussage zur Szene oder eine austauschbare Inhaltsangabe genügt nicht. Eine auswendig gelernte Seitenzahl ist nicht erforderlich.
 
-### Defense: Entscheidungen argumentativ vertreten · 8 Punkte
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### O1-2 Gestaltung in Deutung überführen
+
+**Zählt genau dann:** Die Person beschreibt ein an dieser Szene nachprüfbares sprachliches oder erzählerisches Merkmal, erklärt seine Wirkung und leitet daraus eine Aussage über Thema oder Konflikt ab.
+
+**Genügt nicht:** Ein Fachbegriff ohne Textbeobachtung oder eine persönliche Wertung ohne erklärten Wirkungsschritt genügt nicht.
+
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### O1-3 Historische Bedingung kausal erklären
+
+**Zählt genau dann:** Die Person nennt einen zutreffenden historischen Zustand, ordnet ihn zeitlich oder politisch ein und erklärt seine konkrete Folge für den im Roman untersuchten Konflikt.
+
+**Genügt nicht:** Ein Epochenname, eine Jahreszahl oder die Romanhandlung als historischer Nachweis genügt nicht.
+
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### O1-4 Alternative Textdeutung prüfen
+
+**Zählt genau dann:** Auf einen Einwand nennt die Person einen konkreten Textbefund, der für oder gegen die alternative Deutung spricht, und erklärt, weshalb sie diese Deutung annimmt, begrenzt oder verwirft.
+
+**Genügt nicht:** Die eigene Interpretation bloss zu wiederholen oder die Alternative als «falsch» zu bezeichnen genügt nicht.
+
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
+
+### O2 Defense: Entscheidungen argumentativ vertreten
 
 Verteidigt eine konkrete Produktentscheidung mit These, Beleg und Abwägung; reagiert auf Einwände. Zustimmen oder Revision sind gleichwertig, wenn begründet.
 
-**Inhaltliche Prüffragen:**
+Gewicht: 8 Punkte. Jeder der vier Nachweise: 2 Punkte.
 
-- Welche Aussage soll die konkrete Produktentscheidung vermitteln?
-- Welche Alternative hätte welche Folgen für Aussage und Publikum?
-- Wird auf den Einwand mit Belegen und Abwägung reagiert?
+#### O2-1 Entscheidung am Produkt lokalisieren
 
-- **4 · Einwand abwägen und Entscheidung begründet halten oder ändern:** Legt Ziele, Alternativen und Folgen offen; beantwortet einen substanziellen Einwand am Produkt und verteidigt oder revidiert die Entscheidung fachlich überzeugend.
-- **3 · Entscheidung am Produkt mit Alternative begründen:** Begründet eine konkrete Entscheidung mit Beleg und Alternative und beantwortet kritische Rückfragen nachvollziehbar.
-- **2 · Wahl erklären, Alternative kaum abwägen:** Erklärt die Entscheidung plausibel, wägt Alternativen oder Folgen aber nur teilweise ab.
-- **1 · Vorgehen oder Geschmack statt Gründe nennen:** Beschreibt vor allem den Herstellungsweg oder persönlichen Geschmack; Einwände bleiben unbeantwortet.
-- **0 · Eigene Produktentscheidung nicht erklären:** Kann eine wesentliche Entscheidung nicht erklären oder belegen.
+**Zählt genau dann:** Die Person zeigt eine konkrete eigene inhaltliche oder gestalterische Entscheidung im Produkt und benennt die damit zu vermittelnde Aussage.
 
-**Beleganker:** Konkrete Produktstelle, verworfene Alternative, Einwand und Reaktion
+**Genügt nicht:** Eine allgemeine Rollenangabe wie «ich war für Design zuständig» ohne Produktstelle und Aussage genügt nicht.
 
-### Synthese & Transfer unter neuer Fragestellung · 6 Punkte
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### O2-2 Beleg für die gewählte Lösung erklären
+
+**Zählt genau dann:** Die Person nennt ein konkretes Text-, Quellen- oder Ortsdetail und erklärt, warum gerade dieses Detail die gewählte Entscheidung stützt.
+
+**Genügt nicht:** Persönlicher Geschmack, Arbeitsaufwand oder «die KI hat das vorgeschlagen» genügt nicht als Begründung.
+
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### O2-3 Realisierbare Alternative abwägen
+
+**Zählt genau dann:** Die Person nennt eine umsetzbare andere Lösung für dieselbe Produktstelle und vergleicht eine konkrete Folge beider Lösungen für Aussage oder Verständnis.
+
+**Genügt nicht:** Eine offensichtlich unbrauchbare Schein-Alternative oder «die andere Lösung wäre schlechter» ohne Vergleichskriterium genügt nicht.
+
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### O2-4 Auf einen Einwand mit Entscheidung reagieren
+
+**Zählt genau dann:** Nach einem konkreten Gegenargument benennt die Person dessen fachlichen Kern, beantwortet ihn an einem Beleg und entscheidet ausdrücklich, ob und wie die Produktstelle beibehalten oder geändert werden müsste.
+
+**Genügt nicht:** Blosses Zustimmen, Ablehnen oder ein Ausweichen auf den Herstellungsprozess genügt nicht. Eine begründete Revision zählt gleich wie eine begründete Verteidigung.
+
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
+
+### O3 Synthese & Transfer unter neuer Fragestellung
 
 Verbindet Text, Geschichte und Gegenwart in einer nicht vorab ausformulierten Denkaufgabe; berücksichtigt Grenzen des Vergleichs.
 
-**Inhaltliche Prüffragen:**
+Gewicht: 6 Punkte. Jeder der vier Nachweise: 1.5 Punkte.
 
-- Welche Annahme verändert die neue Frage oder Gegenquelle?
-- Welche Folgerung ist daraus zu ziehen, und welche bisherige Aussage bleibt bestehen?
-- Wo endet der Vergleich zwischen historischen und gegenwärtigen Verhältnissen?
+#### O3-1 Veränderte Annahme benennen
 
-- **4 · Neue Prämisse prüfen und These gezielt revidieren:** Entwickelt aus einer neuen Quelle, Perspektive oder Gegenhypothese eine eigenständige Folgerung und benennt Reichweite, Grenze und nötige Anpassung des Produkts.
-- **3 · Neue Frage durch begründeten Vergleich erschliessen:** Überträgt die Erkenntnisse begründet auf eine neue Frage; unterscheidet Gemeinsamkeiten und Unterschiede.
-- **2 · Zusammenhang erkennen, Folgen kaum entwickeln:** Erkennt einen passenden Zusammenhang, führt ihn aber wenig differenziert weiter.
-- **1 · Bekannte Aussage auf neue Frage übertragen:** Überträgt schematisch; Gegenwartsvergleiche bleiben pauschal oder anachronistisch.
-- **0 · Keinen begründeten Transfer entwickeln:** Keine begründete Übertragung erkennbar.
+**Zählt genau dann:** Bei einer vorher nicht bekannt gegebenen Gegenquelle oder Transferfrage benennt die Person, welche konkrete Annahme oder Beziehung der bisherigen Interpretation damit in Frage steht.
 
-**Beleganker:** Neue Frage, selbstständiger Gedankengang und Grenze des Vergleichs
+**Genügt nicht:** Nur die Prüfungsfrage zu wiederholen oder an einer unveränderten vorbereiteten Antwort festzuhalten genügt nicht.
 
-### Quellen-, KI- & Eigenbeitragsreflexion · 6 Punkte
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### O3-2 Passendes Wissen auf die neue Frage beziehen
+
+**Zählt genau dann:** Die Person führt einen konkreten Romanbefund oder historischen Befund an und erklärt, wie dieser die neue Frage stützt, begrenzt oder widerlegt.
+
+**Genügt nicht:** Ein bekannter Fakt ohne erklärte Beziehung zur neuen Frage genügt nicht.
+
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### O3-3 Neue Folgerung herleiten
+
+**Zählt genau dann:** Die Person formuliert eine Folgerung und erklärt den Schluss vom neuen Material oder der geänderten Annahme zu dieser Folgerung.
+
+**Genügt nicht:** Eine neue Behauptung ohne begründeten Schluss oder blosses «ich müsste recherchieren» genügt nicht.
+
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
+
+#### O3-4 Reichweite der Folgerung abgrenzen
+
+**Zählt genau dann:** Die Person benennt eine konkrete Aussage, die geändert oder vorläufig offengelassen werden muss, und eine andere, die mit Begründung weiterhin trägt.
+
+**Genügt nicht:** Alles unverändert zu lassen oder pauschal die gesamte Arbeit zu verwerfen, ohne Aussagen zu unterscheiden, genügt nicht.
+
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
+
+### O4 Quellen-, KI- & Eigenbeitragsreflexion
 
 Macht den eigenen fachlichen Beitrag und seine Prüfwege nachvollziehbar. Freiwillige Entscheidungsnotizen sind keine zusätzliche Pflichtabgabe.
 
-**Inhaltliche Prüffragen:**
+Gewicht: 6 Punkte. Jeder der vier Nachweise: 1.5 Punkte.
 
-- Welche fachliche Entscheidung ist der eigenen Person zurechenbar?
-- Wie wurde eine konkrete Aussage, Quelle oder KI-Ausgabe kontrolliert?
-- Was wurde korrigiert, und welche Unsicherheit bleibt bestehen?
+#### O4-1 Eigenen Beitrag fachlich rekonstruieren
 
-- **4 · Eigenen Prüfweg samt Korrektur und Restunsicherheit erklären:** Rekonstruiert den eigenen Beitrag an einem konkreten Beispiel, zeigt Quellen-/KI-Fehlerprüfung und begründet eine Korrektur samt verbleibender Unsicherheit.
-- **3 · Eigenen Beitrag und konkreten Prüfschritt zeigen:** Erklärt den eigenen Beitrag, verwendete Hilfen und einen nachvollziehbaren Prüf- oder Revisionsschritt.
-- **2 · Beitrag und Hilfen benennen, Prüfung vage lassen:** Kann Beitrag und Hilfen benennen; Prüfung und Lerngewinn bleiben wenig konkret.
-- **1 · Verantwortung und Prüfschritte offenlassen:** Eigener Anteil oder Prüfschritte bleiben vage; Verantwortung wird an Team oder KI abgegeben.
-- **0 · Eigenen Beitrag fachlich nicht rekonstruieren:** Kein nachvollziehbarer eigener Beitrag bzw. keine Erklärung einer übernommenen Aussage.
+**Zählt genau dann:** Die Person benennt an einer Produktstelle eine selbst bearbeitete Aussage oder Entscheidung und erklärt den eigenen Bearbeitungsschritt.
 
-**Beleganker:** Eigene Entscheidung, Hilfsmittel, überprüfte Aussage und Änderung
+**Genügt nicht:** «Wir haben das gemeinsam gemacht» oder eine reine Tätigkeitsliste ohne fachlichen Schritt genügt nicht.
 
-## Prüfungsablauf · genau 10 Minuten je Person
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
 
-- 0:00–2:00: Defense einer zentralen Entscheidung am geöffneten Produkt; eigene These, Beleg, Alternative.
-- 2:00–6:00: Inhaltliche Vertiefung; mindestens eine literarische und eine historische Frage, davon eine mit genauer Textreferenz.
-- 6:00–8:00: Neue Transferfrage oder Gegenhypothese; Denkzeit innerhalb dieses Fensters ermöglichen.
-- 8:00–10:00: Quellen-/KI-Prüfung und eigener Beitrag; verbleibende Unsicherheit und mögliche Revision.
+#### O4-2 Verwendete Grundlage identifizieren
 
-Kein vollständiger Produktvortrag. Die Lehrperson steuert nach zehn Minuten zum Ende. Die Zeitfenster strukturieren das Gespräch, sind keine zusätzlichen Bewertungskriterien. Fragenbank: Defense-, Inhalts-, Transfer- und Reflexionsfrage vorab auswählen; nicht alle Fragen stellen. Allen Personen vergleichbar anspruchsvolle Denkgelegenheiten bieten. Hilfen und Nachfragen protokollieren; deren Einfluss auf die Selbstständigkeit fachlich abwägen. Bewertet wird das individuelle Gespräch, keine vermutete Gruppenrolle. Nicht gestellte Fragen sind kein Leistungsdefizit: fehlende Bewertungsgrundlage kennzeichnen und vor Abschluss klären.
+**Zählt genau dann:** Die Person benennt die verwendete Quelle, Aufnahme oder das Hilfsmittel so genau, dass es identifizierbar ist, und erklärt, welche konkrete Information oder Anregung daraus übernommen wurde.
 
-## Mitschnitt und Protokoll
+**Genügt nicht:** Nur «Google», «KI» oder «der Roman» ohne konkrete verwendete Information genügt nicht. Ohne KI gilt derselbe Nachweis für andere Grundlagen.
 
-Mitschnitt mit dem schulisch vorgesehenen Aufnahmegerät führen. Im Tool eine lokale Aufnahme-ID (keinen öffentlichen Link) und Zeitmarken eintragen. Der Timer startet zeitgleich mit der Aufnahme; Abweichungen als Notiz vermerken. Der Timer zeichnet selbst kein Audio auf. Nach der Prüfung Antworten und Belege anhand der Zeitmarken prüfen und die Bewertung begründen. Aufnahme, Protokoll und Export nur in der vorgesehenen schulischen Ablage verwahren; Aufbewahrung und Zugriffsrechte vor der Prüfung nach der schulischen Regelung festlegen. Keine Namen, Bewertungen oder Mitschnitte ins öffentliche GitHub-Repository hochladen.
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
 
-## Fragenbank
+#### O4-3 Prüfung mit Ergebnis schildern
 
-### Defense
+**Zählt genau dann:** Die Person rekonstruiert einen konkreten Abgleich einer übernommenen Aussage mit dem Originaltext oder einer unabhängigen Quelle und benennt, ob die Aussage bestätigt, korrigiert oder verworfen wurde.
 
-Zeigen Sie eine Station, ohne die Ihre Hauptthese schwächer wäre. Welche Erkenntnis leistet sie – und welche einfachere Alternative haben Sie verworfen?
+**Genügt nicht:** «Ich habe alles kontrolliert» ohne benannte Aussage, Prüfgrundlage und Ergebnis genügt nicht. Eine bestätigte Aussage zählt gleich wie eine korrigierte.
 
-Nachfrage: Warum wäre Ihre Alternative weniger geeignet? Was kostet Ihre gewählte Lösung?
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
 
-### Defense
+#### O4-4 Verbleibende Unsicherheit eingrenzen
 
-Ihre Interaktion wirkt auf mich dekorativ. Verteidigen Sie ihren Erkenntniswert an einer konkreten Stelle.
+**Zählt genau dann:** Die Person nennt eine konkrete, noch offene Sach- oder Deutungsfrage und erklärt, welcher überprüfbare nächste Schritt sie klären könnte.
 
-Nachfrage: Was müssten Sie ändern, wenn Nutzerinnen und Nutzer die Interaktion überspringen?
+**Genügt nicht:** Pauschale Unsicherheit wie «Quellen können falsch sein» oder ein nicht zur Frage passender Prüfschritt genügt nicht.
 
-### Inhalt
+**Zu dokumentieren:** Frage und Antwortkern mit Zeitmarke, ggf. relevante Hilfe; bei negativem Urteil der konkret fehlende Bestandteil.
 
-Deuten Sie eine zentrale Passage: Wie lenken Erzählperspektive, Sprache oder Raumgestaltung unser Urteil über eine Figur?
+## Fachliche und auftragsbezogene Grundlage
 
-Nachfrage: Welche Textbeobachtung würde eine andere Lesart stützen?
-
-### Inhalt
-
-Welche historische Machtstruktur erklärt einen Konflikt des Romans? Trennen Sie Romanbefund, gesichertes Wissen und Ihre Deutung.
-
-Nachfrage: Welche Quelle stützt Ihre Erklärung, und was kann diese Quelle nicht belegen?
-
-### Inhalt
-
-Wie vertieft Ihr frei gewählter Aspekt die Leitfrage? Zeigen Sie die Verbindung an einer Romanstelle.
-
-Nachfrage: Wo widerspricht dieser Aspekt einer einfachen Deutung des Falls?
-
-### Transfer
-
-Angenommen, eine neue historische Quelle widerspricht Ihrer wichtigsten Annahme: Welche Schlussfolgerung und welche Station müssten Sie zuerst revidieren?
-
-Nachfrage: Was bleibt an Ihrer These trotzdem tragfähig?
-
-### Transfer
-
-Eine heutige Ortsaufnahme zeigt keine sichtbare historische Spur. Wie kann gerade diese Leerstelle Ihre Interpretation verändern?
-
-Nachfrage: Wo wäre das eine Überinterpretation?
-
-### Transfer
-
-Nennen Sie eine plausible Gegenwartsparallele und erklären Sie anschliessend, an welchem Punkt sie irreführend wird.
-
-Nachfrage: Welche unterschiedliche politische oder gesellschaftliche Bedingung ist entscheidend?
-
-### Reflexion
-
-Rekonstruieren Sie Ihren eigenen Beitrag an einer konkreten Produktstelle: Welche Aussage haben Sie geprüft oder verändert und warum?
-
-Nachfrage: Welche Quelle bzw. welches Hilfsmittel kam zum Einsatz? Welche Unsicherheit bleibt?
-
-### Reflexion
-
-Zeigen Sie einen Vorschlag von KI oder aus dem Team, den Sie verworfen oder korrigiert haben. Nach welchem fachlichen Kriterium?
-
-Nachfrage: Falls Sie keine KI genutzt haben: Wie haben Sie eine eigene erste Annahme geprüft?
-
-
-## Fachliche Bezugspunkte
-
-Der [EDK-Rahmenlehrplan gymnasiale Maturitätsschulen, Fach Deutsch, S. 27–30](https://www.gr.ch/DE/institutionen/verwaltung/ekud/ahb/mittelschulen/dienstleistungen/wegm/Documents/Rahmenlehrplan-maturitatsschulen.pdf#page=28) nennt Form-Inhalt-Bezüge, Mehrdeutigkeit, kulturhistorische Einordnung, Informationsprüfung, eigenständige ästhetische Gestaltung und Argumentation. Die Kriterien übersetzen diese Bezugspunkte in beobachtbare Leistungen für den Berlin-Auftrag. Der Rahmenlehrplan schreibt weder diese Gewichtung noch diese fünf Stufen vor.
-
-**Beispiel für eine prüfbare Synthese:** Eine Romanfigur deutet einen Ort als Schutzraum. Eine historische Quelle zeigt dort zugleich institutionelle Ausgrenzung. Die eigene heutige Ortsaufnahme dokumentiert eine veränderte öffentliche Nutzung. Die Synthese erklärt, wie diese Spannung das Verständnis von Zugehörigkeit verändert und wo ein Vergleich der politischen Verhältnisse nicht trägt. Dies ist ein fiktives Strukturbeispiel, keine Behauptung über einen der Romane.
+Die lokale Auftragsfassung der [Berlin Thriller Werkstatt](https://berlin-thriller-werkstatt.patrickoliverfischer.chatgpt.site/) vom 25.10.2026 verlangt Fall, historischen Kontext, Thema, freien Aspekt und Gegenwart sowie eigene Berlin-Materialien. Der [EDK-Rahmenlehrplan Deutsch S. 27–30](https://www.gr.ch/DE/institutionen/verwaltung/ekud/ahb/mittelschulen/dienstleistungen/wegm/Documents/Rahmenlehrplan-maturitatsschulen.pdf#page=28) liefert fachliche Bezugspunkte für Analyse, Interpretation und begründete Argumentation. Gewichtungen, Nachweisregeln und Notenformeln sind eine eigenständige Ausarbeitung für diesen Auftrag, keine amtliche Bewertungsskala.

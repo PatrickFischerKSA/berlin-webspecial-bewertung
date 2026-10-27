@@ -5,25 +5,32 @@ export const criteria = [
     "title": "Synthese & eigenständige Erkenntnis",
     "weight": 14,
     "aim": "Verbindet alle fünf Perspektiven durch eine tragfähige Leitfrage. Roman, historische Quellen und Berliner Gegenwart verändern wechselseitig die Interpretation.",
-    "levels": [
-      "Entwickelt eine eigene Antwort auf die Leitfrage aus Romanpassage, historischem Befund und eigener Berlin-Beobachtung. Ein Widerspruch oder Gegenbefund wird untersucht und führt zur Präzisierung der These; Unterschiede zur Gegenwart werden erklärt.",
-      "Führt Romanpassage, historischen Befund und eigene Berlin-Beobachtung argumentativ auf eine Antwort zur Leitfrage zusammen. Fall, Kontext, Thema, freier Aspekt und Gegenwart erfüllen erkennbare Funktionen; die Schlussfolgerung folgt aus den Belegen.",
-      "Verbindet einzelne Perspektiven mit nachvollziehbaren Bezügen. In der Schlussfolgerung wird jedoch überwiegend wiederholt, was die Materialien einzeln aussagen; ein gemeinsamer Erklärungszusammenhang bleibt lückenhaft.",
-      "Stellt Handlung, Epocheninformationen und Gegenwartsbezug in getrennten Blöcken dar. Übergänge behaupten Ähnlichkeiten, erklären aber nicht, weshalb diese die Leitfrage beantworten.",
-      "Entwickelt keine Antwort auf die Leitfrage und keine überprüfbare Beziehung zwischen Roman, historischem Kontext und Gegenwart."
-    ],
     "evidence": "Leitfrage, Schlussstation, Verknüpfung einer Romanstelle mit historischer Quelle und heutiger Ortsbeobachtung",
-    "labels": [
-      "These an Widersprüchen weiterentwickeln",
-      "Roman, Geschichte und Gegenwart zur These verbinden",
-      "Einzelne Verbindungen herstellen",
-      "Material nebeneinanderstellen",
-      "Keine Verbindung zur Leitfrage"
-    ],
-    "checks": [
-      "Welche beantwortbare Leitfrage hält die fünf Perspektiven zusammen?",
-      "Welche Schlussfolgerung entsteht erst aus Romanstelle + historischem Befund + Ortsbeobachtung?",
-      "Welche Differenz oder Gegenquelle begrenzt den Vergleich mit heute?"
+    "indicators": [
+      {
+        "id": "p1-1",
+        "title": "Leitfrage mit überprüfbarer Antwort",
+        "accept": "Eine explizite Frage verbindet Roman und historische oder heutige Verhältnisse; eine ausdrücklich formulierte Antwort benennt einen Zusammenhang und verweist auf eine konkrete Produktstation.",
+        "reject": "Ein Thema als Überschrift oder eine offene Schlussfrage ohne eigene Antwort genügt nicht."
+      },
+      {
+        "id": "p1-2",
+        "title": "Schlussfolgerung aus drei Materialarten",
+        "accept": "Eine bezeichnete Argumentationsstelle verknüpft eine genaue Romanstelle, einen belegten historischen Befund und eine eigene Berliner Ortsbeobachtung. Ein Erklärungssatz zeigt, was daraus gemeinsam folgt.",
+        "reject": "Drei nebeneinanderstehende Materialien oder die Behauptung «passt zusammen» ohne erklärten Zusammenhang genügen nicht."
+      },
+      {
+        "id": "p1-3",
+        "title": "Freier Aspekt verändert die Antwort",
+        "accept": "Der frei gewählte Aspekt wird benannt; an einer konkreten Stelle wird erklärt, wie er die Antwort auf die Leitfrage ergänzt, einschränkt oder verändert.",
+        "reject": "Ein separates Kapitel über eine Figur oder einen Ort ohne erklärte Rückwirkung auf die Leitfrage genügt nicht."
+      },
+      {
+        "id": "p1-4",
+        "title": "Gegenbefund und Grenze des Gegenwartsvergleichs",
+        "accept": "Ein konkreter Befund oder eine alternative Lesart, die gegen die eigene These spricht, wird genannt und mit einer begründeten Präzisierung beantwortet. Zusätzlich wird eine konkrete historische Bedingung benannt, die eine Gleichsetzung mit heute begrenzt.",
+        "reject": "Allgemeine Sätze wie «damals war vieles anders» oder ein folgenlos erwähnter Widerspruch genügen nicht."
+      }
     ]
   },
   {
@@ -32,25 +39,32 @@ export const criteria = [
     "title": "Literarische & historische Analyse",
     "weight": 12,
     "aim": "Untersucht das Wie der Darstellung und erklärt historische Bedingungen, statt Handlung und Epoche nur wiederzugeben. Der freie Aspekt erhält analytische Tiefe.",
-    "levels": [
-      "Zeigt an genau bezeichneten Passagen, wie Erzählperspektive, Sprache, Raum oder Figurenkonstellation eine Deutung erzeugen. Prüft einen Textbefund, der eine andere Lesart erlaubt, und erklärt den Konflikt aus konkreten historischen Bedingungen. Fiktion und historischer Befund bleiben unterscheidbar.",
-      "Verknüpft genaue Textbeobachtung, ihre Wirkung und eine daraus abgeleitete Deutung des Themas bzw. freien Aspekts. Erklärt den Zusammenhang mit konkreten historischen Bedingungen; Fachbegriffe leisten Erklärung statt nur Benennung.",
-      "Benennt zutreffende Textmerkmale und relevante historische Fakten. Erklärt deren Wirkung und Zusammenhang jedoch nur stellenweise; die Deutung ist nur teilweise an Textstellen entwickelt.",
-      "Ersetzt Interpretation weitgehend durch Inhaltsangabe. Fachbegriffe bleiben ohne Wirkungsanalyse; historischer Kontext erscheint als pauschale Epochenkulisse.",
-      "Verkennt zentrale Textzusammenhänge oder historische Verhältnisse und entwickelt daraus keine belastbare Deutung."
-    ],
     "evidence": "Mindestens eine im Detail ausgelegte Passage mit Stellenangabe; historische Einordnung und Gegeninterpretation",
-    "labels": [
-      "Formwirkung deuten und Gegenlesart prüfen",
-      "Formwirkung am Text und Kontext erklären",
-      "Textmerkmale benennen, Deutung nur teilweise belegen",
-      "Handlung nacherzählen, Kontext pauschalisieren",
-      "Text und Geschichte sachlich verkennen"
-    ],
-    "checks": [
-      "Welche Perspektive, Sprachwahl, Raumdarstellung oder Figurenkonstellation erzeugt welche Wirkung?",
-      "Welche Textbeobachtung trägt die Deutung, und wie erklärt sie das zentrale Thema bzw. den freien Aspekt?",
-      "Welche historischen Bedingungen erklären den Konflikt, ohne die Fiktion zur historischen Quelle umzufunktionieren?"
+    "indicators": [
+      {
+        "id": "p2-1",
+        "title": "Erste literarische Analysekette",
+        "accept": "Eine genaue Romanstelle wird zitiert oder eindeutig verortet. Ein dort beobachtbares Gestaltungsmittel wird beschrieben; seine Wirkung wird erklärt und mit der Deutung von Thema oder Konflikt verknüpft.",
+        "reject": "Inhaltsangabe, blosses Benennen von «personaler Perspektive» oder eine Deutung ohne Bezug zum genannten Textdetail genügen nicht."
+      },
+      {
+        "id": "p2-2",
+        "title": "Zweite literarische Analysekette",
+        "accept": "Eine andere genau verortete Passage wird mit Textbeobachtung, Wirkung und Deutungsfolge analysiert. Sie untersucht ein anderes Gestaltungsmittel oder prüft dieselbe Deutung an einem abweichenden Textbefund.",
+        "reject": "Ein zweites Zitat mit derselben unveränderten Erklärung oder blosses Wiederholen der ersten Passage genügt nicht."
+      },
+      {
+        "id": "p2-3",
+        "title": "Historischen Mechanismus erklären",
+        "accept": "Ein konkreter politischer oder gesellschaftlicher Zustand wird durch eine identifizierbare historische Quelle belegt. Es wird erklärt, wie dieser Zustand Handlungsmöglichkeiten, Interessen oder Risiken einer Romanfigur beeinflusst.",
+        "reject": "Eine Jahreszahl oder die Epochenbezeichnung «Diktatur» ohne Erklärung der Wirkung auf den Konflikt genügt nicht."
+      },
+      {
+        "id": "p2-4",
+        "title": "Fiktion und historischen Befund auseinanderhalten",
+        "accept": "An einem benannten Detail wird ausdrücklich unterschieden, was der Roman darstellt und was eine historische Quelle belegt. Eine Übereinstimmung, Abweichung oder nicht überprüfbare Ergänzung wird korrekt als solche ausgewiesen.",
+        "reject": "Die Romanhandlung als Beweis für ein historisches Ereignis zu behandeln oder nur allgemein «der Roman ist erfunden» zu sagen genügt nicht."
+      }
     ]
   },
   {
@@ -59,25 +73,32 @@ export const criteria = [
     "title": "Kreativität als Erkenntnisleistung",
     "weight": 8,
     "aim": "Eine eigenständige mediale Idee macht einen inhaltlichen Zusammenhang erfahrbar. Bewertet wird ihr begründeter Mehrwert, nicht technischer Aufwand.",
-    "levels": [
-      "Eine überraschende, konsequent entwickelte Form eröffnet neue Einsichten; Dramaturgie, Perspektivwechsel und Interaktion lassen das Publikum eine zentrale Spannung selbst erschliessen.",
-      "Die eigenständige Form passt zum Thema und vermittelt durch gezielten Medieneinsatz einen erkennbaren Erkenntnisgewinn.",
-      "Es gibt passende eigene Ideen; wesentliche Teile folgen einer Vorlage oder bleiben illustrativ.",
-      "Effekte und Medien sind überwiegend dekorativ; Form und Aussage passen nur teilweise zusammen.",
-      "Keine erkennbare eigene Gestaltung oder eine Form, die das Verständnis verhindert."
-    ],
     "evidence": "Konkrete Station: Was lässt sich hier erfahren, das ein linearer Text weniger gut vermittelt?",
-    "labels": [
-      "Durch die Form eine neue Einsicht ermöglichen",
-      "Medien für eine Deutung gezielt gestalten",
-      "Eigene Ideen vorwiegend illustrieren lassen",
-      "Effekte ohne inhaltliche Funktion einsetzen",
-      "Keine erkennbare gestalterische Aussage"
-    ],
-    "checks": [
-      "Welche Deutung wird durch Perspektivwechsel, Montage, Raumführung oder Interaktion erfahrbar?",
-      "Was gewinnt das Publikum durch diese Form gegenüber einer blossen Zusammenfassung?",
-      "Wie konsequent wird die eigene Idee vom Auftakt bis zur Schlussstation entwickelt?"
+    "indicators": [
+      {
+        "id": "p3-1",
+        "title": "Formentscheidung vermittelt eine benannte Aussage",
+        "accept": "Eine am Produkt erkennbare Gestaltungsidee wird einer konkreten Aussage zugeordnet. Die Auswahl oder Anordnung von Text, Bild, Ton oder Raum macht diese Aussage tatsächlich zugänglich.",
+        "reject": "Eine im Kommentar behauptete Absicht ohne Umsetzung oder ausschliesslich dekorative Gestaltung genügt nicht."
+      },
+      {
+        "id": "p3-2",
+        "title": "Perspektiven durch Gestaltung vergleichbar machen",
+        "accept": "Zwei inhaltlich verschiedene Sichtweisen oder Zeitebenen werden im Produkt durch eine erkennbare Anordnung auf denselben Gegenstand bezogen; das Publikum kann den Unterschied am Material feststellen.",
+        "reject": "Zwei Medien ohne gemeinsamen Vergleichsgegenstand oder ein nur behaupteter Perspektivwechsel genügen nicht."
+      },
+      {
+        "id": "p3-3",
+        "title": "Publikum erschliesst einen Zusammenhang am Material",
+        "accept": "Eine konkrete Station lässt das Publikum durch Vergleich, Reihenfolge, Enthüllung, Montage oder Interaktion einen Zusammenhang aus benannten Materialdetails erschliessen. Der Zusammenhang wird nicht nur als fertige Behauptung mitgeteilt.",
+        "reject": "Ein Quiz, Button oder Video ohne Zusammenhang zwischen seiner konkreten Gestaltung und der erschliessbaren Einsicht genügt nicht. Eine technische Interaktion ist nicht vorgeschrieben."
+      },
+      {
+        "id": "p3-4",
+        "title": "Dramaturgischer Wendepunkt mit Deutungsfolge",
+        "accept": "Ein später eingeführter Materialbefund verändert eine vorher aufgebaute Erwartung oder Sichtweise. Eine anschliessende Passage benennt, welche Deutung deshalb ergänzt oder revidiert werden muss.",
+        "reject": "Ein überraschendes Bild oder ein Handlungscliffhanger ohne ausgeführte Deutungsfolge genügt nicht."
+      }
     ]
   },
   {
@@ -86,25 +107,32 @@ export const criteria = [
     "title": "Quellenkritik & epistemische Sorgfalt",
     "weight": 6,
     "aim": "Prüft Herkunft, Zeit, Absicht und Grenzen der verwendeten Quellen. Zitate, Fakten, Rekonstruktionen und KI-Anteile bleiben unterscheidbar.",
-    "levels": [
-      "Kontrastiert geeignete Primär- und Sekundärquellen, erklärt Interessengebundenheit und Lücken; zentrale Aussagen sind direkt nachprüfbar, Rechte und KI-Prüfwege transparent.",
-      "Nutzt geeignete Quellen kritisch; zentrale Fakten und Zitate sind auffindbar belegt, Mediennachweise und KI-Verwendung nachvollziehbar.",
-      "Belege sind überwiegend vorhanden; Quellenbewertung und Prüfung von KI-Aussagen bleiben punktuell.",
-      "Unklare Herkunft, fehlende Stellenangaben oder unkritische Übernahmen erschweren die Überprüfung.",
-      "Zentrale Aussagen sind unbelegt oder Quellen werden als Nachweise erfunden."
-    ],
     "evidence": "Quellennachweis an der Aussage, Romanseite/Kapitel, Urheber und Lizenz; ein dokumentierter Prüfweg",
-    "labels": [
-      "Quellen gegeneinander prüfen und Grenzen ausweisen",
-      "Zentrale Aussagen belegen und Quellen einordnen",
-      "Belege liefern, Quellenperspektive kaum prüfen",
-      "Angaben übernehmen, Herkunft unklar lassen",
-      "Zentrale Aussagen ohne prüfbare Grundlage"
-    ],
-    "checks": [
-      "Lässt sich eine zentrale Behauptung zur verwendeten Textstelle bzw. Originalquelle zurückverfolgen?",
-      "Wie beeinflussen Entstehungszeit, Urheber und Absicht den Aussagewert?",
-      "Wie wurden widersprüchliche Angaben oder KI-Vorschläge überprüft?"
+    "indicators": [
+      {
+        "id": "p4-1",
+        "title": "Drei zentrale Sachbehauptungen zurückverfolgen",
+        "accept": "Geprüft werden die erste historische Behauptung zur Hauptthese und die zwei folgenden unterschiedlichen historischen Sachbehauptungen in Leserichtung. Alle drei besitzen einen zuordenbaren Nachweis mit Urheber oder Institution, Titel und Fundstelle bzw. direkt erreichbarer Originalseite; der Nachweis trägt die jeweilige Aussage.",
+        "reject": "Eine allgemeine Linkliste, ein Suchmaschinenlink, ein KI-Output oder ein Nachweis, der die Aussage nicht enthält, genügt nicht. Sind weniger als drei historische Sachbehauptungen vorhanden, ist dieser Nachweis nicht erfüllt."
+      },
+      {
+        "id": "p4-2",
+        "title": "Perspektive einer Quelle für ihre Aussagekraft auswerten",
+        "accept": "Für eine konkret verwendete historische Quelle sind Entstehungszeit, Urheber und Adressat oder Zweck genannt. Daraus wird eine konkrete Folgerung gezogen, welche Aussage die Quelle stützen kann und welche nicht.",
+        "reject": "Eine Quellenbeschreibung ohne Folgerung für den Aussagewert oder pauschales «seriös/unseriös» genügt nicht."
+      },
+      {
+        "id": "p4-3",
+        "title": "Zentrale Aussage an unabhängiger Quelle gegenprüfen",
+        "accept": "Eine benannte Sachbehauptung wird an zwei identifizierbaren, voneinander unabhängigen Quellen geprüft. Übereinstimmung oder Abweichung und die daraus folgende Verwendung der Aussage werden festgehalten; eine KI-Ausgabe zählt nicht als unabhängige Quelle.",
+        "reject": "Zwei Seiten, die dieselbe Meldung oder Vorlage übernehmen, oder bloss zwei Links ohne Vergleichsergebnis genügen nicht."
+      },
+      {
+        "id": "p4-4",
+        "title": "Herkunft der Medien und Hilfsmittel ausweisen",
+        "accept": "Für jedes im Produkt verwendete fremde Bild-, Ton- oder Videoelement sind Herkunft und Nutzungsgrundlage angegeben; eigene Medien sind als eigene erkennbar. Zusätzlich ist angegeben, ob und wofür KI eingesetzt wurde, oder dass keine KI eingesetzt wurde.",
+        "reject": "Ein pauschales «Bilder: Internet» oder eine nicht zuordenbare KI-Angabe genügt nicht. Wenn nur eigene Medien vorkommen, genügt deren eindeutige Kennzeichnung plus die KI-Angabe."
+      }
     ]
   },
   {
@@ -113,25 +141,32 @@ export const criteria = [
     "title": "Berlin als untersuchter Raum",
     "weight": 5,
     "aim": "Eigenes Bild-, Video- oder Tonmaterial übernimmt eine begründete Funktion für die Interpretation. Keine feste Anzahl oder Route.",
-    "levels": [
-      "Eigene Beobachtungen von Raum, Spuren oder Leerstellen prüfen und verändern eine Deutung; historische und heutige Raumnutzung werden differenziert lesbar.",
-      "Eigenes Berlin-Material ist gezielt ausgewählt, verständlich eingeordnet und trägt eine inhaltliche Aussage.",
-      "Eigenes Material passt zum Ort, bleibt aber meist Illustration statt Untersuchung.",
-      "Aufnahmen wirken austauschbar; Ortsbezug oder Bezug zur Leitfrage bleibt unklar.",
-      "Kein eigenes Berlin-Material oder keine erkennbare Verbindung zum untersuchten Raum."
-    ],
     "evidence": "Aufnahme mit Ort, Datum und Kommentar: Welche Behauptung stützt oder irritiert sie?",
-    "labels": [
-      "Ortsbeobachtung zur Prüfung einer Deutung nutzen",
-      "Eigene Aufnahme als inhaltlichen Beleg einsetzen",
-      "Ort zeigen, Deutung kaum vertiefen",
-      "Berlin-Material ohne Bezug zur Leitfrage zeigen",
-      "Kein eigenes Material mit Ortsbezug"
-    ],
-    "checks": [
-      "Was zeigt die eigene Aufnahme über Nutzung, Grenze, Spur oder Leerstelle des Orts?",
-      "Welche Deutung stützt, verändert oder widerlegt diese Beobachtung?",
-      "Werden heutiger Zustand und historisch rekonstruierte Situation auseinandergehalten?"
+    "indicators": [
+      {
+        "id": "p5-1",
+        "title": "Eigenes Material am identifizierten Ort",
+        "accept": "Mindestens eine eigene Aufnahme oder eine eigene dokumentierte Ortsbeobachtung ist im Produkt einem konkreten Berliner Ort und einem Aufnahmedatum zugeordnet; die Urheberschaft ist ausgewiesen.",
+        "reject": "Ein fremdes Bild, eine austauschbare Stadtansicht ohne Ortszuordnung oder eine reine Erinnerung ohne dokumentierte Beobachtung genügt nicht."
+      },
+      {
+        "id": "p5-2",
+        "title": "Beobachtbaren Befund im Material zeigen",
+        "accept": "Eine am eigenen Material erkennbare Spur, räumliche Beziehung, Nutzung oder Leerstelle wird mit einem konkreten Detail beschrieben; die Fundstelle erlaubt, Beschreibung und Material abzugleichen.",
+        "reject": "Eine Stimmung wie «bedrohlich» ohne beschriebenes sicht- oder hörbares Detail genügt nicht."
+      },
+      {
+        "id": "p5-3",
+        "title": "Historischen und heutigen Ort unterscheiden",
+        "accept": "Das eigene Ortsmaterial wird mit einer bezeichneten historischen Quelle auf denselben Ort bezogen. Mindestens ein konkretes Merkmal der früheren und heutigen Situation wird verglichen; Rekonstruktion und heutige Aufnahme bleiben erkennbar.",
+        "reject": "Eine historische Geschichte neben einem heutigen Foto ohne Vergleich eines konkreten Ortsmerkmals genügt nicht."
+      },
+      {
+        "id": "p5-4",
+        "title": "Ortsbefund deuten und Aussagegrenze benennen",
+        "accept": "Aus dem beobachteten Detail wird eine explizite Folgerung für eine benannte Roman- oder Gegenwartsfrage gezogen. Zusätzlich wird erklärt, was sich aus dieser heutigen Beobachtung historisch nicht nachweisen lässt.",
+        "reject": "Eine Aussage über damalige Motive allein aus einer heutigen Aufnahme oder ein allgemeines «Aufnahmen sind subjektiv» genügt nicht."
+      }
     ]
   },
   {
@@ -140,25 +175,32 @@ export const criteria = [
     "title": "Mediale Kohärenz & Zugänglichkeit",
     "weight": 5,
     "aim": "Das Publikum kann dem Argument folgen. Medien, Navigation und Lesbarkeit dienen der Aussage; technische Komplexität bringt keinen Bonus.",
-    "levels": [
-      "Dramaturgie steuert Aufmerksamkeit und Verständnis präzise; Text und Medien ergänzen sich; mobile Bedienung, Untertitel bzw. Textalternativen und Quellenzugang funktionieren durchgehend.",
-      "Das Webspecial ist schlüssig, gut lesbar und mobil nutzbar; zentrale Medien sind zugänglich und sinnvoll eingebettet.",
-      "Die Argumentation bleibt nachvollziehbar; einzelne Brüche, Bedienprobleme oder fehlende Alternativen stören.",
-      "Navigation, Textdichte oder Medienfehler behindern das Verständnis mehrfach.",
-      "Wesentliche Inhalte sind nicht zugänglich oder das Produkt lässt sich nicht sinnvoll nutzen."
-    ],
     "evidence": "Test auf Smartphone und Desktop; Ton aus; Navigation und Medienlinks",
-    "labels": [
-      "Medienfolge führt durch ein nachvollziehbares Argument",
-      "Inhalte schlüssig und zugänglich vermitteln",
-      "Argument trotz medialer Brüche erkennbar halten",
-      "Verständnis durch Aufbau und Bedienung erschweren",
-      "Zentrale Inhalte nicht zugänglich machen"
-    ],
-    "checks": [
-      "Kann ein Publikum ohne Romankenntnis Fall, Argument und Schlussfolgerung nachvollziehen?",
-      "Übernehmen Text, Bild, Ton und Interaktion verschiedene inhaltliche Aufgaben?",
-      "Bleiben zentrale Aussagen mobil, ohne Ton und über zugängliche Medienalternativen verständlich?"
+    "indicators": [
+      {
+        "id": "p6-1",
+        "title": "Fünf Perspektiven für das Publikum auffindbar",
+        "accept": "In der vorgesehenen Leseroute lassen sich Fall, historischer Kontext, zentrales Thema, freier Aspekt und Gegenwartsbezug jeweils einer konkreten Station zuordnen. Der Fallabschnitt klärt beteiligte Figuren und zentralen Konflikt.",
+        "reject": "Eine nur in Notizen vorhandene Perspektive oder ein Kapitelname ohne den entsprechenden Inhalt genügt nicht. Die Reihenfolge ist frei."
+      },
+      {
+        "id": "p6-2",
+        "title": "Leseroute am Desktop und Mobilgerät bedienen",
+        "accept": "Die vorgesehene Route wird bei 1280 und 360 CSS-Pixel Breite vollständig durchlaufen. Alle dafür benötigten Bedienelemente sind erreichbar; kein überlagerter oder abgeschnittener Text und kein horizontaler Bildlauf des Fliesstexts blockiert das Lesen. Beide Testbreiten und gefundene Fehler werden protokolliert.",
+        "reject": "Ein Desktop-Test allein oder «mobil getestet» ohne Testbreite und Ergebnis genügt nicht."
+      },
+      {
+        "id": "p6-3",
+        "title": "Kernaussagen ohne Ton zugänglich",
+        "accept": "Alle für die Argumentation notwendigen gesprochenen Informationen sind als Untertitel oder Textfassung zugänglich. Inhaltstragende Bilder besitzen beschreibenden Alternativtext oder eine Textfassung ihres Befunds. Falls solche Medien nicht vorkommen, wird festgehalten, dass alle Kernaussagen bereits als Text vorliegen.",
+        "reject": "Automatisch erzeugte, sinnentstellende Untertitel oder ein Alternativtext wie «Bild1» genügen nicht."
+      },
+      {
+        "id": "p6-4",
+        "title": "Medien und Quellen auf der Leseroute öffnen",
+        "accept": "Alle auf der vorgesehenen Route benötigten Medien starten oder haben eine inhaltlich gleichwertige zugängliche Ersatzfassung. Alle dort verwendeten Quellenverweise öffnen die bezeichnete Fundstelle oder eine vollständige abrufbare bibliografische Angabe. Die geprüfte Route und Fehlerfreiheit werden protokolliert.",
+        "reject": "Ein nicht ersetzter Ausfall eines für das Argument nötigen Mediums oder ein leerer Quellenlink genügt nicht. Technische Effekte ausserhalb dieser Route zählen nicht."
+      }
     ]
   },
   {
@@ -167,25 +209,32 @@ export const criteria = [
     "title": "Inhaltliche Analyse: Roman & Geschichte",
     "weight": 8,
     "aim": "Beantwortet inhaltliche Fragen präzise und am Text; erklärt historische Zusammenhänge und das Verhältnis von Fiktion und Geschichte.",
-    "levels": [
-      "Entwickelt aus einer konkreten Passage den Zusammenhang von Gestaltung, Wirkung und Deutung. Erklärt historische Bedingungen des Konflikts und prüft auf Nachfrage, welche Textbeobachtung für eine alternative Erklärung spricht.",
-      "Erklärt eine Deutung durch genaue Textbeobachtung und deren Wirkung. Verknüpft den Konflikt fachlich korrekt mit historischen Bedingungen und unterscheidet Romanhandlung von historischem Wissen.",
-      "Kennt wesentliche Handlung und historische Eckpunkte. Bei der Erklärung von Gestaltung, Wirkung oder historischem Zusammenhang bleiben Belege und Folgerungen teilweise offen.",
-      "Gibt Handlung oder Epochenwissen wieder, kann aber auch nach Nachfrage nicht erklären, wie ein Textdetail die Deutung oder der historische Kontext den Konflikt trägt.",
-      "Kann zentrale Fragen zum Text und zu den historischen Verhältnissen trotz Klärungsfragen nicht sachlich beantworten."
-    ],
     "evidence": "Frage, Antwortkern, Romanstelle und historische Erklärung protokollieren",
-    "labels": [
-      "Textdeutung gegen alternative Erklärung abwägen",
-      "Textbeobachtung und historischen Zusammenhang erklären",
-      "Inhalt kennen, Erklärung nur teilweise belegen",
-      "Inhalt wiedergeben, Zusammenhänge nicht erklären",
-      "Zentrale Text- und Kontextfragen nicht klären"
-    ],
-    "checks": [
-      "Wird aus Textdetail → Wirkung → Deutung argumentiert?",
-      "Werden historische Bedingungen erklärt, statt nur Jahreszahlen genannt?",
-      "Kann eine andere Lesart anhand eines Textbefunds geprüft werden?"
+    "indicators": [
+      {
+        "id": "o1-1",
+        "title": "Romanbeobachtung exakt bezeichnen",
+        "accept": "Die Person nennt eine konkrete Szene mit so genauen Figuren-, Situations- oder Textangaben, dass sie im Roman eindeutig auffindbar ist; die Darstellung stimmt mit dem Text überein.",
+        "reject": "Eine Seitenzahl ohne Aussage zur Szene oder eine austauschbare Inhaltsangabe genügt nicht. Eine auswendig gelernte Seitenzahl ist nicht erforderlich."
+      },
+      {
+        "id": "o1-2",
+        "title": "Gestaltung in Deutung überführen",
+        "accept": "Die Person beschreibt ein an dieser Szene nachprüfbares sprachliches oder erzählerisches Merkmal, erklärt seine Wirkung und leitet daraus eine Aussage über Thema oder Konflikt ab.",
+        "reject": "Ein Fachbegriff ohne Textbeobachtung oder eine persönliche Wertung ohne erklärten Wirkungsschritt genügt nicht."
+      },
+      {
+        "id": "o1-3",
+        "title": "Historische Bedingung kausal erklären",
+        "accept": "Die Person nennt einen zutreffenden historischen Zustand, ordnet ihn zeitlich oder politisch ein und erklärt seine konkrete Folge für den im Roman untersuchten Konflikt.",
+        "reject": "Ein Epochenname, eine Jahreszahl oder die Romanhandlung als historischer Nachweis genügt nicht."
+      },
+      {
+        "id": "o1-4",
+        "title": "Alternative Textdeutung prüfen",
+        "accept": "Auf einen Einwand nennt die Person einen konkreten Textbefund, der für oder gegen die alternative Deutung spricht, und erklärt, weshalb sie diese Deutung annimmt, begrenzt oder verwirft.",
+        "reject": "Die eigene Interpretation bloss zu wiederholen oder die Alternative als «falsch» zu bezeichnen genügt nicht."
+      }
     ]
   },
   {
@@ -194,25 +243,32 @@ export const criteria = [
     "title": "Defense: Entscheidungen argumentativ vertreten",
     "weight": 8,
     "aim": "Verteidigt eine konkrete Produktentscheidung mit These, Beleg und Abwägung; reagiert auf Einwände. Zustimmen oder Revision sind gleichwertig, wenn begründet.",
-    "levels": [
-      "Legt Ziele, Alternativen und Folgen offen; beantwortet einen substanziellen Einwand am Produkt und verteidigt oder revidiert die Entscheidung fachlich überzeugend.",
-      "Begründet eine konkrete Entscheidung mit Beleg und Alternative und beantwortet kritische Rückfragen nachvollziehbar.",
-      "Erklärt die Entscheidung plausibel, wägt Alternativen oder Folgen aber nur teilweise ab.",
-      "Beschreibt vor allem den Herstellungsweg oder persönlichen Geschmack; Einwände bleiben unbeantwortet.",
-      "Kann eine wesentliche Entscheidung nicht erklären oder belegen."
-    ],
     "evidence": "Konkrete Produktstelle, verworfene Alternative, Einwand und Reaktion",
-    "labels": [
-      "Einwand abwägen und Entscheidung begründet halten oder ändern",
-      "Entscheidung am Produkt mit Alternative begründen",
-      "Wahl erklären, Alternative kaum abwägen",
-      "Vorgehen oder Geschmack statt Gründe nennen",
-      "Eigene Produktentscheidung nicht erklären"
-    ],
-    "checks": [
-      "Welche Aussage soll die konkrete Produktentscheidung vermitteln?",
-      "Welche Alternative hätte welche Folgen für Aussage und Publikum?",
-      "Wird auf den Einwand mit Belegen und Abwägung reagiert?"
+    "indicators": [
+      {
+        "id": "o2-1",
+        "title": "Entscheidung am Produkt lokalisieren",
+        "accept": "Die Person zeigt eine konkrete eigene inhaltliche oder gestalterische Entscheidung im Produkt und benennt die damit zu vermittelnde Aussage.",
+        "reject": "Eine allgemeine Rollenangabe wie «ich war für Design zuständig» ohne Produktstelle und Aussage genügt nicht."
+      },
+      {
+        "id": "o2-2",
+        "title": "Beleg für die gewählte Lösung erklären",
+        "accept": "Die Person nennt ein konkretes Text-, Quellen- oder Ortsdetail und erklärt, warum gerade dieses Detail die gewählte Entscheidung stützt.",
+        "reject": "Persönlicher Geschmack, Arbeitsaufwand oder «die KI hat das vorgeschlagen» genügt nicht als Begründung."
+      },
+      {
+        "id": "o2-3",
+        "title": "Realisierbare Alternative abwägen",
+        "accept": "Die Person nennt eine umsetzbare andere Lösung für dieselbe Produktstelle und vergleicht eine konkrete Folge beider Lösungen für Aussage oder Verständnis.",
+        "reject": "Eine offensichtlich unbrauchbare Schein-Alternative oder «die andere Lösung wäre schlechter» ohne Vergleichskriterium genügt nicht."
+      },
+      {
+        "id": "o2-4",
+        "title": "Auf einen Einwand mit Entscheidung reagieren",
+        "accept": "Nach einem konkreten Gegenargument benennt die Person dessen fachlichen Kern, beantwortet ihn an einem Beleg und entscheidet ausdrücklich, ob und wie die Produktstelle beibehalten oder geändert werden müsste.",
+        "reject": "Blosses Zustimmen, Ablehnen oder ein Ausweichen auf den Herstellungsprozess genügt nicht. Eine begründete Revision zählt gleich wie eine begründete Verteidigung."
+      }
     ]
   },
   {
@@ -221,25 +277,32 @@ export const criteria = [
     "title": "Synthese & Transfer unter neuer Fragestellung",
     "weight": 6,
     "aim": "Verbindet Text, Geschichte und Gegenwart in einer nicht vorab ausformulierten Denkaufgabe; berücksichtigt Grenzen des Vergleichs.",
-    "levels": [
-      "Entwickelt aus einer neuen Quelle, Perspektive oder Gegenhypothese eine eigenständige Folgerung und benennt Reichweite, Grenze und nötige Anpassung des Produkts.",
-      "Überträgt die Erkenntnisse begründet auf eine neue Frage; unterscheidet Gemeinsamkeiten und Unterschiede.",
-      "Erkennt einen passenden Zusammenhang, führt ihn aber wenig differenziert weiter.",
-      "Überträgt schematisch; Gegenwartsvergleiche bleiben pauschal oder anachronistisch.",
-      "Keine begründete Übertragung erkennbar."
-    ],
     "evidence": "Neue Frage, selbstständiger Gedankengang und Grenze des Vergleichs",
-    "labels": [
-      "Neue Prämisse prüfen und These gezielt revidieren",
-      "Neue Frage durch begründeten Vergleich erschliessen",
-      "Zusammenhang erkennen, Folgen kaum entwickeln",
-      "Bekannte Aussage auf neue Frage übertragen",
-      "Keinen begründeten Transfer entwickeln"
-    ],
-    "checks": [
-      "Welche Annahme verändert die neue Frage oder Gegenquelle?",
-      "Welche Folgerung ist daraus zu ziehen, und welche bisherige Aussage bleibt bestehen?",
-      "Wo endet der Vergleich zwischen historischen und gegenwärtigen Verhältnissen?"
+    "indicators": [
+      {
+        "id": "o3-1",
+        "title": "Veränderte Annahme benennen",
+        "accept": "Bei einer vorher nicht bekannt gegebenen Gegenquelle oder Transferfrage benennt die Person, welche konkrete Annahme oder Beziehung der bisherigen Interpretation damit in Frage steht.",
+        "reject": "Nur die Prüfungsfrage zu wiederholen oder an einer unveränderten vorbereiteten Antwort festzuhalten genügt nicht."
+      },
+      {
+        "id": "o3-2",
+        "title": "Passendes Wissen auf die neue Frage beziehen",
+        "accept": "Die Person führt einen konkreten Romanbefund oder historischen Befund an und erklärt, wie dieser die neue Frage stützt, begrenzt oder widerlegt.",
+        "reject": "Ein bekannter Fakt ohne erklärte Beziehung zur neuen Frage genügt nicht."
+      },
+      {
+        "id": "o3-3",
+        "title": "Neue Folgerung herleiten",
+        "accept": "Die Person formuliert eine Folgerung und erklärt den Schluss vom neuen Material oder der geänderten Annahme zu dieser Folgerung.",
+        "reject": "Eine neue Behauptung ohne begründeten Schluss oder blosses «ich müsste recherchieren» genügt nicht."
+      },
+      {
+        "id": "o3-4",
+        "title": "Reichweite der Folgerung abgrenzen",
+        "accept": "Die Person benennt eine konkrete Aussage, die geändert oder vorläufig offengelassen werden muss, und eine andere, die mit Begründung weiterhin trägt.",
+        "reject": "Alles unverändert zu lassen oder pauschal die gesamte Arbeit zu verwerfen, ohne Aussagen zu unterscheiden, genügt nicht."
+      }
     ]
   },
   {
@@ -248,25 +311,32 @@ export const criteria = [
     "title": "Quellen-, KI- & Eigenbeitragsreflexion",
     "weight": 6,
     "aim": "Macht den eigenen fachlichen Beitrag und seine Prüfwege nachvollziehbar. Freiwillige Entscheidungsnotizen sind keine zusätzliche Pflichtabgabe.",
-    "levels": [
-      "Rekonstruiert den eigenen Beitrag an einem konkreten Beispiel, zeigt Quellen-/KI-Fehlerprüfung und begründet eine Korrektur samt verbleibender Unsicherheit.",
-      "Erklärt den eigenen Beitrag, verwendete Hilfen und einen nachvollziehbaren Prüf- oder Revisionsschritt.",
-      "Kann Beitrag und Hilfen benennen; Prüfung und Lerngewinn bleiben wenig konkret.",
-      "Eigener Anteil oder Prüfschritte bleiben vage; Verantwortung wird an Team oder KI abgegeben.",
-      "Kein nachvollziehbarer eigener Beitrag bzw. keine Erklärung einer übernommenen Aussage."
-    ],
     "evidence": "Eigene Entscheidung, Hilfsmittel, überprüfte Aussage und Änderung",
-    "labels": [
-      "Eigenen Prüfweg samt Korrektur und Restunsicherheit erklären",
-      "Eigenen Beitrag und konkreten Prüfschritt zeigen",
-      "Beitrag und Hilfen benennen, Prüfung vage lassen",
-      "Verantwortung und Prüfschritte offenlassen",
-      "Eigenen Beitrag fachlich nicht rekonstruieren"
-    ],
-    "checks": [
-      "Welche fachliche Entscheidung ist der eigenen Person zurechenbar?",
-      "Wie wurde eine konkrete Aussage, Quelle oder KI-Ausgabe kontrolliert?",
-      "Was wurde korrigiert, und welche Unsicherheit bleibt bestehen?"
+    "indicators": [
+      {
+        "id": "o4-1",
+        "title": "Eigenen Beitrag fachlich rekonstruieren",
+        "accept": "Die Person benennt an einer Produktstelle eine selbst bearbeitete Aussage oder Entscheidung und erklärt den eigenen Bearbeitungsschritt.",
+        "reject": "«Wir haben das gemeinsam gemacht» oder eine reine Tätigkeitsliste ohne fachlichen Schritt genügt nicht."
+      },
+      {
+        "id": "o4-2",
+        "title": "Verwendete Grundlage identifizieren",
+        "accept": "Die Person benennt die verwendete Quelle, Aufnahme oder das Hilfsmittel so genau, dass es identifizierbar ist, und erklärt, welche konkrete Information oder Anregung daraus übernommen wurde.",
+        "reject": "Nur «Google», «KI» oder «der Roman» ohne konkrete verwendete Information genügt nicht. Ohne KI gilt derselbe Nachweis für andere Grundlagen."
+      },
+      {
+        "id": "o4-3",
+        "title": "Prüfung mit Ergebnis schildern",
+        "accept": "Die Person rekonstruiert einen konkreten Abgleich einer übernommenen Aussage mit dem Originaltext oder einer unabhängigen Quelle und benennt, ob die Aussage bestätigt, korrigiert oder verworfen wurde.",
+        "reject": "«Ich habe alles kontrolliert» ohne benannte Aussage, Prüfgrundlage und Ergebnis genügt nicht. Eine bestätigte Aussage zählt gleich wie eine korrigierte."
+      },
+      {
+        "id": "o4-4",
+        "title": "Verbleibende Unsicherheit eingrenzen",
+        "accept": "Die Person nennt eine konkrete, noch offene Sach- oder Deutungsfrage und erklärt, welcher überprüfbare nächste Schritt sie klären könnte.",
+        "reject": "Pauschale Unsicherheit wie «Quellen können falsch sein» oder ein nicht zur Frage passender Prüfschritt genügt nicht."
+      }
     ]
   }
 ];
