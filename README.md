@@ -29,7 +29,7 @@ Das Tool nimmt selbst kein Audio auf. Die Uhr bleibt nach zehn Minuten sichtbar 
 
 Der vollständige [Kriterienkatalog](KRITERIENKATALOG.md) dokumentiert Deskriptoren, Beleganker, Fragenbank und Beurteilungsregeln. Grundlage ist die lokale Fassung des [Auftrags](https://berlin-thriller-werkstatt.patrickoliverfischer.chatgpt.site/) vom 25.10.2026. Der Live-Auftrag konnte beim Erstellen nicht abgerufen werden. Abweichung gegenüber dieser Fassung: Gespräch 10 statt ca. 8 Minuten, differenziertere Kriterien und neue Gewichtung innerhalb der 50 bzw. 28 Punkte. Vorgängig bekanntgeben.
 
-Notenvorschlag CH: `1 + 5 × Gesamtpunkte / 78`, erst zum Schluss auf eine Dezimalstelle gerundet. Formel vor dem Einsatz mit den schulischen Vorgaben abgleichen. Die Anwendung zeigt eine Note erst bei vollständig bewerteten Kriterien. Fehlende Begründungen werden angezeigt; die Bewertung bleibt eine fachliche Entscheidung der Prüfperson.
+Zwei getrennte Notenvorschläge CH: Produktnote = `1 + 5 × Produktpunkte / 50`; Note mündliche Prüfung = `1 + 5 × Gesprächspunkte / 28`. Jede Note wird unabhängig auf eine Dezimalstelle gerundet und erscheint, sobald ihr eigener Bereich vollständig bewertet ist. Es wird keine Gesamtnote berechnet. Formeln vor dem Einsatz mit den schulischen Vorgaben abgleichen. Fehlende Begründungen werden angezeigt; die Bewertung bleibt eine fachliche Entscheidung der Prüfperson.
 
 ## Speicherung
 

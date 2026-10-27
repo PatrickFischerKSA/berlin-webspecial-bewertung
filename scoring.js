@@ -20,3 +20,7 @@ export function validateImport(raw, criteria) {
   out.transcript=raw.kind==='dossier'?validateTranscript(raw.transcript):{text:'',filename:''};
   return out;
 }
+
+export function gradeFor(result) {
+  return result.complete ? Number((1 + 5 * result.points / result.max).toFixed(1)) : null;
+}

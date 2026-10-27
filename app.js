@@ -1,5 +1,5 @@
 import {criteria,questions,books} from './data.js';
-import {calculate,validateImport} from './scoring.js';
+import {calculate,validateImport,gradeFor} from './scoring.js';
 import {readTranscript, validateTranscript} from './transcript.js';
 const $=id=>document.getElementById(id),key='berlin-rubric-v1';
 let state={ratings:{},notes:{},meta:{},selected:[],marks:[],transcript:{text:'',filename:''}};
@@ -20,7 +20,21 @@ function updateDescriptor(c){const rating=state.ratings[c.id];$('desc-'+c.id).te
 questions.forEach(([cat,q,follow],i)=>{const box=node('article',undefined,'question'),label=node('label'),check=node('input');check.type='checkbox';check.id='q'+i;label.append(check,node('small',cat+' · zur Prüfung auswählen'));box.append(label,node('p',q),node('p','Nachfrage: '+follow));$('questions').append(box);check.addEventListener('change',()=>{state.selected=check.checked?[...new Set([...state.selected,i])]:state.selected.filter(n=>n!==i);save();});});
 for(const id of metaKeys)$(id).addEventListener('input',()=>{state.meta[id]=$(id).value;save();});
 function hydrate(){for(const id of metaKeys)$(id).value=state.meta[id]||'';for(const c of criteria){$('rating-'+c.id).value=state.ratings[c.id]??'';$('note-'+c.id).value=state.notes[c.id]||'';updateDescriptor(c);}questions.forEach((_,i)=>$('q'+i).checked=state.selected.includes(i));renderMarks();renderResults();renderTranscript();}
-function renderResults(){const p=calculate(criteria,state.ratings,'product'),o=calculate(criteria,state.ratings,'oral'),done=p.complete&&o.complete,total=p.points+o.points,root=$('results');root.replaceChildren();const grid=node('div',undefined,'result-grid');for(const [title,s] of [['Produkt',p],['Gespräch',o]]){const el=node('div',undefined,'result');el.append(node('span',title),node('strong',s.points.toLocaleString('de-CH')+' / '+s.max),node('small',s.count+' von '+s.total+' Kriterien bewertet'));grid.append(el);}const all=node('div',undefined,'result');all.append(node('span',done?'Notenvorschlag CH':'Noch kein Gesamturteil'),node('strong',done?(1+5*total/78).toFixed(1):'—'),node('small',total.toLocaleString('de-CH')+' / 78 Punkte'+(done?'':' · Zwischenstand')));grid.append(all);root.append(grid);const missing=criteria.filter(c=>state.ratings[c.id]!==undefined&&!state.notes[c.id]?.trim());if(!done)root.append(node('p','Unbewertete Kriterien zählen nicht als 0. Gesamturteil erst nach vollständiger Bewertung.','warning'));if(missing.length)root.append(node('p','Begründung fehlt bei: '+missing.map(c=>c.title).join(' · '),'warning'));root.append(node('p','Notenvorschlag: 1 + 5 × Gesamtpunkte / 78; erst das Endergebnis auf eine Dezimalstelle gerundet. Die schulisch geltende Notenskala vorgängig festlegen.'));}
+function renderResults(){
+ const root=$('results');root.replaceChildren();
+ const grid=node('div',undefined,'result-grid');
+ for(const [title,part] of [['Produktnote · Gruppenleistung','product'],['Note mündliche Prüfung · Einzelleistung','oral']]){
+  const result=calculate(criteria,state.ratings,part),grade=gradeFor(result),card=node('div',undefined,'result');
+  card.append(node('span',title),node('strong',grade===null?'—':grade.toFixed(1)),node('small',result.points.toLocaleString('de-CH')+' / '+result.max+' Punkte'),node('small',result.count+' von '+result.total+' Kriterien bewertet'));
+  if(!result.complete)card.append(node('p','Note offen: In diesem Bereich sind noch nicht alle Kriterien bewertet.','grade-status'));
+  grid.append(card);
+ }
+ root.append(grid);
+ const missing=criteria.filter(c=>state.ratings[c.id]!==undefined&&!state.notes[c.id]?.trim());
+ if(missing.length)root.append(node('p','Begründung fehlt bei: '+missing.map(c=>c.title).join(' · '),'warning'));
+ root.append(node('p','Zwei unabhängige Noten: Produktnote = 1 + 5 × Produktpunkte / 50. Note mündliche Prüfung = 1 + 5 × Gesprächspunkte / 28. Jede Note wird erst nach vollständiger Bewertung ihres Bereichs auf eine Dezimalstelle gerundet.'));
+}
+
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!==b.dataset.tab);document.querySelectorAll('[data-tab]').forEach(t=>{t.classList.toggle('active',t===b);t.setAttribute('aria-current',t===b?'page':'false');});}));
 function download(data,name){const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=node('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 $('export').onclick=()=>download({version:1,kind:'dossier',...state},'berlin-bewertung.json');
