@@ -415,3 +415,11 @@ Gewicht: 6 Punkte. Jeder der vier Nachweise: 1.5 Punkte.
 ## Fachliche und auftragsbezogene Grundlage
 
 Die lokale Auftragsfassung der [Berlin Thriller Werkstatt](https://berlin-thriller-werkstatt.patrickoliverfischer.chatgpt.site/) vom 25.10.2026 verlangt Fall, historischen Kontext, Thema, freien Aspekt und Gegenwart sowie eigene Berlin-Materialien. Der [EDK-Rahmenlehrplan Deutsch S. 27–30](https://www.gr.ch/DE/institutionen/verwaltung/ekud/ahb/mittelschulen/dienstleistungen/wegm/Documents/Rahmenlehrplan-maturitatsschulen.pdf#page=28) liefert fachliche Bezugspunkte für Analyse, Interpretation und begründete Argumentation. Gewichtungen, Nachweisregeln und Notenformeln sind eine eigenständige Ausarbeitung für diesen Auftrag, keine amtliche Bewertungsskala.
+
+## Belegarbeitsplatz und Bewertungskontrolle
+
+Textpassagen aus Produkt und Transkript werden einzelnen Nachweisen mit Originalwortlaut, Quellangabe, Zeilen und vorhandener Transkriptzeitmarke zugeordnet. Die Zuordnung ist keine Erfüllungsentscheidung. Begründung und Urteil werden separat erfasst. Textauszüge erlauben keine automatische Beurteilung von Videos, Audios, technischen Funktionen oder nicht importiertem Material.
+
+Eine Änderung des Quelltexts macht vorhandene Zuordnungen zur erneuten Prüfung kenntlich. Ihr ursprünglicher Wortlaut und das ursprüngliche Urteil bleiben erhalten; betroffene Kriterien bleiben rechnerisch offen, bis die Quelle neu belegt oder die frühere Zuordnung bewusst entfernt wird.
+
+Die Kontrolle unterscheidet offene Urteile, fehlende Begründungen, veränderte Quellen, undokumentierte mündliche Antwortgelegenheiten und manuell zu kontrollierende Fundstellen. Fehlende Textverknüpfungen sowie undokumentierte Fragen sind Prüfhinweise, keine automatisch inhaltlich festgestellten Defizite. Nicht eröffnete Antwortgelegenheiten bleiben nach den Regeln dieses Katalogs fachlich offen; die Prüfperson muss dies im Urteil berücksichtigen. Word exportiert alle Hinweise, Belegzuordnungen und dokumentierten Fragen.

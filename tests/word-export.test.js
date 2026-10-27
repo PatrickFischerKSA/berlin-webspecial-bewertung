@@ -31,3 +31,14 @@ test('Word export keeps open assessments open and transcript opt-in',async()=>{
  assert.ok(without.includes('Offen'));assert.ok(without.includes('Begründung fehlt'));assert.ok(!without.includes('6.0'));assert.ok(!without.includes('VERTRAULICHES TESTTRANSKRIPT'));
  const withTranscript=zipText(await Packer.toBuffer(buildAssessmentDocument(state,{includeTranscript:true})),'word/document.xml');assert.ok(withTranscript.includes('VERTRAULICHES TESTTRANSKRIPT'));
 });
+
+test('Word report preserves original evidence, locator, question and audit',async()=>{
+ const {passage,replaceSource}=await import('../evidence.js');
+ const state=emptyDossier();state.transcript=replaceSource(state.transcript,{text:'[00:12] ORIGINALBELEG <Text> & Kontext',filename:'gespraech.txt'});
+ const start=state.transcript.text.indexOf('ORIGINAL');state.evidence=[{...passage(state.transcript,'transcript',start,state.transcript.text.length),id:'ref1',indicatorId:'o1-1'}];
+ state.opportunities['o1-1']={opened:true,question:'GESTELLTE FRAGE',time:'00:10',help:'Neutrale Nachfrage'};
+ const xml=zipText(await Packer.toBuffer(buildAssessmentDocument(state)),'word/document.xml');
+ assert.ok(xml.includes('ORIGINALBELEG &lt;Text&gt; &amp; Kontext'));assert.ok(xml.includes('Z. 1'));assert.ok(xml.includes('00:12'));assert.ok(xml.includes('GESTELLTE FRAGE'));assert.ok(xml.includes('Bewertungskontrolle'));
+ state.transcript=replaceSource(state.transcript,{...state.transcript,text:'Geändert'});
+ const changed=zipText(await Packer.toBuffer(buildAssessmentDocument(state)),'word/document.xml');assert.ok(changed.includes('ursprünglich zugeordnete Wortlaut'));assert.ok(changed.includes('ORIGINALBELEG'));
+});
