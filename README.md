@@ -46,3 +46,7 @@ Im Bereich **02 Einzelprüfung** eine TXT-, Markdown-, SRT- oder VTT-Datei in UT
 Eine Passage im Transkript markieren, ein Gesprächskriterium wählen und **Markierung als Beleg übernehmen** anklicken. Dies ergänzt dessen Begründungsfeld, ohne die Bewertungsstufe zu verändern. Es gibt keine automatische Bewertung. Ersetzende Uploads fragen nach; ungültige Dateien lassen das vorhandene Transkript unverändert. Die Druckfassung enthält das Transkript.
 
 Uploads werden ausschliesslich lokal eingelesen. Der Inhalt wird mit dem Dossier im Browser gespeichert; bei Speicherproblemen das JSON exportieren. Keine automatische Transkription von Audiodateien, kein Upload an GitHub und kein KI-Dienst. PDF-/Word-Transkripte zuerst als UTF-8-Text exportieren.
+
+## Inhaltliche Bewertungsstufen
+
+Alle zehn Kriterien verwenden eigene, beobachtbare Stufenbeschreibungen. Die Auswahlfelder nennen die fachliche Leistung direkt (z. B. bei Synthese: «Roman, Geschichte und Gegenwart zur These verbinden»). Unter jedem Kriterium stehen inhaltliche Prüffragen. Die allgemeine Bezeichnung «Maturaziel erreicht» wurde entfernt. Fachlicher Bezug: EDK-Rahmenlehrplan Deutsch S. 27–30; das konkrete Raster und die Gewichtungen sind aufgabenspezifisch.

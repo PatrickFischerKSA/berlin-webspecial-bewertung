@@ -4,7 +4,7 @@ Vorschlag zur vorgängigen Bekanntgabe, auf Maturaniveau. Grundlage: lokale Auft
 
 ## Bewertungslogik
 
-Pro Kriterium eine Stufe: 4 = herausragend, 3 = Maturaziel erreicht, 2 = teilweise erreicht, 1 = ansatzweise, 0 = nicht nachgewiesen. Punkte = Gewicht × Stufe / 4; erst die Endnote runden. Zwischenstufen werden nicht vergeben. Nicht bewertet ist nicht 0. Für jedes Urteil eine konkrete Produktstelle oder Gesprächsantwort festhalten. Stufe 3 setzt selbstständige, belegte Argumentation voraus. Sprachliche Gewandtheit und technische Effekte ersetzen keine fachliche Leistung.
+Jedes Kriterium enthält eigene inhaltliche Stufen von 0 bis 4. Ihre Beschreibungen nennen die beobachtbare Leistung: etwa Material nebeneinanderstellen, Zusammenhänge belegen oder eine These an Gegenbefunden weiterentwickeln. Es gibt keine pauschalen Qualitätsattribute. Punkte = Gewicht × Stufe / 4; erst die Endnote runden. Nicht bewertet ist nicht 0. Für jedes Urteil eine konkrete Produktstelle oder Gesprächsantwort dokumentieren. Wenn eine Leistung Merkmale mehrerer Stufen zeigt, die am Beleg überwiegende Stufe wählen und die Abwägung erläutern.
 
 Produkt: Gruppenleistung 50 Punkte. Gespräch: individuelle Leistung 28 Punkte. Gesamt: 78 Punkte, dadurch ca. 64 % Produkt und 36 % Gespräch. Vorgeschlagene Schweizer Note = 1 + 5 × Punkte / 78, auf eine Dezimalstelle; Bestehensgrenze bei ungerundeter Note 4: 46,8 Punkte. Diese Formel ist ein Vorschlag, keine Aussage über schulische Vorgaben.
 
@@ -16,11 +16,17 @@ Die fünf geforderten Perspektiven sind Fall, historischer Kontext, Thema, freie
 
 Verbindet alle fünf Perspektiven durch eine tragfähige Leitfrage. Roman, historische Quellen und Berliner Gegenwart verändern wechselseitig die Interpretation.
 
-- **Stufe 4:** Eine präzise These entsteht aus der Verbindung von Roman, Geschichte und Ortsmaterial; Widersprüche und Grenzen des Gegenwartsvergleichs führen zu einer differenzierten eigenen Erkenntnis.
-- **Stufe 3:** Die fünf Perspektiven sind schlüssig verbunden; die Leitfrage wird begründet beantwortet. Unterschiede zwischen damals und heute bleiben sichtbar.
-- **Stufe 2:** Die Perspektiven sind überwiegend vorhanden, stehen aber teilweise nebeneinander; Verbindungen und Schlussfolgerungen bleiben allgemein.
-- **Stufe 1:** Die Arbeit reiht Inhaltsangabe, Fakten und Gegenwartsbehauptungen aneinander; eine leitende Erkenntnis ist kaum erkennbar.
-- **Stufe 0:** Keine überprüfbare Synthese; die Leitfrage und wesentliche Perspektiven fehlen.
+**Inhaltliche Prüffragen:**
+
+- Welche beantwortbare Leitfrage hält die fünf Perspektiven zusammen?
+- Welche Schlussfolgerung entsteht erst aus Romanstelle + historischem Befund + Ortsbeobachtung?
+- Welche Differenz oder Gegenquelle begrenzt den Vergleich mit heute?
+
+- **4 · These an Widersprüchen weiterentwickeln:** Entwickelt eine eigene Antwort auf die Leitfrage aus Romanpassage, historischem Befund und eigener Berlin-Beobachtung. Ein Widerspruch oder Gegenbefund wird untersucht und führt zur Präzisierung der These; Unterschiede zur Gegenwart werden erklärt.
+- **3 · Roman, Geschichte und Gegenwart zur These verbinden:** Führt Romanpassage, historischen Befund und eigene Berlin-Beobachtung argumentativ auf eine Antwort zur Leitfrage zusammen. Fall, Kontext, Thema, freier Aspekt und Gegenwart erfüllen erkennbare Funktionen; die Schlussfolgerung folgt aus den Belegen.
+- **2 · Einzelne Verbindungen herstellen:** Verbindet einzelne Perspektiven mit nachvollziehbaren Bezügen. In der Schlussfolgerung wird jedoch überwiegend wiederholt, was die Materialien einzeln aussagen; ein gemeinsamer Erklärungszusammenhang bleibt lückenhaft.
+- **1 · Material nebeneinanderstellen:** Stellt Handlung, Epocheninformationen und Gegenwartsbezug in getrennten Blöcken dar. Übergänge behaupten Ähnlichkeiten, erklären aber nicht, weshalb diese die Leitfrage beantworten.
+- **0 · Keine Verbindung zur Leitfrage:** Entwickelt keine Antwort auf die Leitfrage und keine überprüfbare Beziehung zwischen Roman, historischem Kontext und Gegenwart.
 
 **Beleganker:** Leitfrage, Schlussstation, Verknüpfung einer Romanstelle mit historischer Quelle und heutiger Ortsbeobachtung
 
@@ -28,11 +34,17 @@ Verbindet alle fünf Perspektiven durch eine tragfähige Leitfrage. Roman, histo
 
 Untersucht das Wie der Darstellung und erklärt historische Bedingungen, statt Handlung und Epoche nur wiederzugeben. Der freie Aspekt erhält analytische Tiefe.
 
-- **Stufe 4:** Deutet präzise Textdetails (z. B. Perspektive, Sprache, Raum, Figurenambivalenz) in ihrem Zusammenspiel; kontextualisiert historische Machtverhältnisse, prüft Gegenlesarten und trennt Fiktion von Befund.
-- **Stufe 3:** Entwickelt eine nachvollziehbare, textgestützte Deutung zentraler Gestaltungsmittel und verbindet diese korrekt mit dem historischen Kontext.
-- **Stufe 2:** Deutungen sind plausibel, aber an wenigen Belegen entwickelt; Kontext wird eher beschrieben, Gestaltungsmittel eher benannt.
-- **Stufe 1:** Überwiegend Nacherzählung und Epochenwissen; Deutungen sind unbelegt oder historisch verkürzt.
-- **Stufe 0:** Keine tragfähige Textanalyse oder grundlegende Verwechslung von Romanhandlung und historischer Wirklichkeit.
+**Inhaltliche Prüffragen:**
+
+- Welche Perspektive, Sprachwahl, Raumdarstellung oder Figurenkonstellation erzeugt welche Wirkung?
+- Welche Textbeobachtung trägt die Deutung, und wie erklärt sie das zentrale Thema bzw. den freien Aspekt?
+- Welche historischen Bedingungen erklären den Konflikt, ohne die Fiktion zur historischen Quelle umzufunktionieren?
+
+- **4 · Formwirkung deuten und Gegenlesart prüfen:** Zeigt an genau bezeichneten Passagen, wie Erzählperspektive, Sprache, Raum oder Figurenkonstellation eine Deutung erzeugen. Prüft einen Textbefund, der eine andere Lesart erlaubt, und erklärt den Konflikt aus konkreten historischen Bedingungen. Fiktion und historischer Befund bleiben unterscheidbar.
+- **3 · Formwirkung am Text und Kontext erklären:** Verknüpft genaue Textbeobachtung, ihre Wirkung und eine daraus abgeleitete Deutung des Themas bzw. freien Aspekts. Erklärt den Zusammenhang mit konkreten historischen Bedingungen; Fachbegriffe leisten Erklärung statt nur Benennung.
+- **2 · Textmerkmale benennen, Deutung nur teilweise belegen:** Benennt zutreffende Textmerkmale und relevante historische Fakten. Erklärt deren Wirkung und Zusammenhang jedoch nur stellenweise; die Deutung ist nur teilweise an Textstellen entwickelt.
+- **1 · Handlung nacherzählen, Kontext pauschalisieren:** Ersetzt Interpretation weitgehend durch Inhaltsangabe. Fachbegriffe bleiben ohne Wirkungsanalyse; historischer Kontext erscheint als pauschale Epochenkulisse.
+- **0 · Text und Geschichte sachlich verkennen:** Verkennt zentrale Textzusammenhänge oder historische Verhältnisse und entwickelt daraus keine belastbare Deutung.
 
 **Beleganker:** Mindestens eine im Detail ausgelegte Passage mit Stellenangabe; historische Einordnung und Gegeninterpretation
 
@@ -40,11 +52,17 @@ Untersucht das Wie der Darstellung und erklärt historische Bedingungen, statt H
 
 Eine eigenständige mediale Idee macht einen inhaltlichen Zusammenhang erfahrbar. Bewertet wird ihr begründeter Mehrwert, nicht technischer Aufwand.
 
-- **Stufe 4:** Eine überraschende, konsequent entwickelte Form eröffnet neue Einsichten; Dramaturgie, Perspektivwechsel und Interaktion lassen das Publikum eine zentrale Spannung selbst erschliessen.
-- **Stufe 3:** Die eigenständige Form passt zum Thema und vermittelt durch gezielten Medieneinsatz einen erkennbaren Erkenntnisgewinn.
-- **Stufe 2:** Es gibt passende eigene Ideen; wesentliche Teile folgen einer Vorlage oder bleiben illustrativ.
-- **Stufe 1:** Effekte und Medien sind überwiegend dekorativ; Form und Aussage passen nur teilweise zusammen.
-- **Stufe 0:** Keine erkennbare eigene Gestaltung oder eine Form, die das Verständnis verhindert.
+**Inhaltliche Prüffragen:**
+
+- Welche Deutung wird durch Perspektivwechsel, Montage, Raumführung oder Interaktion erfahrbar?
+- Was gewinnt das Publikum durch diese Form gegenüber einer blossen Zusammenfassung?
+- Wie konsequent wird die eigene Idee vom Auftakt bis zur Schlussstation entwickelt?
+
+- **4 · Durch die Form eine neue Einsicht ermöglichen:** Eine überraschende, konsequent entwickelte Form eröffnet neue Einsichten; Dramaturgie, Perspektivwechsel und Interaktion lassen das Publikum eine zentrale Spannung selbst erschliessen.
+- **3 · Medien für eine Deutung gezielt gestalten:** Die eigenständige Form passt zum Thema und vermittelt durch gezielten Medieneinsatz einen erkennbaren Erkenntnisgewinn.
+- **2 · Eigene Ideen vorwiegend illustrieren lassen:** Es gibt passende eigene Ideen; wesentliche Teile folgen einer Vorlage oder bleiben illustrativ.
+- **1 · Effekte ohne inhaltliche Funktion einsetzen:** Effekte und Medien sind überwiegend dekorativ; Form und Aussage passen nur teilweise zusammen.
+- **0 · Keine erkennbare gestalterische Aussage:** Keine erkennbare eigene Gestaltung oder eine Form, die das Verständnis verhindert.
 
 **Beleganker:** Konkrete Station: Was lässt sich hier erfahren, das ein linearer Text weniger gut vermittelt?
 
@@ -52,11 +70,17 @@ Eine eigenständige mediale Idee macht einen inhaltlichen Zusammenhang erfahrbar
 
 Prüft Herkunft, Zeit, Absicht und Grenzen der verwendeten Quellen. Zitate, Fakten, Rekonstruktionen und KI-Anteile bleiben unterscheidbar.
 
-- **Stufe 4:** Kontrastiert geeignete Primär- und Sekundärquellen, erklärt Interessengebundenheit und Lücken; zentrale Aussagen sind direkt nachprüfbar, Rechte und KI-Prüfwege transparent.
-- **Stufe 3:** Nutzt geeignete Quellen kritisch; zentrale Fakten und Zitate sind auffindbar belegt, Mediennachweise und KI-Verwendung nachvollziehbar.
-- **Stufe 2:** Belege sind überwiegend vorhanden; Quellenbewertung und Prüfung von KI-Aussagen bleiben punktuell.
-- **Stufe 1:** Unklare Herkunft, fehlende Stellenangaben oder unkritische Übernahmen erschweren die Überprüfung.
-- **Stufe 0:** Zentrale Aussagen sind unbelegt oder Quellen werden als Nachweise erfunden.
+**Inhaltliche Prüffragen:**
+
+- Lässt sich eine zentrale Behauptung zur verwendeten Textstelle bzw. Originalquelle zurückverfolgen?
+- Wie beeinflussen Entstehungszeit, Urheber und Absicht den Aussagewert?
+- Wie wurden widersprüchliche Angaben oder KI-Vorschläge überprüft?
+
+- **4 · Quellen gegeneinander prüfen und Grenzen ausweisen:** Kontrastiert geeignete Primär- und Sekundärquellen, erklärt Interessengebundenheit und Lücken; zentrale Aussagen sind direkt nachprüfbar, Rechte und KI-Prüfwege transparent.
+- **3 · Zentrale Aussagen belegen und Quellen einordnen:** Nutzt geeignete Quellen kritisch; zentrale Fakten und Zitate sind auffindbar belegt, Mediennachweise und KI-Verwendung nachvollziehbar.
+- **2 · Belege liefern, Quellenperspektive kaum prüfen:** Belege sind überwiegend vorhanden; Quellenbewertung und Prüfung von KI-Aussagen bleiben punktuell.
+- **1 · Angaben übernehmen, Herkunft unklar lassen:** Unklare Herkunft, fehlende Stellenangaben oder unkritische Übernahmen erschweren die Überprüfung.
+- **0 · Zentrale Aussagen ohne prüfbare Grundlage:** Zentrale Aussagen sind unbelegt oder Quellen werden als Nachweise erfunden.
 
 **Beleganker:** Quellennachweis an der Aussage, Romanseite/Kapitel, Urheber und Lizenz; ein dokumentierter Prüfweg
 
@@ -64,11 +88,17 @@ Prüft Herkunft, Zeit, Absicht und Grenzen der verwendeten Quellen. Zitate, Fakt
 
 Eigenes Bild-, Video- oder Tonmaterial übernimmt eine begründete Funktion für die Interpretation. Keine feste Anzahl oder Route.
 
-- **Stufe 4:** Eigene Beobachtungen von Raum, Spuren oder Leerstellen prüfen und verändern eine Deutung; historische und heutige Raumnutzung werden differenziert lesbar.
-- **Stufe 3:** Eigenes Berlin-Material ist gezielt ausgewählt, verständlich eingeordnet und trägt eine inhaltliche Aussage.
-- **Stufe 2:** Eigenes Material passt zum Ort, bleibt aber meist Illustration statt Untersuchung.
-- **Stufe 1:** Aufnahmen wirken austauschbar; Ortsbezug oder Bezug zur Leitfrage bleibt unklar.
-- **Stufe 0:** Kein eigenes Berlin-Material oder keine erkennbare Verbindung zum untersuchten Raum.
+**Inhaltliche Prüffragen:**
+
+- Was zeigt die eigene Aufnahme über Nutzung, Grenze, Spur oder Leerstelle des Orts?
+- Welche Deutung stützt, verändert oder widerlegt diese Beobachtung?
+- Werden heutiger Zustand und historisch rekonstruierte Situation auseinandergehalten?
+
+- **4 · Ortsbeobachtung zur Prüfung einer Deutung nutzen:** Eigene Beobachtungen von Raum, Spuren oder Leerstellen prüfen und verändern eine Deutung; historische und heutige Raumnutzung werden differenziert lesbar.
+- **3 · Eigene Aufnahme als inhaltlichen Beleg einsetzen:** Eigenes Berlin-Material ist gezielt ausgewählt, verständlich eingeordnet und trägt eine inhaltliche Aussage.
+- **2 · Ort zeigen, Deutung kaum vertiefen:** Eigenes Material passt zum Ort, bleibt aber meist Illustration statt Untersuchung.
+- **1 · Berlin-Material ohne Bezug zur Leitfrage zeigen:** Aufnahmen wirken austauschbar; Ortsbezug oder Bezug zur Leitfrage bleibt unklar.
+- **0 · Kein eigenes Material mit Ortsbezug:** Kein eigenes Berlin-Material oder keine erkennbare Verbindung zum untersuchten Raum.
 
 **Beleganker:** Aufnahme mit Ort, Datum und Kommentar: Welche Behauptung stützt oder irritiert sie?
 
@@ -76,11 +106,17 @@ Eigenes Bild-, Video- oder Tonmaterial übernimmt eine begründete Funktion für
 
 Das Publikum kann dem Argument folgen. Medien, Navigation und Lesbarkeit dienen der Aussage; technische Komplexität bringt keinen Bonus.
 
-- **Stufe 4:** Dramaturgie steuert Aufmerksamkeit und Verständnis präzise; Text und Medien ergänzen sich; mobile Bedienung, Untertitel bzw. Textalternativen und Quellenzugang funktionieren durchgehend.
-- **Stufe 3:** Das Webspecial ist schlüssig, gut lesbar und mobil nutzbar; zentrale Medien sind zugänglich und sinnvoll eingebettet.
-- **Stufe 2:** Die Argumentation bleibt nachvollziehbar; einzelne Brüche, Bedienprobleme oder fehlende Alternativen stören.
-- **Stufe 1:** Navigation, Textdichte oder Medienfehler behindern das Verständnis mehrfach.
-- **Stufe 0:** Wesentliche Inhalte sind nicht zugänglich oder das Produkt lässt sich nicht sinnvoll nutzen.
+**Inhaltliche Prüffragen:**
+
+- Kann ein Publikum ohne Romankenntnis Fall, Argument und Schlussfolgerung nachvollziehen?
+- Übernehmen Text, Bild, Ton und Interaktion verschiedene inhaltliche Aufgaben?
+- Bleiben zentrale Aussagen mobil, ohne Ton und über zugängliche Medienalternativen verständlich?
+
+- **4 · Medienfolge führt durch ein nachvollziehbares Argument:** Dramaturgie steuert Aufmerksamkeit und Verständnis präzise; Text und Medien ergänzen sich; mobile Bedienung, Untertitel bzw. Textalternativen und Quellenzugang funktionieren durchgehend.
+- **3 · Inhalte schlüssig und zugänglich vermitteln:** Das Webspecial ist schlüssig, gut lesbar und mobil nutzbar; zentrale Medien sind zugänglich und sinnvoll eingebettet.
+- **2 · Argument trotz medialer Brüche erkennbar halten:** Die Argumentation bleibt nachvollziehbar; einzelne Brüche, Bedienprobleme oder fehlende Alternativen stören.
+- **1 · Verständnis durch Aufbau und Bedienung erschweren:** Navigation, Textdichte oder Medienfehler behindern das Verständnis mehrfach.
+- **0 · Zentrale Inhalte nicht zugänglich machen:** Wesentliche Inhalte sind nicht zugänglich oder das Produkt lässt sich nicht sinnvoll nutzen.
 
 **Beleganker:** Test auf Smartphone und Desktop; Ton aus; Navigation und Medienlinks
 
@@ -90,11 +126,17 @@ Das Publikum kann dem Argument folgen. Medien, Navigation und Lesbarkeit dienen 
 
 Beantwortet inhaltliche Fragen präzise und am Text; erklärt historische Zusammenhänge und das Verhältnis von Fiktion und Geschichte.
 
-- **Stufe 4:** Entwickelt eine differenzierte Deutung aus präzisen Stellenbezügen, erklärt historische Bedingungen und prüft eine plausible Gegenlesart selbstständig.
-- **Stufe 3:** Antwortet fachlich korrekt, belegt die Deutung am Roman und erklärt passende historische Zusammenhänge.
-- **Stufe 2:** Zeigt solides Grundverständnis; Belege und Zusammenhangserklärungen bleiben teilweise allgemein.
-- **Stufe 1:** Antwortet überwiegend reproduktiv oder lückenhaft; zentrale Zusammenhänge werden erst durch starke Hilfen sichtbar.
-- **Stufe 0:** Kein belastbares Text- und Kontextverständnis nachweisbar.
+**Inhaltliche Prüffragen:**
+
+- Wird aus Textdetail → Wirkung → Deutung argumentiert?
+- Werden historische Bedingungen erklärt, statt nur Jahreszahlen genannt?
+- Kann eine andere Lesart anhand eines Textbefunds geprüft werden?
+
+- **4 · Textdeutung gegen alternative Erklärung abwägen:** Entwickelt aus einer konkreten Passage den Zusammenhang von Gestaltung, Wirkung und Deutung. Erklärt historische Bedingungen des Konflikts und prüft auf Nachfrage, welche Textbeobachtung für eine alternative Erklärung spricht.
+- **3 · Textbeobachtung und historischen Zusammenhang erklären:** Erklärt eine Deutung durch genaue Textbeobachtung und deren Wirkung. Verknüpft den Konflikt fachlich korrekt mit historischen Bedingungen und unterscheidet Romanhandlung von historischem Wissen.
+- **2 · Inhalt kennen, Erklärung nur teilweise belegen:** Kennt wesentliche Handlung und historische Eckpunkte. Bei der Erklärung von Gestaltung, Wirkung oder historischem Zusammenhang bleiben Belege und Folgerungen teilweise offen.
+- **1 · Inhalt wiedergeben, Zusammenhänge nicht erklären:** Gibt Handlung oder Epochenwissen wieder, kann aber auch nach Nachfrage nicht erklären, wie ein Textdetail die Deutung oder der historische Kontext den Konflikt trägt.
+- **0 · Zentrale Text- und Kontextfragen nicht klären:** Kann zentrale Fragen zum Text und zu den historischen Verhältnissen trotz Klärungsfragen nicht sachlich beantworten.
 
 **Beleganker:** Frage, Antwortkern, Romanstelle und historische Erklärung protokollieren
 
@@ -102,11 +144,17 @@ Beantwortet inhaltliche Fragen präzise und am Text; erklärt historische Zusamm
 
 Verteidigt eine konkrete Produktentscheidung mit These, Beleg und Abwägung; reagiert auf Einwände. Zustimmen oder Revision sind gleichwertig, wenn begründet.
 
-- **Stufe 4:** Legt Ziele, Alternativen und Folgen offen; beantwortet einen substanziellen Einwand am Produkt und verteidigt oder revidiert die Entscheidung fachlich überzeugend.
-- **Stufe 3:** Begründet eine konkrete Entscheidung mit Beleg und Alternative und beantwortet kritische Rückfragen nachvollziehbar.
-- **Stufe 2:** Erklärt die Entscheidung plausibel, wägt Alternativen oder Folgen aber nur teilweise ab.
-- **Stufe 1:** Beschreibt vor allem den Herstellungsweg oder persönlichen Geschmack; Einwände bleiben unbeantwortet.
-- **Stufe 0:** Kann eine wesentliche Entscheidung nicht erklären oder belegen.
+**Inhaltliche Prüffragen:**
+
+- Welche Aussage soll die konkrete Produktentscheidung vermitteln?
+- Welche Alternative hätte welche Folgen für Aussage und Publikum?
+- Wird auf den Einwand mit Belegen und Abwägung reagiert?
+
+- **4 · Einwand abwägen und Entscheidung begründet halten oder ändern:** Legt Ziele, Alternativen und Folgen offen; beantwortet einen substanziellen Einwand am Produkt und verteidigt oder revidiert die Entscheidung fachlich überzeugend.
+- **3 · Entscheidung am Produkt mit Alternative begründen:** Begründet eine konkrete Entscheidung mit Beleg und Alternative und beantwortet kritische Rückfragen nachvollziehbar.
+- **2 · Wahl erklären, Alternative kaum abwägen:** Erklärt die Entscheidung plausibel, wägt Alternativen oder Folgen aber nur teilweise ab.
+- **1 · Vorgehen oder Geschmack statt Gründe nennen:** Beschreibt vor allem den Herstellungsweg oder persönlichen Geschmack; Einwände bleiben unbeantwortet.
+- **0 · Eigene Produktentscheidung nicht erklären:** Kann eine wesentliche Entscheidung nicht erklären oder belegen.
 
 **Beleganker:** Konkrete Produktstelle, verworfene Alternative, Einwand und Reaktion
 
@@ -114,11 +162,17 @@ Verteidigt eine konkrete Produktentscheidung mit These, Beleg und Abwägung; rea
 
 Verbindet Text, Geschichte und Gegenwart in einer nicht vorab ausformulierten Denkaufgabe; berücksichtigt Grenzen des Vergleichs.
 
-- **Stufe 4:** Entwickelt aus einer neuen Quelle, Perspektive oder Gegenhypothese eine eigenständige Folgerung und benennt Reichweite, Grenze und nötige Anpassung des Produkts.
-- **Stufe 3:** Überträgt die Erkenntnisse begründet auf eine neue Frage; unterscheidet Gemeinsamkeiten und Unterschiede.
-- **Stufe 2:** Erkennt einen passenden Zusammenhang, führt ihn aber wenig differenziert weiter.
-- **Stufe 1:** Überträgt schematisch; Gegenwartsvergleiche bleiben pauschal oder anachronistisch.
-- **Stufe 0:** Keine begründete Übertragung erkennbar.
+**Inhaltliche Prüffragen:**
+
+- Welche Annahme verändert die neue Frage oder Gegenquelle?
+- Welche Folgerung ist daraus zu ziehen, und welche bisherige Aussage bleibt bestehen?
+- Wo endet der Vergleich zwischen historischen und gegenwärtigen Verhältnissen?
+
+- **4 · Neue Prämisse prüfen und These gezielt revidieren:** Entwickelt aus einer neuen Quelle, Perspektive oder Gegenhypothese eine eigenständige Folgerung und benennt Reichweite, Grenze und nötige Anpassung des Produkts.
+- **3 · Neue Frage durch begründeten Vergleich erschliessen:** Überträgt die Erkenntnisse begründet auf eine neue Frage; unterscheidet Gemeinsamkeiten und Unterschiede.
+- **2 · Zusammenhang erkennen, Folgen kaum entwickeln:** Erkennt einen passenden Zusammenhang, führt ihn aber wenig differenziert weiter.
+- **1 · Bekannte Aussage auf neue Frage übertragen:** Überträgt schematisch; Gegenwartsvergleiche bleiben pauschal oder anachronistisch.
+- **0 · Keinen begründeten Transfer entwickeln:** Keine begründete Übertragung erkennbar.
 
 **Beleganker:** Neue Frage, selbstständiger Gedankengang und Grenze des Vergleichs
 
@@ -126,11 +180,17 @@ Verbindet Text, Geschichte und Gegenwart in einer nicht vorab ausformulierten De
 
 Macht den eigenen fachlichen Beitrag und seine Prüfwege nachvollziehbar. Freiwillige Entscheidungsnotizen sind keine zusätzliche Pflichtabgabe.
 
-- **Stufe 4:** Rekonstruiert den eigenen Beitrag an einem konkreten Beispiel, zeigt Quellen-/KI-Fehlerprüfung und begründet eine Korrektur samt verbleibender Unsicherheit.
-- **Stufe 3:** Erklärt den eigenen Beitrag, verwendete Hilfen und einen nachvollziehbaren Prüf- oder Revisionsschritt.
-- **Stufe 2:** Kann Beitrag und Hilfen benennen; Prüfung und Lerngewinn bleiben wenig konkret.
-- **Stufe 1:** Eigener Anteil oder Prüfschritte bleiben vage; Verantwortung wird an Team oder KI abgegeben.
-- **Stufe 0:** Kein nachvollziehbarer eigener Beitrag bzw. keine Erklärung einer übernommenen Aussage.
+**Inhaltliche Prüffragen:**
+
+- Welche fachliche Entscheidung ist der eigenen Person zurechenbar?
+- Wie wurde eine konkrete Aussage, Quelle oder KI-Ausgabe kontrolliert?
+- Was wurde korrigiert, und welche Unsicherheit bleibt bestehen?
+
+- **4 · Eigenen Prüfweg samt Korrektur und Restunsicherheit erklären:** Rekonstruiert den eigenen Beitrag an einem konkreten Beispiel, zeigt Quellen-/KI-Fehlerprüfung und begründet eine Korrektur samt verbleibender Unsicherheit.
+- **3 · Eigenen Beitrag und konkreten Prüfschritt zeigen:** Erklärt den eigenen Beitrag, verwendete Hilfen und einen nachvollziehbaren Prüf- oder Revisionsschritt.
+- **2 · Beitrag und Hilfen benennen, Prüfung vage lassen:** Kann Beitrag und Hilfen benennen; Prüfung und Lerngewinn bleiben wenig konkret.
+- **1 · Verantwortung und Prüfschritte offenlassen:** Eigener Anteil oder Prüfschritte bleiben vage; Verantwortung wird an Team oder KI abgegeben.
+- **0 · Eigenen Beitrag fachlich nicht rekonstruieren:** Kein nachvollziehbarer eigener Beitrag bzw. keine Erklärung einer übernommenen Aussage.
 
 **Beleganker:** Eigene Entscheidung, Hilfsmittel, überprüfte Aussage und Änderung
 
@@ -209,3 +269,9 @@ Zeigen Sie einen Vorschlag von KI oder aus dem Team, den Sie verworfen oder korr
 
 Nachfrage: Falls Sie keine KI genutzt haben: Wie haben Sie eine eigene erste Annahme geprüft?
 
+
+## Fachliche Bezugspunkte
+
+Der [EDK-Rahmenlehrplan gymnasiale Maturitätsschulen, Fach Deutsch, S. 27–30](https://www.gr.ch/DE/institutionen/verwaltung/ekud/ahb/mittelschulen/dienstleistungen/wegm/Documents/Rahmenlehrplan-maturitatsschulen.pdf#page=28) nennt Form-Inhalt-Bezüge, Mehrdeutigkeit, kulturhistorische Einordnung, Informationsprüfung, eigenständige ästhetische Gestaltung und Argumentation. Die Kriterien übersetzen diese Bezugspunkte in beobachtbare Leistungen für den Berlin-Auftrag. Der Rahmenlehrplan schreibt weder diese Gewichtung noch diese fünf Stufen vor.
+
+**Beispiel für eine prüfbare Synthese:** Eine Romanfigur deutet einen Ort als Schutzraum. Eine historische Quelle zeigt dort zugleich institutionelle Ausgrenzung. Die eigene heutige Ortsaufnahme dokumentiert eine veränderte öffentliche Nutzung. Die Synthese erklärt, wie diese Spannung das Verständnis von Zugehörigkeit verändert und wo ein Vergleich der politischen Verhältnisse nicht trägt. Dies ist ein fiktives Strukturbeispiel, keine Behauptung über einen der Romane.
