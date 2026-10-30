@@ -1,7 +1,8 @@
-import {auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261030-auftrag';
+import {formalReportLines} from './formal-check.js?v=20261030-formal';
+import {auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261030-formal';
 import {Document,Packer,Paragraph,TextRun,HeadingLevel,Table,TableRow,TableCell,WidthType,BorderStyle,Header,Footer,PageNumber,AlignmentType,VerticalAlign} from './vendor/docx.mjs';
-import {criteria,questions} from './data.js?v=20261030-auftrag';
-import {calculate,deriveRatings,gradeFor,criterionResult,indicatorDecided,rawPoints,RUBRIC_VERSION} from './scoring.js?v=20261030-auftrag';
+import {criteria,questions} from './data.js?v=20261030-formal';
+import {calculate,deriveRatings,gradeFor,criterionResult,indicatorDecided,rawPoints,RUBRIC_VERSION} from './scoring.js?v=20261030-formal';
 const fmt=n=>n.toLocaleString('de-CH');
 // XML 1.0 cannot represent most control characters, including those pasted into notes.
 const clean=value=>String(value??'').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\ufffe\uffff]/g,'');
@@ -51,6 +52,8 @@ export function buildAssessmentDocument(state,{includeTranscript=false}={}){
  if(selected.length||state.marks?.length)children.push(heading('Prüfungsprotokoll',HeadingLevel.HEADING_1));
  if(selected.length){children.push(heading('Ausgewählte Prüfungsfragen',HeadingLevel.HEADING_2));for(const index of selected){const [type,q,follow]=questions[index];children.push(heading(type,HeadingLevel.HEADING_2),para(q),para('Nachfrage: '+follow));}}
  if(state.marks?.length){children.push(heading('Zeitmarken des Gesprächs',HeadingLevel.HEADING_2));for(const m of state.marks){const time=String(Math.floor(m.seconds/60)).padStart(2,'0')+':'+String(Math.floor(m.seconds%60)).padStart(2,'0');children.push(...multiline(time+' · '+m.text));}}
+ children.push(heading('Automatisch erfasster Formalcheck',HeadingLevel.HEADING_1));
+ for(const line of formalReportLines(state.formalReport,meta.url))children.push(para(line));
  const issues=auditDossier(criteria,state);
  children.push(heading('Bewertungskontrolle',HeadingLevel.HEADING_1),para('Diese Kontrolle prüft Dokumentation und Zuordnung, nicht die fachliche Richtigkeit. Eine fehlende Textverknüpfung kann durch eine überprüfte manuelle Fundstelle oder technische Beobachtung ersetzt werden. Die Hinweise sind vor Abschluss fachlich zu klären. Bei veränderten Beleggrundlagen bleiben betroffene Kriterien rechnerisch offen.'));
  if(!issues.length)children.push(para('Keine formalen Prüfhinweise vorhanden. Die fachliche Prüfung bleibt Aufgabe der Prüfperson.'));

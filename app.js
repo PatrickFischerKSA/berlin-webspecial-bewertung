@@ -1,11 +1,13 @@
-import {initWorkbench} from './workbench-ui.js?v=20261030-auftrag';
-import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261030-auftrag';
-import {criteria,questions,books} from './data.js?v=20261030-auftrag';
-import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261030-auftrag';
-import {readTranscript, validateTranscript} from './transcript.js?v=20261030-auftrag';
+import {initFormalCheck} from './formal-ui.js?v=20261030-formal';
+import {initWorkbench} from './workbench-ui.js?v=20261030-formal';
+import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261030-formal';
+import {criteria,questions,books} from './data.js?v=20261030-formal';
+import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261030-formal';
+import {readTranscript, validateTranscript} from './transcript.js?v=20261030-formal';
 const $=id=>document.getElementById(id),key='berlin-rubric-v1';
 let state=emptyDossier();
 let workbench=null;
+let formalCheck=null;
 try{const raw=localStorage.getItem(key);if(raw)state=validateImport(JSON.parse(raw),criteria);}catch{$('saveStatus').textContent='Lokale Daten nicht lesbar – bitte Sicherung importieren.';}
 const metaKeys=['person','group','book','date','examiner','url','recording','strength','next','judgment'];
 function save(){try{localStorage.setItem(key,JSON.stringify(dossierExport(state)));$('saveStatus').textContent='Auf diesem Gerät gespeichert';}catch{$('saveStatus').textContent='Speicherung nicht möglich – bitte JSON exportieren.';}}
@@ -34,14 +36,14 @@ function updateDescriptor(c){
  const legacy=$('legacy-'+c.id),old=state.legacyRatings[c.id];legacy.hidden=old===undefined||r.complete;if(!legacy.hidden)legacy.textContent=`Frühere Bewertung: ${old}/4. Sie stammt aus dem alten Raster und wird nicht umgerechnet. Die bisherigen Notizen bleiben erhalten; die vier neuen Nachweise müssen einzeln geprüft werden.`;
 }
 questions.forEach(([cat,q,follow],i)=>{const box=node('article',undefined,'question'),label=node('label'),check=node('input');check.type='checkbox';check.id='q'+i;label.append(check,node('small',cat+' · zur Prüfung auswählen'));box.append(label,node('p',q),node('p','Nachfrage: '+follow));$('questions').append(box);check.addEventListener('change',()=>{state.selected=check.checked?[...new Set([...state.selected,i])]:state.selected.filter(n=>n!==i);save();});});
-for(const id of metaKeys)$(id).addEventListener('input',()=>{state.meta[id]=$(id).value;save();});
+for(const id of metaKeys)$(id).addEventListener('input',()=>{state.meta[id]=$(id).value;save();if(id==='url')formalCheck?.refresh();});
 function hydrate(){
  for(const id of metaKeys)$(id).value=state.meta[id]||'';
  for(const c of criteria){
   for(const i of c.indicators){const o=state.observations[i.id];$('check-'+i.id).value=o?.status||'';$('evidence-'+i.id).value=o?.evidence||'';$('gap-'+i.id).value=o?.gap||'';renderLinkedEvidence(i.id);const previous=$('previous-'+i.id);previous.hidden=!o?.legacyStatus&&!o?.previousScore;previous.textContent=o?.previousScore?'Frühere Einstufung: '+rawPoints({status:o.previousScore})+'/3 Rohpunkte vor dem Auftragsabgleich. Belege und Begründungen bleiben erhalten; dieses geänderte Teilkriterium neu prüfen.':o?.legacyStatus?'Früheres binäres Urteil: '+(o.legacyStatus==='yes'?'nachgewiesen':'nicht nachgewiesen')+'. Keine automatische Umrechnung; neue Punktestufe anhand der Deskriptoren festlegen.':'';}
   $('note-'+c.id).value=state.notes[c.id]||'';updateDescriptor(c);
  }
- questions.forEach((_,i)=>$('q'+i).checked=state.selected.includes(i));renderMarks();renderResults();renderTranscript();workbench?.refresh();
+ questions.forEach((_,i)=>$('q'+i).checked=state.selected.includes(i));renderMarks();renderResults();renderTranscript();workbench?.refresh();formalCheck?.refresh();
 }
 function renderResults(){
  const root=$('results');root.replaceChildren();
@@ -81,7 +83,7 @@ $('import').onchange=async e=>{
 };
 $('wordExport').onclick=async()=>{
  const button=$('wordExport');button.disabled=true;$('feedback').textContent='Word-Dokument wird erstellt …';
- try{const {exportWord}=await import('./word-export.js?v=20261030-auftrag');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
+ try{const {exportWord}=await import('./word-export.js?v=20261030-formal');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
 };
 
 let elapsed=0,started=null,interval=null;
@@ -134,4 +136,5 @@ $('transcriptClear').onclick=()=>{if(!confirm('Transkript aus diesem Dossier ent
 window.addEventListener('beforeprint',()=>{document.querySelectorAll('textarea').forEach(t=>{const block=node('div',t.value||'—','print-value');t.after(block);});});
 window.addEventListener('afterprint',()=>document.querySelectorAll('.print-value').forEach(b=>b.remove()));
 workbench=initWorkbench({criteria,getState:()=>state,onChange:()=>{state.ratings=deriveRatings(criteria,state.observations,state);hydrate();save();},onNavigate:(panel,id)=>{showPanel(panel);const target=$('check-'+id)||$(id);target?.scrollIntoView({block:'center'});target?.focus();}});
+formalCheck=initFormalCheck({getState:()=>state,onChange:save});
 hydrate();tick();

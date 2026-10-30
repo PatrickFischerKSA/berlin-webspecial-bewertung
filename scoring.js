@@ -1,10 +1,11 @@
-import {normalizeSource,validateEvidence,validateOpportunities,evidenceValid} from './evidence.js?v=20261030-auftrag';
-import {validateTranscript} from './transcript.js?v=20261030-auftrag';
+import {validateFormalReport} from './formal-check.js?v=20261030-formal';
+import {normalizeSource,validateEvidence,validateOpportunities,evidenceValid} from './evidence.js?v=20261030-formal';
+import {validateTranscript} from './transcript.js?v=20261030-formal';
 export const RUBRIC_VERSION='Auftragsabgeglichenes Bewertungsraster 4.1 · 30.10.2026';
 export const STATUS_POINTS={no:0,limited:1,partial:2,yes:3};
 export function rawPoints(observation){return STATUS_POINTS[observation?.status]??null;}
 export function scoreOptions(criterion,indicator){return [3,2,1,0].map(n=>({value:['no','limited','partial','yes'][n],label:`${n}/3 Rohpunkte · ${(criterion.weight*n/12).toLocaleString('de-CH',{maximumFractionDigits:3})} P.`,description:indicator.levels[n]}));}
-export function emptyDossier(){return {ratings:{},observations:{},legacyRatings:{},notes:{},meta:{},selected:[],marks:[],transcript:{text:'',filename:''},product:normalizeSource(),evidence:[],opportunities:{}};}
+export function emptyDossier(){return {ratings:{},observations:{},legacyRatings:{},notes:{},meta:{},selected:[],marks:[],transcript:{text:'',filename:''},product:normalizeSource(),formalReport:null,evidence:[],opportunities:{}};}
 export function indicatorDecided(observation){return Object.hasOwn(STATUS_POINTS,observation?.status)&&typeof observation.evidence==='string'&&Boolean(observation.evidence.trim())&&(rawPoints(observation)===3||Boolean(observation.gap?.trim()));}
 export function criterionResult(criterion,observations,state){
  const records=criterion.indicators.map(i=>state&&(state.evidence||[]).some(e=>e.indicatorId===i.id&&!evidenceValid(e,state))?undefined:observations[i.id]);
@@ -49,13 +50,14 @@ export function validateImport(raw,criteria){
   out.opportunities=validateOpportunities(raw.opportunities,criteria);
  }
  out.product=normalizeSource(raw.product);
+ out.formalReport=validateFormalReport(raw.formalReport);
  out.evidence=validateEvidence(raw.evidence,criteria).filter(e=>raw.kind==='dossier'||(e.indicatorId.startsWith('p')&&e.source==='product'));
  out.ratings=deriveRatings(criteria,out.observations,out);
  return out;
 }
 export function dossierExport(state){return {version:4,rubric:RUBRIC_VERSION,kind:'dossier',...state};}
 export function groupExport(state,criteria){
- const out={version:4,rubric:RUBRIC_VERSION,kind:'group',ratings:{},observations:{},legacyRatings:{},notes:{},meta:{},product:state.product,evidence:(state.evidence||[]).filter(e=>e.indicatorId.startsWith('p')&&e.source==='product')};
+ const out={version:4,rubric:RUBRIC_VERSION,kind:'group',ratings:{},observations:{},legacyRatings:{},notes:{},meta:{},product:state.product,formalReport:validateFormalReport(state.formalReport),evidence:(state.evidence||[]).filter(e=>e.indicatorId.startsWith('p')&&e.source==='product')};
  for(const c of criteria.filter(c=>c.part==='product')){
   if(state.ratings[c.id]!==undefined)out.ratings[c.id]=state.ratings[c.id];
   if(state.legacyRatings[c.id]!==undefined)out.legacyRatings[c.id]=state.legacyRatings[c.id];
@@ -73,6 +75,7 @@ export function mergeGroup(state,imported,criteria){
  for(const key of ['ratings','notes','legacyRatings','observations'])Object.assign(state[key],imported[key]);
  for(const key of ['group','book','url'])state.meta[key]=imported.meta[key]||'';
  state.product=imported.product;
+ state.formalReport=imported.formalReport;
  state.evidence=[...(state.evidence||[]).filter(e=>!e.indicatorId.startsWith('p')),...imported.evidence];
  state.ratings=deriveRatings(criteria,state.observations,state);
 }
