@@ -1,8 +1,8 @@
-import {initWorkbench} from './workbench-ui.js?v=20261030-stufen';
-import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261030-stufen';
-import {criteria,questions,books} from './data.js?v=20261030-stufen';
-import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261030-stufen';
-import {readTranscript, validateTranscript} from './transcript.js?v=20261030-stufen';
+import {initWorkbench} from './workbench-ui.js?v=20261030-auftrag';
+import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261030-auftrag';
+import {criteria,questions,books} from './data.js?v=20261030-auftrag';
+import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261030-auftrag';
+import {readTranscript, validateTranscript} from './transcript.js?v=20261030-auftrag';
 const $=id=>document.getElementById(id),key='berlin-rubric-v1';
 let state=emptyDossier();
 let workbench=null;
@@ -38,7 +38,7 @@ for(const id of metaKeys)$(id).addEventListener('input',()=>{state.meta[id]=$(id
 function hydrate(){
  for(const id of metaKeys)$(id).value=state.meta[id]||'';
  for(const c of criteria){
-  for(const i of c.indicators){const o=state.observations[i.id];$('check-'+i.id).value=o?.status||'';$('evidence-'+i.id).value=o?.evidence||'';$('gap-'+i.id).value=o?.gap||'';renderLinkedEvidence(i.id);const previous=$('previous-'+i.id);previous.hidden=!o?.legacyStatus;previous.textContent=o?.legacyStatus?'Früheres binäres Urteil: '+(o.legacyStatus==='yes'?'nachgewiesen':'nicht nachgewiesen')+'. Keine automatische Umrechnung; neue Punktestufe anhand der Deskriptoren festlegen.':'';}
+  for(const i of c.indicators){const o=state.observations[i.id];$('check-'+i.id).value=o?.status||'';$('evidence-'+i.id).value=o?.evidence||'';$('gap-'+i.id).value=o?.gap||'';renderLinkedEvidence(i.id);const previous=$('previous-'+i.id);previous.hidden=!o?.legacyStatus&&!o?.previousScore;previous.textContent=o?.previousScore?'Frühere Einstufung: '+rawPoints({status:o.previousScore})+'/3 Rohpunkte vor dem Auftragsabgleich. Belege und Begründungen bleiben erhalten; dieses geänderte Teilkriterium neu prüfen.':o?.legacyStatus?'Früheres binäres Urteil: '+(o.legacyStatus==='yes'?'nachgewiesen':'nicht nachgewiesen')+'. Keine automatische Umrechnung; neue Punktestufe anhand der Deskriptoren festlegen.':'';}
   $('note-'+c.id).value=state.notes[c.id]||'';updateDescriptor(c);
  }
  questions.forEach((_,i)=>$('q'+i).checked=state.selected.includes(i));renderMarks();renderResults();renderTranscript();workbench?.refresh();
@@ -81,7 +81,7 @@ $('import').onchange=async e=>{
 };
 $('wordExport').onclick=async()=>{
  const button=$('wordExport');button.disabled=true;$('feedback').textContent='Word-Dokument wird erstellt …';
- try{const {exportWord}=await import('./word-export.js?v=20261030-stufen');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
+ try{const {exportWord}=await import('./word-export.js?v=20261030-auftrag');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
 };
 
 let elapsed=0,started=null,interval=null;

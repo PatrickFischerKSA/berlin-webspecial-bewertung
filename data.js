@@ -9,14 +9,14 @@ export const criteria = [
     "indicators": [
       {
         "id": "p1-1",
-        "title": "Leitfrage mit überprüfbarer Antwort",
-        "accept": "Eine explizite Frage verbindet Roman und historische oder heutige Verhältnisse; eine ausdrücklich formulierte Antwort benennt einen Zusammenhang und verweist auf eine konkrete Produktstation.",
-        "reject": "Ein Thema als Überschrift oder eine offene Schlussfrage ohne eigene Antwort genügt nicht.",
+        "title": "Gegenwartsaufhänger mit begründeter Erkenntnisfrage",
+        "accept": "Der Auftakt benennt einen konkreten Gegenwartsbefund und entwickelt daraus eine Frage oder These zum Roman. Der Ausblick erklärt an einem untersuchten Befund, wie Roman und Geschichte den Blick auf diese Gegenwart verändern. Eine begründete offene Frage ist ebenso zulässig wie eine Antwort.",
+        "reject": "Ein aktuelles Bild ohne erklärten Bezug zum Roman oder eine pauschale Formel wie «auch heute gibt es Gewalt» genügt nicht. Keine Pflicht zu einer abschliessenden Antwort.",
         "levels": [
-          "Weder eine auf den Roman bezogene Leitfrage noch eine zuordenbare Antwort ist vorhanden.",
-          "Ein Romanthema oder eine Leitfrage ist benannt; eine eigene Antwort auf diese Frage fehlt.",
-          "Leitfrage und eigene Antwort liegen vor; der Zusammenhang mit historischen bzw. heutigen Verhältnissen oder die Zuordnung zu einer Produktstation wird nicht erklärt.",
-          "Eine explizite Frage verbindet Roman und historische oder heutige Verhältnisse; eine ausdrücklich formulierte Antwort benennt einen Zusammenhang und verweist auf eine konkrete Produktstation."
+          "Kein konkreter Gegenwartsbefund und keine auf den Roman bezogene Erkenntnisfrage oder These sind erkennbar.",
+          "Ein konkreter Gegenwartsbefund oder eine auf den Roman bezogene Erkenntnisfrage ist benannt; ihre Beziehung wird nicht erklärt.",
+          "Gegenwartsbefund und Romanfrage bzw. These sind ausdrücklich aufeinander bezogen; welche neue Sicht die Untersuchung eröffnet, wird am Schluss nicht aus einem konkreten Befund erklärt.",
+          "Der Auftakt benennt einen konkreten Gegenwartsbefund und entwickelt daraus eine Frage oder These zum Roman. Der Ausblick erklärt an einem untersuchten Befund, wie Roman und Geschichte den Blick auf diese Gegenwart verändern. Eine begründete offene Frage ist ebenso zulässig wie eine Antwort."
         ]
       },
       {
@@ -79,14 +79,14 @@ export const criteria = [
       },
       {
         "id": "p2-2",
-        "title": "Zweite literarische Analysekette",
-        "accept": "Eine andere genau verortete Passage wird mit Textbeobachtung, Wirkung und Deutungsfolge analysiert. Sie untersucht ein anderes Gestaltungsmittel oder prüft dieselbe Deutung an einem abweichenden Textbefund.",
-        "reject": "Ein zweites Zitat mit derselben unveränderten Erklärung oder blosses Wiederholen der ersten Passage genügt nicht.",
+        "title": "Zentrales Thema und freien Aspekt analytisch vertiefen",
+        "accept": "Eine zweite, von P2-1 unterscheidbare Romanstelle wird mit Textbeobachtung, Wirkung und Deutungsfolge analysiert. Daraus werden das zentrale Thema und der selbst gewählte Aspekt in ihrer Beziehung erklärt: Der Aspekt vertieft, differenziert oder hinterfragt das Thema. Auch ein thematischer freier Aspekt ist zulässig, wenn seine eigene Untersuchungsfrage erkennbar wird.",
+        "reject": "Blosse Themenwörter, Wiederholung der ersten Analyse oder ein freier Aspekt ohne erkennbare eigene Untersuchung genügen nicht.",
         "levels": [
-          "Es liegt keine von der ersten Analyse unterscheidbare zweite Textuntersuchung vor.",
-          "Eine zweite Passage ist bezeichnet und enthält eine zutreffende Textbeobachtung; Wirkung und Deutungsfolge fehlen.",
-          "Die zweite Beobachtung wird in ihrer Wirkung erklärt; ihre Deutungsfolge oder der Unterschied zur ersten Analysekette wird nicht ausgeführt.",
-          "Eine andere genau verortete Passage wird mit Textbeobachtung, Wirkung und Deutungsfolge analysiert. Sie untersucht ein anderes Gestaltungsmittel oder prüft dieselbe Deutung an einem abweichenden Textbefund."
+          "Keine von P2-1 unterscheidbare zweite Romanstelle wird mit einer zutreffenden Textbeobachtung auf das zentrale Thema oder den freien Aspekt bezogen.",
+          "Eine von P2-1 unterscheidbare zweite Romanstelle ist mit einer zutreffenden Textbeobachtung dem zentralen Thema oder freien Aspekt zugeordnet; Wirkung und Deutungsfolge werden nicht erklärt.",
+          "Eine zweite verortete Textanalyse erklärt Beobachtung und Wirkung für das Thema oder den freien Aspekt; wie beide zusammenhängen oder sich unterscheiden, wird nicht begründet.",
+          "Eine zweite, von P2-1 unterscheidbare Romanstelle wird mit Textbeobachtung, Wirkung und Deutungsfolge analysiert. Daraus werden das zentrale Thema und der selbst gewählte Aspekt in ihrer Beziehung erklärt: Der Aspekt vertieft, differenziert oder hinterfragt das Thema. Auch ein thematischer freier Aspekt ist zulässig, wenn seine eigene Untersuchungsfrage erkennbar wird."
         ]
       },
       {
@@ -161,14 +161,14 @@ export const criteria = [
       },
       {
         "id": "p3-4",
-        "title": "Dramaturgischer Wendepunkt mit Deutungsfolge",
-        "accept": "Ein später eingeführter Materialbefund verändert eine vorher aufgebaute Erwartung oder Sichtweise. Eine anschliessende Passage benennt, welche Deutung deshalb ergänzt oder revidiert werden muss.",
-        "reject": "Ein überraschendes Bild oder ein Handlungscliffhanger ohne ausgeführte Deutungsfolge genügt nicht.",
+        "title": "Eigenständige Dramaturgie mit Erkenntnisfortschritt",
+        "accept": "Die vorgesehene Leseroute führt vom konkreten Aufhänger über aufeinander aufbauende Gedanken zum Gegenwartsausblick. An zwei bezeichneten Übergängen lässt sich erklären, welchen neuen Befund die folgende Station einführt und wie er die bisherige Sicht erweitert, prüft oder verändert. Die Anordnung ergibt sich aus dem eigenen Stoff. Ein linearer Aufbau, eine freie Erkundungsroute oder ein Perspektivwechsel sind gleichwertige Wege.",
+        "reject": "Ein Nachbau der Moabit-Oberfläche, ein Pflicht-Cliffhanger oder eine überraschende Enthüllung ersetzt keine inhaltliche Gedankenfolge. Ein Wendepunkt und eine feste Stationszahl sind nicht vorgeschrieben.",
         "levels": [
-          "Es wird weder eine Erwartung aufgebaut noch eine spätere Veränderung dieser Sichtweise gestaltet.",
-          "Eine Erwartung und ein späterer abweichender Befund sind erkennbar; ihre Beziehung wird nicht gezeigt.",
-          "Der spätere Befund verändert eine zuvor aufgebaute Sichtweise; welche Deutung deshalb zu revidieren ist, wird nicht ausgeführt.",
-          "Ein später eingeführter Materialbefund verändert eine vorher aufgebaute Erwartung oder Sichtweise. Eine anschliessende Passage benennt, welche Deutung deshalb ergänzt oder revidiert werden muss."
+          "Eine nachvollziehbare inhaltliche Leseroute mit Auftakt, Vertiefung und Ausblick ist nicht erkennbar.",
+          "Auftakt, Vertiefung und Ausblick sind auffindbar; die Stationen wiederholen Aussagen oder reihen Material ohne erklärte Gedankenfolge aneinander.",
+          "Die Route führt von einem Aufhänger über neue Befunde zum Ausblick; an einer bezeichneten Übergangsstelle bleibt unklar, warum der nächste Befund die bisherige Sicht erweitert oder prüft.",
+          "Die vorgesehene Leseroute führt vom konkreten Aufhänger über aufeinander aufbauende Gedanken zum Gegenwartsausblick. An zwei bezeichneten Übergängen lässt sich erklären, welchen neuen Befund die folgende Station einführt und wie er die bisherige Sicht erweitert, prüft oder verändert. Die Anordnung ergibt sich aus dem eigenen Stoff. Ein linearer Aufbau, eine freie Erkundungsroute oder ein Perspektivwechsel sind gleichwertige Wege."
         ]
       }
     ]
@@ -236,19 +236,19 @@ export const criteria = [
     "part": "product",
     "title": "Berlin als untersuchter Raum",
     "weight": 5,
-    "aim": "Eigenes Bild-, Video- oder Tonmaterial übernimmt eine begründete Funktion für die Interpretation. Keine feste Anzahl oder Route.",
+    "aim": "Eigenes Berliner Bild-, Video- oder Tonmaterial trägt die Untersuchung: Herkunft, beobachtbares Detail, historischer Vergleich und begrenzte Deutung. Keine feste Anzahl oder Route.",
     "evidence": "Aufnahme mit Ort, Datum und Kommentar: Welche Behauptung stützt oder irritiert sie?",
     "indicators": [
       {
         "id": "p5-1",
-        "title": "Eigenes Material am identifizierten Ort",
-        "accept": "Mindestens eine eigene Aufnahme oder eine eigene dokumentierte Ortsbeobachtung ist im Produkt einem konkreten Berliner Ort und einem Aufnahmedatum zugeordnet; die Urheberschaft ist ausgewiesen.",
-        "reject": "Ein fremdes Bild, eine austauschbare Stadtansicht ohne Ortszuordnung oder eine reine Erinnerung ohne dokumentierte Beobachtung genügt nicht.",
+        "title": "Eigenes Berlin-Medium mit nachvollziehbarer Herkunft",
+        "accept": "Eine eigene Berliner Bild-, Video- oder Tonaufnahme ist einer untersuchten Produktstation, dem konkreten Ort, der Aufnahmezeit und der eigenen Urheberschaft zugeordnet. Das Medium gehört zum tatsächlich publizierten Produkt. Es gibt keine vorgeschriebene Anzahl, Route oder Kombination von Medienarten.",
+        "reject": "Schriftliche Ortsnotizen können die Analyse ergänzen, ersetzen aber das im Auftrag verlangte eigene Berlin-Medium nicht. Fremde oder generierte Berlin-Bilder zählen nicht als eigene Vor-Ort-Aufnahme.",
         "levels": [
-          "Kein eigenes, einem Berliner Ort zuordenbares Material oder dokumentierter Ortsbefund.",
-          "Ein eigener Ortsbefund ist vorhanden und der Ort erkennbar; Aufnahmedatum und ausdrückliche Urheberschaft fehlen.",
-          "Eigenes Material ist dem konkreten Ort zugeordnet; entweder Aufnahmedatum oder Urheberschaft ist angegeben, der jeweils andere Nachweis fehlt.",
-          "Mindestens eine eigene Aufnahme oder eine eigene dokumentierte Ortsbeobachtung ist im Produkt einem konkreten Berliner Ort und einem Aufnahmedatum zugeordnet; die Urheberschaft ist ausgewiesen."
+          "Keine eigene Berliner Bild-, Video- oder Tonaufnahme ist im Produkt vorhanden; ausschliesslich fremdes Material, Platzhalter oder schriftliche Ortsnotizen.",
+          "Eine eigene Berliner Bild-, Video- oder Tonaufnahme ist vorhanden; der konkrete Aufnahmeort oder die eigene Urheberschaft ist nicht nachvollziehbar.",
+          "Eigene Aufnahme, konkreter Berliner Ort und Urheberschaft sind nachvollziehbar; Aufnahmezeit oder Zuordnung zur untersuchten Produktstation fehlt.",
+          "Eine eigene Berliner Bild-, Video- oder Tonaufnahme ist einer untersuchten Produktstation, dem konkreten Ort, der Aufnahmezeit und der eigenen Urheberschaft zugeordnet. Das Medium gehört zum tatsächlich publizierten Produkt. Es gibt keine vorgeschriebene Anzahl, Route oder Kombination von Medienarten."
         ]
       },
       {

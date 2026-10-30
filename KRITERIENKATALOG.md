@@ -1,6 +1,19 @@
 # Abgestufter Bewertungskatalog für das Berlin Thriller Webspecial
 
-Fassung 4 vom 30. Oktober 2026
+Fassung 4.1 vom 30. Oktober 2026
+
+
+## Verbindlicher Bezug zum vollständigen Auftrag
+
+Massgeblich ist der vollständige Auftrag der Berlin-Thriller-Werkstatt, live abgeglichen am 30.10.2026. Die rasch generierte Moabit-Demo zeigt technische Möglichkeiten und ist ausdrücklich kein inhaltlicher, gestalterischer oder technischer Qualitätsmassstab. Ein Nachbau erfüllt den Auftrag nicht allein durch seine Oberfläche.
+
+Auftragsbezug: Fall und historischer Kontext → P6-1, P2-1 bis P2-4; zentrales Thema und freier Aspekt → P2-2, P1-3; Verhältnis zur Gegenwart → P1-1, P1-2, P1-4, P5-4; Recherche und Quellenkritik → P4; eigenes Berlin-Material → P5; Form folgt Aussage, Eigenständigkeit und Dramaturgie → P3; mobile Bedienbarkeit, Medienfunktion und Textalternativen → P6. Eine inhaltliche Perspektive gilt nur dann als vorhanden, wenn eine konkrete Aussage dazu auffindbar ist; eine Überschrift genügt nicht.
+
+Fünf Perspektiven sind verbindlich: Fall, historischer Kontext, zentrales Thema, freier Aspekt und Verhältnis zur Gegenwart. Reihenfolge, Gewichtung innerhalb der Geschichte und Form sind frei. Keine feste Medienanzahl, Route, Stationszahl, Pflichtinteraktion oder verpflichtende Enthüllung. Eigene Berliner Aufnahmen bleiben erforderlich; schriftliche Notizen allein ersetzen sie nicht. Der Ausblick darf eine aus der Untersuchung hergeleitete offene Frage enthalten.
+
+Dieses vertiefte Raster gewichtet Synthese, Analyse und kreative Erkenntnisleistung auf ausdrücklichen Wunsch mit 34 von 50 Produktpunkten. Die Auftragsseite nennt dagegen 10/8/8/8/8/8 Produktpunkte. Das ist eine offenzulegende Änderung der Gewichtung, keine wörtliche Übernahme. Ebenso gelten hier wie beauftragt zehn statt der dort genannten ca. acht Gesprächsminuten und zwei getrennte Noten. Vor der Bewertung muss genau diese Fassung bekanntgegeben sein; keine rückwirkende Anwendung.
+
+Quelle: https://berlin-thriller-werkstatt.patrickoliverfischer.chatgpt.site/
 
 ## Geltung und Dokumentation
 
@@ -48,12 +61,12 @@ Verbindet alle fünf Perspektiven durch eine tragfähige Leitfrage. Roman, histo
 
 Gewicht: 14 Punkte. Vier Teilkriterien mit je 0–3 Rohpunkten; gewichtete Teilpunkte = 14 × Rohpunkte / 12.
 
-#### P1-1 Leitfrage mit überprüfbarer Antwort
+#### P1-1 Gegenwartsaufhänger mit begründeter Erkenntnisfrage
 
-- **3/3 Rohpunkte:** Eine explizite Frage verbindet Roman und historische oder heutige Verhältnisse; eine ausdrücklich formulierte Antwort benennt einen Zusammenhang und verweist auf eine konkrete Produktstation.
-- **2/3 Rohpunkte:** Leitfrage und eigene Antwort liegen vor; der Zusammenhang mit historischen bzw. heutigen Verhältnissen oder die Zuordnung zu einer Produktstation wird nicht erklärt.
-- **1/3 Rohpunkte:** Ein Romanthema oder eine Leitfrage ist benannt; eine eigene Antwort auf diese Frage fehlt.
-- **0/3 Rohpunkte:** Weder eine auf den Roman bezogene Leitfrage noch eine zuordenbare Antwort ist vorhanden.
+- **3/3 Rohpunkte:** Der Auftakt benennt einen konkreten Gegenwartsbefund und entwickelt daraus eine Frage oder These zum Roman. Der Ausblick erklärt an einem untersuchten Befund, wie Roman und Geschichte den Blick auf diese Gegenwart verändern. Eine begründete offene Frage ist ebenso zulässig wie eine Antwort.
+- **2/3 Rohpunkte:** Gegenwartsbefund und Romanfrage bzw. These sind ausdrücklich aufeinander bezogen; welche neue Sicht die Untersuchung eröffnet, wird am Schluss nicht aus einem konkreten Befund erklärt.
+- **1/3 Rohpunkte:** Ein konkreter Gegenwartsbefund oder eine auf den Roman bezogene Erkenntnisfrage ist benannt; ihre Beziehung wird nicht erklärt.
+- **0/3 Rohpunkte:** Kein konkreter Gegenwartsbefund und keine auf den Roman bezogene Erkenntnisfrage oder These sind erkennbar.
 
 **Dokumentieren:** Fundstelle und fachliche Erklärung; bei 0–2 Punkten den konkret fehlenden Bestandteil zur nächsten Stufe.
 
@@ -99,12 +112,12 @@ Gewicht: 12 Punkte. Vier Teilkriterien mit je 0–3 Rohpunkten; gewichtete Teilp
 
 **Dokumentieren:** Fundstelle und fachliche Erklärung; bei 0–2 Punkten den konkret fehlenden Bestandteil zur nächsten Stufe.
 
-#### P2-2 Zweite literarische Analysekette
+#### P2-2 Zentrales Thema und freien Aspekt analytisch vertiefen
 
-- **3/3 Rohpunkte:** Eine andere genau verortete Passage wird mit Textbeobachtung, Wirkung und Deutungsfolge analysiert. Sie untersucht ein anderes Gestaltungsmittel oder prüft dieselbe Deutung an einem abweichenden Textbefund.
-- **2/3 Rohpunkte:** Die zweite Beobachtung wird in ihrer Wirkung erklärt; ihre Deutungsfolge oder der Unterschied zur ersten Analysekette wird nicht ausgeführt.
-- **1/3 Rohpunkte:** Eine zweite Passage ist bezeichnet und enthält eine zutreffende Textbeobachtung; Wirkung und Deutungsfolge fehlen.
-- **0/3 Rohpunkte:** Es liegt keine von der ersten Analyse unterscheidbare zweite Textuntersuchung vor.
+- **3/3 Rohpunkte:** Eine zweite, von P2-1 unterscheidbare Romanstelle wird mit Textbeobachtung, Wirkung und Deutungsfolge analysiert. Daraus werden das zentrale Thema und der selbst gewählte Aspekt in ihrer Beziehung erklärt: Der Aspekt vertieft, differenziert oder hinterfragt das Thema. Auch ein thematischer freier Aspekt ist zulässig, wenn seine eigene Untersuchungsfrage erkennbar wird.
+- **2/3 Rohpunkte:** Eine zweite verortete Textanalyse erklärt Beobachtung und Wirkung für das Thema oder den freien Aspekt; wie beide zusammenhängen oder sich unterscheiden, wird nicht begründet.
+- **1/3 Rohpunkte:** Eine von P2-1 unterscheidbare zweite Romanstelle ist mit einer zutreffenden Textbeobachtung dem zentralen Thema oder freien Aspekt zugeordnet; Wirkung und Deutungsfolge werden nicht erklärt.
+- **0/3 Rohpunkte:** Keine von P2-1 unterscheidbare zweite Romanstelle wird mit einer zutreffenden Textbeobachtung auf das zentrale Thema oder den freien Aspekt bezogen.
 
 **Dokumentieren:** Fundstelle und fachliche Erklärung; bei 0–2 Punkten den konkret fehlenden Bestandteil zur nächsten Stufe.
 
@@ -159,12 +172,12 @@ Gewicht: 8 Punkte. Vier Teilkriterien mit je 0–3 Rohpunkten; gewichtete Teilpu
 
 **Dokumentieren:** Fundstelle und fachliche Erklärung; bei 0–2 Punkten den konkret fehlenden Bestandteil zur nächsten Stufe.
 
-#### P3-4 Dramaturgischer Wendepunkt mit Deutungsfolge
+#### P3-4 Eigenständige Dramaturgie mit Erkenntnisfortschritt
 
-- **3/3 Rohpunkte:** Ein später eingeführter Materialbefund verändert eine vorher aufgebaute Erwartung oder Sichtweise. Eine anschliessende Passage benennt, welche Deutung deshalb ergänzt oder revidiert werden muss.
-- **2/3 Rohpunkte:** Der spätere Befund verändert eine zuvor aufgebaute Sichtweise; welche Deutung deshalb zu revidieren ist, wird nicht ausgeführt.
-- **1/3 Rohpunkte:** Eine Erwartung und ein späterer abweichender Befund sind erkennbar; ihre Beziehung wird nicht gezeigt.
-- **0/3 Rohpunkte:** Es wird weder eine Erwartung aufgebaut noch eine spätere Veränderung dieser Sichtweise gestaltet.
+- **3/3 Rohpunkte:** Die vorgesehene Leseroute führt vom konkreten Aufhänger über aufeinander aufbauende Gedanken zum Gegenwartsausblick. An zwei bezeichneten Übergängen lässt sich erklären, welchen neuen Befund die folgende Station einführt und wie er die bisherige Sicht erweitert, prüft oder verändert. Die Anordnung ergibt sich aus dem eigenen Stoff. Ein linearer Aufbau, eine freie Erkundungsroute oder ein Perspektivwechsel sind gleichwertige Wege.
+- **2/3 Rohpunkte:** Die Route führt von einem Aufhänger über neue Befunde zum Ausblick; an einer bezeichneten Übergangsstelle bleibt unklar, warum der nächste Befund die bisherige Sicht erweitert oder prüft.
+- **1/3 Rohpunkte:** Auftakt, Vertiefung und Ausblick sind auffindbar; die Stationen wiederholen Aussagen oder reihen Material ohne erklärte Gedankenfolge aneinander.
+- **0/3 Rohpunkte:** Eine nachvollziehbare inhaltliche Leseroute mit Auftakt, Vertiefung und Ausblick ist nicht erkennbar.
 
 **Dokumentieren:** Fundstelle und fachliche Erklärung; bei 0–2 Punkten den konkret fehlenden Bestandteil zur nächsten Stufe.
 
@@ -212,16 +225,16 @@ Gewicht: 6 Punkte. Vier Teilkriterien mit je 0–3 Rohpunkten; gewichtete Teilpu
 
 ### P5 Berlin als untersuchter Raum
 
-Eigenes Bild-, Video- oder Tonmaterial übernimmt eine begründete Funktion für die Interpretation. Keine feste Anzahl oder Route.
+Eigenes Berliner Bild-, Video- oder Tonmaterial trägt die Untersuchung: Herkunft, beobachtbares Detail, historischer Vergleich und begrenzte Deutung. Keine feste Anzahl oder Route.
 
 Gewicht: 5 Punkte. Vier Teilkriterien mit je 0–3 Rohpunkten; gewichtete Teilpunkte = 5 × Rohpunkte / 12.
 
-#### P5-1 Eigenes Material am identifizierten Ort
+#### P5-1 Eigenes Berlin-Medium mit nachvollziehbarer Herkunft
 
-- **3/3 Rohpunkte:** Mindestens eine eigene Aufnahme oder eine eigene dokumentierte Ortsbeobachtung ist im Produkt einem konkreten Berliner Ort und einem Aufnahmedatum zugeordnet; die Urheberschaft ist ausgewiesen.
-- **2/3 Rohpunkte:** Eigenes Material ist dem konkreten Ort zugeordnet; entweder Aufnahmedatum oder Urheberschaft ist angegeben, der jeweils andere Nachweis fehlt.
-- **1/3 Rohpunkte:** Ein eigener Ortsbefund ist vorhanden und der Ort erkennbar; Aufnahmedatum und ausdrückliche Urheberschaft fehlen.
-- **0/3 Rohpunkte:** Kein eigenes, einem Berliner Ort zuordenbares Material oder dokumentierter Ortsbefund.
+- **3/3 Rohpunkte:** Eine eigene Berliner Bild-, Video- oder Tonaufnahme ist einer untersuchten Produktstation, dem konkreten Ort, der Aufnahmezeit und der eigenen Urheberschaft zugeordnet. Das Medium gehört zum tatsächlich publizierten Produkt. Es gibt keine vorgeschriebene Anzahl, Route oder Kombination von Medienarten.
+- **2/3 Rohpunkte:** Eigene Aufnahme, konkreter Berliner Ort und Urheberschaft sind nachvollziehbar; Aufnahmezeit oder Zuordnung zur untersuchten Produktstation fehlt.
+- **1/3 Rohpunkte:** Eine eigene Berliner Bild-, Video- oder Tonaufnahme ist vorhanden; der konkrete Aufnahmeort oder die eigene Urheberschaft ist nicht nachvollziehbar.
+- **0/3 Rohpunkte:** Keine eigene Berliner Bild-, Video- oder Tonaufnahme ist im Produkt vorhanden; ausschliesslich fremdes Material, Platzhalter oder schriftliche Ortsnotizen.
 
 **Dokumentieren:** Fundstelle und fachliche Erklärung; bei 0–2 Punkten den konkret fehlenden Bestandteil zur nächsten Stufe.
 
@@ -472,4 +485,6 @@ Frühere binäre Urteile werden nicht automatisch als neue Rohpunkte übernommen
 
 ## Fachliche Grundlage
 
-Auftrag: [Berlin Thriller Werkstatt](https://berlin-thriller-werkstatt.patrickoliverfischer.chatgpt.site/), lokale Auftragsfassung vom 25.10.2026. Fachliche Bezugspunkte: [EDK-Rahmenlehrplan Deutsch S. 27–30](https://www.gr.ch/DE/institutionen/verwaltung/ekud/ahb/mittelschulen/dienstleistungen/wegm/Documents/Rahmenlehrplan-maturitatsschulen.pdf#page=28). Die konkrete Abstufung ist eine eigenständige Ausarbeitung für diesen Auftrag und keine amtliche Skala.
+Auftrag: [Berlin Thriller Werkstatt](https://berlin-thriller-werkstatt.patrickoliverfischer.chatgpt.site/), Live-Auftrag, abgeglichen am 30.10.2026. Fachliche Bezugspunkte: [EDK-Rahmenlehrplan Deutsch S. 27–30](https://www.gr.ch/DE/institutionen/verwaltung/ekud/ahb/mittelschulen/dienstleistungen/wegm/Documents/Rahmenlehrplan-maturitatsschulen.pdf#page=28). Die konkrete Abstufung ist eine eigenständige Ausarbeitung für diesen Auftrag und keine amtliche Skala.
+
+Die vier geänderten Teilkriterien P1-1, P2-2, P3-4 und P5-1 werden beim Einlesen von Dossiers der Rasterfassung 4 wieder geöffnet. Frühere Punktestufen, Belege und Begründungen bleiben dokumentiert. Abgeschlossene Bewertungen sind in ihrer ursprünglichen Fassung aufzubewahren; keine automatische rückwirkende Neubewertung.

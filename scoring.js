@@ -1,6 +1,6 @@
-import {normalizeSource,validateEvidence,validateOpportunities,evidenceValid} from './evidence.js?v=20261030-stufen';
-import {validateTranscript} from './transcript.js?v=20261030-stufen';
-export const RUBRIC_VERSION='Abgestuftes Bewertungsraster 4 · 30.10.2026';
+import {normalizeSource,validateEvidence,validateOpportunities,evidenceValid} from './evidence.js?v=20261030-auftrag';
+import {validateTranscript} from './transcript.js?v=20261030-auftrag';
+export const RUBRIC_VERSION='Auftragsabgeglichenes Bewertungsraster 4.1 · 30.10.2026';
 export const STATUS_POINTS={no:0,limited:1,partial:2,yes:3};
 export function rawPoints(observation){return STATUS_POINTS[observation?.status]??null;}
 export function scoreOptions(criterion,indicator){return [3,2,1,0].map(n=>({value:['no','limited','partial','yes'][n],label:`${n}/3 Rohpunkte · ${(criterion.weight*n/12).toLocaleString('de-CH',{maximumFractionDigits:3})} P.`,description:indicator.levels[n]}));}
@@ -34,6 +34,8 @@ export function validateImport(raw,criteria){
    if(!o||!(raw.version<4?['','yes','no']:['','yes','no','limited','partial']).includes(o.status)||typeof o.evidence!=='string'||o.evidence.length>20000)throw Error('Ungültiger Einzelnachweis.');
    if(o.gap!==undefined&&(typeof o.gap!=='string'||o.gap.length>20000))throw Error('Ungültige Begründung zur nächsten Stufe.');
    out.observations[i.id]={gap:o.gap||'',status:raw.version<4?'':o.status,evidence:o.evidence};
+   if(['yes','partial','limited','no'].includes(o.previousScore))out.observations[i.id].previousScore=o.previousScore;
+   if(raw.version===4&&raw.rubric==='Abgestuftes Bewertungsraster 4 · 30.10.2026'&&['p1-1','p2-2','p3-4','p5-1'].includes(i.id)&&o.status){out.observations[i.id].previousScore=o.status;out.observations[i.id].status='';}
    const prior=raw.version<4?o.status:o.legacyStatus;if(['yes','no'].includes(prior))out.observations[i.id].legacyStatus=prior;
   }
  }

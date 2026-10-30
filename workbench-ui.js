@@ -1,6 +1,6 @@
-import {scoreOptions} from './scoring.js?v=20261030-stufen';
-import {findMatches,passage,evidenceValid,citationLabel,auditDossier,replaceSource,newRevision} from './evidence.js?v=20261030-stufen';
-import {productFromText,fetchProduct} from './source-import.js?v=20261030-stufen';
+import {scoreOptions} from './scoring.js?v=20261030-auftrag';
+import {findMatches,passage,evidenceValid,citationLabel,auditDossier,replaceSource,newRevision} from './evidence.js?v=20261030-auftrag';
+import {productFromText,fetchProduct} from './source-import.js?v=20261030-auftrag';
 export function initWorkbench({criteria,getState,onChange,onNavigate}){
  const $=id=>document.getElementById(id),el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
  let active='product',pending=null,renderKey='',searchData={product:{matches:[],total:0},transcript:{matches:[],total:0}},queryTimer,searchRevision='',currentDossier=null;
@@ -58,6 +58,7 @@ export function initWorkbench({criteria,getState,onChange,onNavigate}){
   const target=all.find(i=>i.id===$('targetIndicator').value),o=state().observations[target.id]||{},q=state().opportunities?.[target.id]||{};
   $('targetRule').textContent=[3,2,1,0].map(n=>n+'/3 Rohpunkte: '+target.levels[n]).join('\n\n');
   if($('reviewStatus').dataset.target!==target.id){$('reviewStatus').replaceChildren(new Option('Offen / nicht geprüft',''));for(const option of scoreOptions(target,target))$('reviewStatus').append(new Option(option.label,option.value));$('reviewStatus').dataset.target=target.id;}
+  if(o.previousScore)$('targetRule').textContent+='\n\nFrühere Punktestufe vor dem Auftragsabgleich: '+({yes:3,partial:2,limited:1,no:0}[o.previousScore])+'/3. Geändertes Kriterium neu prüfen.';
   if(o.legacyStatus)$('targetRule').textContent+='\n\nFrüheres binäres Urteil: '+(o.legacyStatus==='yes'?'nachgewiesen':'nicht nachgewiesen')+'. Bitte neu einstufen.';
   updateValue('reviewStatus',o.status||'');updateValue('reviewReason',o.evidence||'');updateValue('reviewGap',o.gap||'');$('oralOpportunity').hidden=target.part!=='oral';$('opportunityOpened').checked=q.opened||false;updateValue('opportunityQuestion',q.question||'');updateValue('opportunityTime',q.time||'');updateValue('opportunityHelp',q.help||'');renderReferences();
  }

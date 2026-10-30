@@ -40,7 +40,7 @@ GitHub Pages verwendet **Settings → Pages → Source → GitHub Actions**. Der
 
 ## Grundlage
 
-Lokale Auftragsfassung der Berlin-Thriller-Werkstatt vom 25.10.2026; bei der ersten Erstellung war die Live-Seite nicht abrufbar. Fachlicher Bezug: EDK-Rahmenlehrplan Deutsch S. 27–30. Die konkretisierten Nachweise und Gewichtungen sind die eigenständige Ausarbeitung für diesen Auftrag und keine amtliche Skala.
+Vollständiger Live-Auftrag der Berlin-Thriller-Werkstatt, abgeglichen am 30.10.2026. Die Moabit-Demo ist ausschliesslich technische Anschauung und kein Qualitätsmassstab. Siehe [Auftragsabgleich](AUFTRAGSABGLEICH.md) mit Zuordnung der fünf Perspektiven und ausdrücklich ausgewiesenen Änderungen an Gewichtung, Prüfungsdauer und Notenbildung. Fachlicher Bezug: EDK-Rahmenlehrplan Deutsch S. 27–30. Die konkretisierten Nachweise und Gewichtungen sind die eigenständige Ausarbeitung für diesen Auftrag und keine amtliche Skala.
 
 ## Belegarbeitsplatz ohne KI
 
@@ -62,3 +62,5 @@ JSON enthält die Quellen und Zuordnungen (maximal 400 Belege à 15’000 Zeiche
 ## Migration auf Punktestufen
 
 Dateiversionen 1–3 bleiben lesbar. Frühere binäre Einzelurteile werden als `legacyStatus` erhalten; ihre Belege, Notizen, Quelltexte und Zuordnungen bleiben bestehen. Die neuen Punktestufen beginnen offen und müssen fachlich neu beurteilt werden. Keine stille Umrechnung alter Ablehnungen in 0 Rohpunkte. Neue Version-4-Dateien speichern Teilstufen und den Abstand zur nächsten Stufe.
+
+Die vier geänderten Teilkriterien P1-1, P2-2, P3-4 und P5-1 werden beim Einlesen von Dossiers der Rasterfassung 4 wieder geöffnet. Frühere Punktestufen, Belege und Begründungen bleiben dokumentiert. Abgeschlossene Bewertungen sind in ihrer ursprünglichen Fassung aufzubewahren; keine automatische rückwirkende Neubewertung.
