@@ -2,11 +2,11 @@
 
 Statische Anwendung für die Produktbewertung und eine zehnminütige mündliche Einzelprüfung. Produktnote auf 50 Punkte und Prüfungsnote auf 28 Punkte werden unabhängig berechnet. 34 Produktpunkte gelten Synthese, Analyse und kreativer Erkenntnisleistung.
 
-## Bewertung mit dokumentierten Nachweisen
+## Abgestufte Bewertung mit dokumentierten Belegen
 
-Das Nachweisraster 2 ersetzt die freie Wahl einer Stufe durch 40 überprüfbare Nachweise: vier je Kriterium. Jeder Nachweis besitzt eine genaue Erfüllungsregel und eine Abgrenzung mit Gegenbeispielen. Nur ein begründetes Urteil mit Fundstelle bzw. benannter Fehlstelle gilt als abgeschlossen. Jeder bestätigte Nachweis zählt Gewicht / 4 Punkte; keine halben Nachweise oder Zusatzpunkte. Die Reihenfolge ist keine Voraussetzungskette.
+Rasterfassung 4 vom 30.10.2026: Jedes der 40 Teilkriterien hat vier eigene Deskriptoren für 0, 1, 2 und 3 Rohpunkte. Die höchste vollständig belegte Stufe wird gewählt. Vier Teilkriterien ergeben maximal 12 Rohpunkte je Hauptkriterium. Gewichtete Punkte = Hauptkriteriumsgewicht × Rohpunktsumme / 12. Zwischenrechnungen bleiben ungerundet; nur die beiden Noten werden auf eine Dezimalstelle gerundet.
 
-Die Anwendung prüft die Vollständigkeit der Einträge. Ob der Beleg die geforderte Leistung tatsächlich zeigt, beurteilt die Prüfperson anhand der Regel. Streitfälle bleiben bis zur Klärung offen. Die vollständigen Regeln, Stichproben, Fehlertypen und Gesprächsgelegenheiten stehen im [Kriterienkatalog](KRITERIENKATALOG.md) und im Bereich **Massstab & Ablauf**. Vor der Leistungserbringung bekanntgeben, nicht rückwirkend anwenden.
+Bei jedem Urteil sind Fundstelle und fachliche Erklärung erforderlich; bei 0–2 Punkten zusätzlich der konkrete Abstand zur nächsthöheren Stufe. Ohne diesen Eintrag bleibt die Einstufung offen. Das Tool prüft die Dokumentation, nicht deren fachliche Richtigkeit. Die vollständigen Einstufungs-, Fehler- und Grenzfallregeln stehen im [Kriterienkatalog](KRITERIENKATALOG.md) und unter Massstab & Ablauf. Vorab bekanntgeben und nicht rückwirkend anwenden. Absolute Rekursfestigkeit wird nicht zugesichert; schulische Prüfungs- und Verfahrensvorgaben müssen separat geprüft werden.
 
 ## Word Export
 
@@ -20,7 +20,7 @@ Unter **Einzelprüfung** TXT, Markdown, SRT oder VTT in UTF-8 einlesen (bis 1 MB
 
 ## Daten und ältere Dossiers
 
-Das aktuelle Dossier wird lokal im Browser unter `berlin-rubric-v1` gespeichert. Der Schlüssel bleibt aus Kompatibilitätsgründen erhalten, die neue JSON-Dateiversion ist 3. Alte Dateien der Version 1 werden eingelesen: frühere Stufen bleiben als frühere Urteile sichtbar, Notizen und Transkripte erhalten. Neue Nachweise bleiben offen, weil aus einer früheren Stufe keine vier Belege rekonstruiert werden können. Dateien der Version 2 enthalten die Einzelurteile und werden daraus neu berechnet; Version 3 ergänzt Produkttext, verknüpfte Originalbelege und die dokumentierten Antwortgelegenheiten.
+Das aktuelle Dossier wird lokal im Browser unter `berlin-rubric-v1` gespeichert. Der Schlüssel bleibt aus Kompatibilitätsgründen erhalten, die neue JSON-Dateiversion ist 4. Alte Dateien der Version 1 werden eingelesen: frühere Stufen bleiben als frühere Urteile sichtbar, Notizen und Transkripte erhalten. Neue Nachweise bleiben offen, weil aus einer früheren Stufe keine vier Belege rekonstruiert werden können. Dateien der Versionen 2 und 3 behalten ihre früheren Ja/Nein-Urteile als Dokumentation; die neue Punktevergabe bleibt bis zur erneuten Prüfung offen. Version 3 ergänzt Produkttext, verknüpfte Originalbelege und die dokumentierten Antwortgelegenheiten.
 
 Ein Dossier je Person anlegen. Gruppenbewertung separat exportieren und für weitere Personen importieren; dabei bleiben individuelle Prüfung, Transkript und Zeitmarken erhalten. Gruppenexporte enthalten keine individuellen Daten. Vollständige JSON-Sicherungen bis 32 MB lassen sich wieder laden. Regelmässig sichern: Löschen der Browserdaten entfernt das lokale Dossier. Keine Personendaten, Mitschnitte, Transkripte oder Bewertungsdateien ins öffentliche Repository hochladen.
 
@@ -58,3 +58,7 @@ Belege werden als Ausschnitte mit Textposition und Quellrevision gespeichert. Ei
 Die Bewertungskontrolle trennt offene Urteile, fehlende Begründungen, veränderte Beleggrundlagen, undokumentierte mündliche Antwortgelegenheiten und manuelle Fundstellenkontrolle. Ein fehlender Textbeleg ist ein Prüfhinweis, kein automatischer Abzug: auch Romanstellen ausserhalb des importierten Auszugs, technische Tests und eigene Medien können manuell dokumentiert werden. Die Kontrolle bewertet keine Interpretationsqualität und keine sachliche Wahrheit.
 
 JSON enthält die Quellen und Zuordnungen (maximal 400 Belege à 15’000 Zeichen). Gruppenexport enthält Produkttext und produktbezogene Produktbelege, aber weder Transkriptbelege noch die individuellen Antwortgelegenheiten. Ein Gruppenimport erhält individuelle Daten; auf einen ersetzten Produkttext bezogene individuelle Belege werden nötigenfalls als veraltet markiert. Alte Dateiversionen 1 und 2 bleiben lesbar.
+
+## Migration auf Punktestufen
+
+Dateiversionen 1–3 bleiben lesbar. Frühere binäre Einzelurteile werden als `legacyStatus` erhalten; ihre Belege, Notizen, Quelltexte und Zuordnungen bleiben bestehen. Die neuen Punktestufen beginnen offen und müssen fachlich neu beurteilt werden. Keine stille Umrechnung alter Ablehnungen in 0 Rohpunkte. Neue Version-4-Dateien speichern Teilstufen und den Abstand zur nächsten Stufe.

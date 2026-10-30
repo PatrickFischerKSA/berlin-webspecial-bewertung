@@ -1,9 +1,10 @@
-import {findMatches,passage,evidenceValid,citationLabel,auditDossier,replaceSource,newRevision} from './evidence.js?v=20261027-belege';
-import {productFromText,fetchProduct} from './source-import.js?v=20261027-belege';
+import {scoreOptions} from './scoring.js?v=20261030-stufen';
+import {findMatches,passage,evidenceValid,citationLabel,auditDossier,replaceSource,newRevision} from './evidence.js?v=20261030-stufen';
+import {productFromText,fetchProduct} from './source-import.js?v=20261030-stufen';
 export function initWorkbench({criteria,getState,onChange,onNavigate}){
  const $=id=>document.getElementById(id),el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
  let active='product',pending=null,renderKey='',searchData={product:{matches:[],total:0},transcript:{matches:[],total:0}},queryTimer,searchRevision='',currentDossier=null;
- const all=criteria.flatMap(c=>c.indicators.map(i=>({...i,part:c.part,criterion:c.title})));
+ const all=criteria.flatMap(c=>c.indicators.map(i=>({...i,part:c.part,criterion:c.title,weight:c.weight})));
  for(const c of criteria){const group=el('optgroup');group.label=(c.part==='product'?'Produkt · ':'Prüfung · ')+c.title;for(const i of c.indicators)group.append(new Option(i.id.toUpperCase()+' · '+i.title,i.id));$('targetIndicator').append(group);}
  const state=()=>getState(),source=()=>state()[active]||{text:'',filename:''};
  function updateValue(id,value){if($(id).value!==value)$(id).value=value;}
@@ -55,10 +56,12 @@ export function initWorkbench({criteria,getState,onChange,onNavigate}){
  }
  function renderReview(){
   const target=all.find(i=>i.id===$('targetIndicator').value),o=state().observations[target.id]||{},q=state().opportunities?.[target.id]||{};
-  $('targetRule').textContent=target.accept+'\n\nGenügt nicht: '+target.reject;
-  updateValue('reviewStatus',o.status||'');updateValue('reviewReason',o.evidence||'');$('oralOpportunity').hidden=target.part!=='oral';$('opportunityOpened').checked=q.opened||false;updateValue('opportunityQuestion',q.question||'');updateValue('opportunityTime',q.time||'');updateValue('opportunityHelp',q.help||'');renderReferences();
+  $('targetRule').textContent=[3,2,1,0].map(n=>n+'/3 Rohpunkte: '+target.levels[n]).join('\n\n');
+  if($('reviewStatus').dataset.target!==target.id){$('reviewStatus').replaceChildren(new Option('Offen / nicht geprüft',''));for(const option of scoreOptions(target,target))$('reviewStatus').append(new Option(option.label,option.value));$('reviewStatus').dataset.target=target.id;}
+  if(o.legacyStatus)$('targetRule').textContent+='\n\nFrüheres binäres Urteil: '+(o.legacyStatus==='yes'?'nachgewiesen':'nicht nachgewiesen')+'. Bitte neu einstufen.';
+  updateValue('reviewStatus',o.status||'');updateValue('reviewReason',o.evidence||'');updateValue('reviewGap',o.gap||'');$('oralOpportunity').hidden=target.part!=='oral';$('opportunityOpened').checked=q.opened||false;updateValue('opportunityQuestion',q.question||'');updateValue('opportunityTime',q.time||'');updateValue('opportunityHelp',q.help||'');renderReferences();
  }
- for(const id of ['reviewStatus','reviewReason'])$(id).addEventListener('input',()=>{const target=$('targetIndicator').value;state().observations[target]={status:$('reviewStatus').value,evidence:$('reviewReason').value};onChange();});
+ for(const id of ['reviewStatus','reviewReason','reviewGap'])$(id).addEventListener('input',()=>{const target=$('targetIndicator').value;state().observations[target]={...state().observations[target],status:$('reviewStatus').value,evidence:$('reviewReason').value,gap:$('reviewGap').value};onChange();});
  for(const id of ['opportunityOpened','opportunityQuestion','opportunityTime','opportunityHelp'])$(id).addEventListener('input',()=>{state().opportunities[$('targetIndicator').value]={opened:$('opportunityOpened').checked,question:$('opportunityQuestion').value,time:$('opportunityTime').value,help:$('opportunityHelp').value};onChange();});
  $('assignEvidence').onclick=()=>{
   if(!pending||!evidenceValid(pending,state()))return;

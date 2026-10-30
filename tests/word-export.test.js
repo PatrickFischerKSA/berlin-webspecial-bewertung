@@ -18,15 +18,15 @@ function zipText(buffer,target){
 }
 test('Word export contains all 40 rules, decisions and separate grades',async()=>{
  const state=emptyDossier();state.meta.person='Muster & <Test>';state.ratings={p1:4};
- for(const c of criteria)for(const i of c.indicators)state.observations[i.id]={status:'yes',evidence:'Beleg '+i.id};
- state.observations['o1-1']={status:'no',evidence:'Antwort geprüft; konkret fehlender Textbezug'};
+ for(const c of criteria)for(const i of c.indicators)state.observations[i.id]={status:'yes',gap:'Konkret benannter fehlender Bestandteil der nächsten Stufe',evidence:'Beleg '+i.id};
+ state.observations['o1-1']={status:'no',gap:'Konkret benannter fehlender Bestandteil der nächsten Stufe',evidence:'Antwort geprüft; konkret fehlender Textbezug'};
  const buffer=await Packer.toBuffer(buildAssessmentDocument(state)),xml=zipText(buffer,'word/document.xml');
  assert.ok(xml.includes('Muster &amp; &lt;Test&gt;'));assert.ok(xml.includes('50 / 50'));assert.ok(xml.includes('26 / 28'));assert.ok(xml.includes('5.6'));assert.ok(xml.includes('6.0'));
  for(const c of criteria)for(const i of c.indicators){assert.ok(xml.includes(i.id.toUpperCase().replace('-',' ')));assert.ok(xml.includes('Beleg '+i.id)||i.id==='o1-1');}
- assert.ok(xml.includes('Nicht nachgewiesen'));assert.ok(zipText(buffer,'[Content_Types].xml').includes('wordprocessingml.document.main+xml'));
+ assert.ok(xml.includes('0/3 Rohpunkte'));assert.ok(zipText(buffer,'[Content_Types].xml').includes('wordprocessingml.document.main+xml'));
 });
 test('Word export keeps open assessments open and transcript opt-in',async()=>{
- const state=emptyDossier();state.ratings=Object.fromEntries(criteria.map(c=>[c.id,4]));state.observations['p1-1']={status:'yes',evidence:''};state.transcript={text:'VERTRAULICHES TESTTRANSKRIPT',filename:'test.txt'};
+ const state=emptyDossier();state.ratings=Object.fromEntries(criteria.map(c=>[c.id,4]));state.observations['p1-1']={status:'yes',gap:'Konkret benannter fehlender Bestandteil der nächsten Stufe',evidence:''};state.transcript={text:'VERTRAULICHES TESTTRANSKRIPT',filename:'test.txt'};
  const without=zipText(await Packer.toBuffer(buildAssessmentDocument(state)),'word/document.xml');
  assert.ok(without.includes('Offen'));assert.ok(without.includes('Begründung fehlt'));assert.ok(!without.includes('6.0'));assert.ok(!without.includes('VERTRAULICHES TESTTRANSKRIPT'));
  const withTranscript=zipText(await Packer.toBuffer(buildAssessmentDocument(state,{includeTranscript:true})),'word/document.xml');assert.ok(withTranscript.includes('VERTRAULICHES TESTTRANSKRIPT'));

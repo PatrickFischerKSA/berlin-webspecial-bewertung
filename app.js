@@ -1,8 +1,8 @@
-import {initWorkbench} from './workbench-ui.js?v=20261027-belege';
-import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261027-belege';
-import {criteria,questions,books} from './data.js?v=20261027-belege';
-import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup} from './scoring.js?v=20261027-belege';
-import {readTranscript, validateTranscript} from './transcript.js?v=20261027-belege';
+import {initWorkbench} from './workbench-ui.js?v=20261030-stufen';
+import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261030-stufen';
+import {criteria,questions,books} from './data.js?v=20261030-stufen';
+import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261030-stufen';
+import {readTranscript, validateTranscript} from './transcript.js?v=20261030-stufen';
 const $=id=>document.getElementById(id),key='berlin-rubric-v1';
 let state=emptyDossier();
 let workbench=null;
@@ -18,19 +18,19 @@ for(const c of criteria){
  const result=node('p','','criterion-score');result.id='desc-'+c.id;result.setAttribute('aria-live','polite');card.append(result);
  for(const i of c.indicators){
   const box=node('fieldset',undefined,'indicator');box.append(node('legend',i.id.toUpperCase()+' · '+i.title));
-  box.append(node('p',i.accept,'accept-rule'),node('p','Genügt nicht: '+i.reject,'reject-rule'));
+  const levels=node('ol',undefined,'point-levels');levels.reversed=true;levels.start=3;for(let n=3;n>=0;n--){const li=node('li');li.value=n;li.append(node('strong',n+'/3 Rohpunkte: '),document.createTextNode(i.levels[n]));levels.append(li);}box.append(levels);
   const row=node('div',undefined,'indicator-inputs'),statusLabel=node('label','Urteil'),select=node('select');select.id='check-'+i.id;select.setAttribute('aria-label',i.id.toUpperCase()+' Urteil');
-  select.append(new Option('Offen / nicht geprüft',''),new Option('Nachgewiesen · '+(c.weight/4).toLocaleString('de-CH')+' P.','yes'),new Option('Nicht nachgewiesen · 0 P.','no'));statusLabel.append(select);
-  const evidenceLabel=node('label','Fundstelle und Erklärung / fehlender Bestandteil'),note=node('textarea');note.id='evidence-'+i.id;note.rows=2;note.maxLength=20000;note.placeholder=c.part==='oral'?'Zeitmarke + Antwortkern; bei Nichterfüllung Frage und konkret fehlendes Element.':'Produktstation / Quellenstelle + Befund; bei Nichterfüllung geprüftes Material und konkret fehlendes Element.';note.setAttribute('aria-label',i.id.toUpperCase()+' Beleg oder Fehlstelle');evidenceLabel.append(note);row.append(statusLabel,evidenceLabel);box.append(row);card.append(box);
-  const update=()=>{state.observations[i.id]={status:select.value,evidence:note.value};state.ratings=deriveRatings(criteria,state.observations,state);updateDescriptor(c);renderResults();save();workbench?.refresh();};
-  select.addEventListener('change',update);note.addEventListener('input',update);
+  select.append(new Option('Offen / nicht geprüft',''));for(const option of scoreOptions(c,i))select.append(new Option(option.label,option.value));statusLabel.append(select);
+  const evidenceLabel=node('label','Fundstelle und Erklärung / fehlender Bestandteil'),note=node('textarea');note.id='evidence-'+i.id;note.rows=2;note.maxLength=20000;note.placeholder=c.part==='oral'?'Zeitmarke + Antwortkern; bei Nichterfüllung Frage und konkret fehlendes Element.':'Produktstation / Quellenstelle + Befund; bei Nichterfüllung geprüftes Material und konkret fehlendes Element.';note.setAttribute('aria-label',i.id.toUpperCase()+' Beleg oder Fehlstelle');evidenceLabel.append(note);row.append(statusLabel,evidenceLabel);box.append(row);const gapLabel=node('label','Fehlender Bestandteil zur nächsthöheren Punktestufe (bei 0–2 erforderlich)'),gap=node('textarea');gap.id='gap-'+i.id;gap.rows=2;gap.maxLength=20000;gap.setAttribute('aria-label',i.id.toUpperCase()+' Abstand zur nächsten Stufe');gapLabel.append(gap);box.append(gapLabel);const previous=node('p','','warning');previous.id='previous-'+i.id;previous.hidden=true;box.append(previous);card.append(box);
+  const update=()=>{state.observations[i.id]={...state.observations[i.id],status:select.value,evidence:note.value,gap:gap.value};state.ratings=deriveRatings(criteria,state.observations,state);updateDescriptor(c);renderResults();save();workbench?.refresh();};
+  select.addEventListener('change',update);note.addEventListener('input',update);gap.addEventListener('input',update);
   const links=node('div',undefined,'linked-evidence');links.id='linked-'+i.id;const linkButton=node('button','Originalbeleg suchen / zuordnen','secondary');linkButton.type='button';linkButton.onclick=()=>{showPanel('workbench');workbench.openIndicator(i.id);};box.append(links,linkButton);
  }
  const noteLabel=node('label','Ergänzende Begründung / Transkriptbelege'),note=node('textarea');note.id='note-'+c.id;note.rows=2;note.maxLength=20000;noteLabel.append(note);card.append(noteLabel);$(c.part+'Criteria').append(card);
  note.addEventListener('input',()=>{state.notes[c.id]=note.value;save();});
 }
 function updateDescriptor(c){
- const r=criterionResult(c,state.observations,state);$('desc-'+c.id).textContent=`${r.yes} von 4 Nachweisen bestätigt · ${r.decided} von 4 abschliessend geprüft · ${r.complete?r.points.toLocaleString('de-CH')+' / '+c.weight+' Punkte':'Kriterium noch offen'}`;
+ const r=criterionResult(c,state.observations,state);$('desc-'+c.id).textContent=`${r.raw}/12 Rohpunkte · ${r.decided} von 4 abschliessend geprüft · ${r.complete?r.points.toLocaleString('de-CH')+' / '+c.weight+' Punkte':'Kriterium noch offen'}`;
  const legacy=$('legacy-'+c.id),old=state.legacyRatings[c.id];legacy.hidden=old===undefined||r.complete;if(!legacy.hidden)legacy.textContent=`Frühere Bewertung: ${old}/4. Sie stammt aus dem alten Raster und wird nicht umgerechnet. Die bisherigen Notizen bleiben erhalten; die vier neuen Nachweise müssen einzeln geprüft werden.`;
 }
 questions.forEach(([cat,q,follow],i)=>{const box=node('article',undefined,'question'),label=node('label'),check=node('input');check.type='checkbox';check.id='q'+i;label.append(check,node('small',cat+' · zur Prüfung auswählen'));box.append(label,node('p',q),node('p','Nachfrage: '+follow));$('questions').append(box);check.addEventListener('change',()=>{state.selected=check.checked?[...new Set([...state.selected,i])]:state.selected.filter(n=>n!==i);save();});});
@@ -38,7 +38,7 @@ for(const id of metaKeys)$(id).addEventListener('input',()=>{state.meta[id]=$(id
 function hydrate(){
  for(const id of metaKeys)$(id).value=state.meta[id]||'';
  for(const c of criteria){
-  for(const i of c.indicators){const o=state.observations[i.id];$('check-'+i.id).value=o?.status||'';$('evidence-'+i.id).value=o?.evidence||'';renderLinkedEvidence(i.id);}
+  for(const i of c.indicators){const o=state.observations[i.id];$('check-'+i.id).value=o?.status||'';$('evidence-'+i.id).value=o?.evidence||'';$('gap-'+i.id).value=o?.gap||'';renderLinkedEvidence(i.id);const previous=$('previous-'+i.id);previous.hidden=!o?.legacyStatus;previous.textContent=o?.legacyStatus?'Früheres binäres Urteil: '+(o.legacyStatus==='yes'?'nachgewiesen':'nicht nachgewiesen')+'. Keine automatische Umrechnung; neue Punktestufe anhand der Deskriptoren festlegen.':'';}
   $('note-'+c.id).value=state.notes[c.id]||'';updateDescriptor(c);
  }
  questions.forEach((_,i)=>$('q'+i).checked=state.selected.includes(i));renderMarks();renderResults();renderTranscript();workbench?.refresh();
@@ -53,8 +53,8 @@ function renderResults(){
   grid.append(card);
  }
  root.append(grid);
- const missing=criteria.flatMap(c=>c.indicators).filter(i=>['yes','no'].includes(state.observations[i.id]?.status)&&!indicatorDecided(state.observations[i.id]));
- if(missing.length)root.append(node('p','Urteil ohne Begründung zählt noch nicht als geprüft: '+missing.map(i=>i.id.toUpperCase()).join(' · '),'warning'));
+ const missing=criteria.flatMap(c=>c.indicators).filter(i=>rawPoints(state.observations[i.id])!==null&&!indicatorDecided(state.observations[i.id]));
+ if(missing.length)root.append(node('p','Punkteentscheid ohne vollständige Begründung oder Stufenabstand bleibt offen: '+missing.map(i=>i.id.toUpperCase()).join(' · '),'warning'));
  const issues=auditDossier(criteria,state);
  root.append(node('p',`Bewertungskontrolle: ${issues.filter(i=>i.type==='stale').length} veränderte Beleggrundlagen, ${issues.filter(i=>i.type==='opportunity').length} undokumentierte Antwortgelegenheiten und ${issues.filter(i=>i.type==='manual').length} manuelle Belegkontrollen. Hinweise im Belegarbeitsplatz prüfen.`,'warning'));
  const auditButton=node('button','Bewertungskontrolle öffnen','secondary');auditButton.onclick=()=>{showPanel('workbench');document.getElementById('auditSummary').scrollIntoView({block:'center'});};root.append(auditButton);
@@ -76,12 +76,12 @@ $('import').onchange=async e=>{
   const raw=JSON.parse(await file.text()),imported=validateImport(raw,criteria);
   if(!confirm(raw.kind==='group'?'Produktbewertung und Gruppendaten ersetzen? Individuelle Prüfung bleibt erhalten.':'Aktuelles Dossier ersetzen? Vorher bei Bedarf exportieren.'))return;
   if(raw.kind==='group')mergeGroup(state,imported,criteria);else{state=imported;stopClock();elapsed=0;tick();}
-  hydrate();save();$('feedback').textContent=raw.version===1?'Altes Dossier geladen. Frühere Stufen und Notizen bleiben sichtbar; die neuen Nachweise sind noch offen.':'Datei erfolgreich geladen.';
+  hydrate();save();$('feedback').textContent=raw.version<4?'Altes Dossier geladen. Frühere Urteile, Belege und Notizen bleiben sichtbar; die neuen Punktestufen sind noch offen.':'Datei erfolgreich geladen.';
  }catch(err){$('feedback').textContent='Import fehlgeschlagen: '+err.message;}finally{e.target.value='';}
 };
 $('wordExport').onclick=async()=>{
  const button=$('wordExport');button.disabled=true;$('feedback').textContent='Word-Dokument wird erstellt …';
- try{const {exportWord}=await import('./word-export.js?v=20261027-belege');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
+ try{const {exportWord}=await import('./word-export.js?v=20261030-stufen');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
 };
 
 let elapsed=0,started=null,interval=null;

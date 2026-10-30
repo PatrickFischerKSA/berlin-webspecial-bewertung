@@ -52,7 +52,8 @@ export function auditDossier(criteria,state){
   const o=state.observations[i.id],refs=(state.evidence||[]).filter(e=>e.indicatorId===i.id);
   if(!o?.status)issues.push({type:'open',id:i.id,text:'Urteil noch offen'});
   else if(!o.evidence?.trim())issues.push({type:'reason',id:i.id,text:'Urteil ohne fachliche Begründung oder konkret bezeichnete Fehlstelle'});
-  if(o?.status==='yes'&&!refs.some(e=>e.source===(c.part==='oral'?'transcript':'product')))issues.push({type:'manual',id:i.id,text:'Kein verknüpfter Textbeleg: manuelle Fundstelle oder technische Beobachtung kontrollieren'});
+  if(['no','limited','partial'].includes(o?.status)&&!o.gap?.trim())issues.push({type:'reason',id:i.id,text:'Begründung des Abstands zur nächsthöheren Punktestufe fehlt'});
+  if(['yes','partial','limited'].includes(o?.status)&&!refs.some(e=>e.source===(c.part==='oral'?'transcript':'product')))issues.push({type:'manual',id:i.id,text:'Kein verknüpfter Textbeleg: manuelle Fundstelle oder technische Beobachtung kontrollieren'});
   if(refs.some(e=>!evidenceValid(e,state)))issues.push({type:'stale',id:i.id,text:'Beleg stammt aus verändertem oder fehlendem Quelltext; Zuordnung neu prüfen'});
   if(c.part==='oral'&&o?.status){const q=state.opportunities?.[i.id];if(!q?.opened||!q.question.trim())issues.push({type:'opportunity',id:i.id,text:'Antwortgelegenheit und Frage noch nicht dokumentiert'});}
  }

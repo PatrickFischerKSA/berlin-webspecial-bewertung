@@ -1,7 +1,7 @@
-import {auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261027-belege';
+import {auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261030-stufen';
 import {Document,Packer,Paragraph,TextRun,HeadingLevel,Table,TableRow,TableCell,WidthType,BorderStyle,Header,Footer,PageNumber,AlignmentType,VerticalAlign} from './vendor/docx.mjs';
-import {criteria,questions} from './data.js?v=20261027-belege';
-import {calculate,deriveRatings,gradeFor,criterionResult,indicatorDecided,RUBRIC_VERSION} from './scoring.js?v=20261027-belege';
+import {criteria,questions} from './data.js?v=20261030-stufen';
+import {calculate,deriveRatings,gradeFor,criterionResult,indicatorDecided,rawPoints,RUBRIC_VERSION} from './scoring.js?v=20261030-stufen';
 const fmt=n=>n.toLocaleString('de-CH');
 // XML 1.0 cannot represent most control characters, including those pasted into notes.
 const clean=value=>String(value??'').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\ufffe\uffff]/g,'');
@@ -21,16 +21,18 @@ export function buildAssessmentDocument(state,{includeTranscript=false}={}){
  for(const [label,part] of [['Produkt','product'],['Mündliche Prüfung','oral']]){const r=calculate(criteria,ratings,part),g=gradeFor(r);summary.push([label,fmt(r.points)+' / '+r.max,g===null?'Offen':g.toFixed(1),r.complete?'Kriterien geprüft':r.count+' / '+r.total+' Kriterien']);}
  children.push(table(summary,[3558,1800,1400,2880]),para('Punktesummen berücksichtigen nur vollständig geprüfte Kriterien. Produktnote = 1 + 5 × Punkte / 50. Mündliche Prüfungsnote = 1 + 5 × Punkte / 28. Jeweils auf eine Dezimalstelle gerundet. Es wird keine Gesamtnote berechnet.',{spacing:{before:140,after:180}}));
  for(const [title,key] of [['Würdigung','strength'],['Entwicklungsziel','next'],['Übergreifende Rückmeldung','judgment']])if(meta[key]?.trim()){children.push(heading(title,HeadingLevel.HEADING_2),...multiline(meta[key]));}
- children.push(heading('Regeln der Punktevergabe',HeadingLevel.HEADING_2),para('Je Kriterium werden vier Nachweise unabhängig geprüft. Ein Nachweis zählt Gewicht / 4 Punkte, wenn alle genannten Bestandteile vorliegen und ein Urteil mit Begründung dokumentiert ist. Auch ein negatives Urteil benötigt die konkret bezeichnete Fehlstelle. Nicht geprüfte Leistungen bleiben offen. Die Eintragung eines Belegs bestätigt dessen fachliche Richtigkeit nicht automatisch. Keine halben Nachweise, Zusatzpunkte oder globalen Abzüge.'));
+ children.push(heading('Regeln der Punktevergabe',HeadingLevel.HEADING_2),para('Je Kriterium werden vier Nachweise unabhängig geprüft. Jedes Teilkriterium erhält 0, 1, 2 oder 3 Rohpunkte nach seinen eigenen Deskriptoren. Es zählt die höchste vollständig belegte Stufe. Gewichtete Teilpunkte = Kriteriumsgewicht × Rohpunkte / 12. Begründung und Fundstelle müssen die gewählte Stufe und den Abstand zur nächsthöheren erklären. Nicht geprüfte Leistungen bleiben offen. Die Eintragung eines Belegs bestätigt dessen fachliche Richtigkeit nicht automatisch. Keine frei gewählten Zwischenwerte, Zusatzpunkte oder globalen Abzüge. Zwischenrechnungen bleiben ungerundet.'));
  for(const c of criteria){
   const r=criterionResult(c,observations,state);
-  children.push(heading((c.part==='product'?'Produkt ':'Mündliche Prüfung ')+c.id.toUpperCase()+' '+c.title.replace(/[^\p{L}\p{N}\s]/gu,' '),HeadingLevel.HEADING_1,{pageBreakBefore:c.id==='p1'||c.id==='o1'}),para(c.aim,{keepNext:true}),labelled('Ergebnis',r.complete?`${r.yes} von 4 Nachweisen · ${fmt(r.points)} von ${c.weight} Punkten`:`Offen · ${r.decided} von 4 Nachweisen abschliessend geprüft`,{keepNext:true}));
+  children.push(heading((c.part==='product'?'Produkt ':'Mündliche Prüfung ')+c.id.toUpperCase()+' '+c.title.replace(/[^\p{L}\p{N}\s]/gu,' '),HeadingLevel.HEADING_1,{pageBreakBefore:c.id==='p1'||c.id==='o1'}),para(c.aim,{keepNext:true}),labelled('Ergebnis',r.complete?`${r.raw}/12 Rohpunkte · ${fmt(r.points)} von ${c.weight} Punkten`:`Offen · ${r.decided} von 4 Nachweisen abschliessend geprüft`,{keepNext:true}));
   const legacy=state.legacyRatings?.[c.id];if(legacy!==undefined)children.push(para(`Früheres Raster: ${legacy}/4. Nur als früheres Urteil erhalten, nicht in die aktuelle Note eingerechnet.`,{spacing:{after:140}}));
   for(const i of c.indicators){
-   const o=observations[i.id],stale=(state.evidence||[]).some(e=>e.indicatorId===i.id&&!evidenceValid(e,state)),decided=indicatorDecided(o)&&!stale,verdict=decided?(o.status==='yes'?'Nachgewiesen':'Nicht nachgewiesen'):'Offen',points=decided?(o.status==='yes'?fmt(c.weight/4):'0'):'—';
-   children.push(heading(i.id.toUpperCase().replace('-',' ')+' '+i.title,HeadingLevel.HEADING_2),para(i.accept),para('Abgrenzung: '+i.reject,{spacing:{after:100}}),labelled('Urteil',verdict+' · '+points+' Punkte'));
-   if(o?.status&&!decided)children.push(para(stale?'Zugeordnete Beleggrundlage verändert. Das Urteil bleibt bis zur erneuten Prüfung offen.':'Auswahl vorhanden, aber Begründung fehlt. Der Nachweis ist nicht abgeschlossen.'));
+   const o=observations[i.id],stale=(state.evidence||[]).some(e=>e.indicatorId===i.id&&!evidenceValid(e,state)),decided=indicatorDecided(o)&&!stale,verdict=decided?rawPoints(o)+'/3 Rohpunkte':'Offen',points=decided?fmt(c.weight*rawPoints(o)/12):'—';
+   children.push(heading(i.id.toUpperCase().replace('-',' ')+' '+i.title,HeadingLevel.HEADING_2),...i.levels.map((description,n)=>para(n+'/3 Rohpunkte: '+description,{spacing:{after:80}})),labelled('Urteil',verdict+' · '+points+' gewichtete Punkte'));
+   if(o?.status&&!decided)children.push(para(stale?'Zugeordnete Beleggrundlage verändert. Das Urteil bleibt bis zur erneuten Prüfung offen.':'Auswahl vorhanden, aber Begründung fehlt oder der Stufenabstand ist nicht dokumentiert. Der Nachweis ist nicht abgeschlossen.'));
+   if(o?.legacyStatus)children.push(para('Früheres binäres Urteil: '+(o.legacyStatus==='yes'?'nachgewiesen':'nicht nachgewiesen')+'. Nicht automatisch in neue Punkte umgerechnet.'));
    children.push(...multiline(o?.evidence));
+   if(o?.gap)children.push(labelled('Fehlender Bestandteil zur nächsten Stufe',o.gap));
    for(const ref of (state.evidence||[]).filter(e=>e.indicatorId===i.id)){
     children.push(labelled('Originalbeleg',citationLabel(ref)),para(evidenceValid(ref,state)?'Fundstelle stimmt mit dem gespeicherten Textauszug überein.':'Achtung: Quelle wurde verändert oder fehlt. Dies ist der ursprünglich zugeordnete Wortlaut.'),...multiline(ref.quote));
     if(ref.url)children.push(labelled('Quelladresse',ref.url));
