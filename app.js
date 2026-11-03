@@ -1,10 +1,10 @@
-import {readExamDossiers, examTaskHeadings, examTaskIndicators} from './exam-dossiers.js?v=20261103-auftraege';
-import {initFormalCheck} from './formal-ui.js?v=20261103-auftraege';
-import {initWorkbench} from './workbench-ui.js?v=20261103-auftraege';
-import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261103-auftraege';
-import {criteria,questions,books} from './data.js?v=20261103-auftraege';
-import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261103-auftraege';
-import {readTranscript, validateTranscript} from './transcript.js?v=20261103-auftraege';
+import {readExamDossiers, examTaskHeadings, examTaskIndicators} from './exam-dossiers.js?v=20261103-textschutz';
+import {initFormalCheck} from './formal-ui.js?v=20261103-textschutz';
+import {initWorkbench} from './workbench-ui.js?v=20261103-textschutz';
+import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261103-textschutz';
+import {criteria,questions,books} from './data.js?v=20261103-textschutz';
+import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261103-textschutz';
+import {readTranscript, validateTranscript} from './transcript.js?v=20261103-textschutz';
 const $=id=>document.getElementById(id),key='berlin-rubric-v1';
 let state=emptyDossier();
 let workbench=null;
@@ -103,9 +103,41 @@ function renderExamDossier(){
  $('examRemove').hidden = !dossier;
  if (!dossier) return;
  content.append(node('h4', dossier.title), node('p', dossier.book), node('p', dossier.focus));
- const excerpt = node('details');
- excerpt.append(node('summary', 'Originalauszug und Fundstelle'), node('p', dossier.excerpt, 'target-rule'));
- content.append(excerpt);
+ const unlock = node('form');
+ const passwordLabel = node('label', 'Passwort für Originalauszug und Fundstelle');
+ const password = node('input');
+ password.type = 'password';
+ password.required = true;
+ password.autocomplete = 'off';
+ passwordLabel.append(password);
+ const submit = node('button', 'Originalauszug freigeben');
+ const status = node('p');
+ status.setAttribute('role', 'status');
+ const excerpt = node('section');
+ excerpt.hidden = true;
+ unlock.append(passwordLabel, submit, status);
+ unlock.onsubmit = async event => {
+  event.preventDefault();
+  submit.disabled = true;
+  try {
+   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(password.value));
+   const hash = Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('');
+   if (hash !== '8b6ccebf19cae0a6d1e5d33b51b48e60742a26d9eb4437d7d76cc00cd79b0e37') {
+    status.textContent = 'Das Passwort stimmt nicht.';
+    return;
+   }
+   if (state.examDossier !== dossier || !unlock.isConnected) return;
+   excerpt.append(node('h4', 'Originalauszug und Fundstelle'), node('p', dossier.excerpt, 'target-rule'));
+   excerpt.hidden = false;
+   unlock.hidden = true;
+  } catch {
+   status.textContent = 'Die Passwortprüfung ist in diesem Browser nicht verfügbar.';
+  } finally {
+   password.value = '';
+   submit.disabled = false;
+  }
+ };
+ content.append(unlock, excerpt);
  content.append(node('p', 'Zu jedem Auftrag stehen die passenden Nachweise aus dem Bewertungsraster. Weitere Nachweise können im Gespräch durch gezielte Nachfragen erhoben werden. Die Bewertung zählt pro Nachweis einmal.'));
  const tasks = node('ol');
  dossier.tasks.forEach((task, index) => {
@@ -180,7 +212,7 @@ $('import').onchange=async e=>{
 };
 $('wordExport').onclick=async()=>{
  const button=$('wordExport');button.disabled=true;$('feedback').textContent='Word-Dokument wird erstellt …';
- try{const {exportWord}=await import('./word-export.js?v=20261103-auftraege');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
+ try{const {exportWord}=await import('./word-export.js?v=20261103-textschutz');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
 };
 
 let elapsed=0,started=null,interval=null;
