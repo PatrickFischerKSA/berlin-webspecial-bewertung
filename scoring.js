@@ -1,7 +1,8 @@
-import {validExamDossier} from './exam-dossiers.js?v=20261103-textschutz';
-import {validateFormalReport} from './formal-check.js?v=20261103-textschutz';
-import {normalizeSource,validateEvidence,validateOpportunities,evidenceValid} from './evidence.js?v=20261103-textschutz';
-import {validateTranscript} from './transcript.js?v=20261103-textschutz';
+import {validEncryptedExcerpt} from './excerpt-crypto.js?v=20261103-crypto';
+import {validExamDossier} from './exam-dossiers.js?v=20261103-crypto';
+import {validateFormalReport} from './formal-check.js?v=20261103-crypto';
+import {normalizeSource,validateEvidence,validateOpportunities,evidenceValid} from './evidence.js?v=20261103-crypto';
+import {validateTranscript} from './transcript.js?v=20261103-crypto';
 export const RUBRIC_VERSION='Auftragsabgeglichenes Bewertungsraster 4.1 · 30.10.2026';
 export const STATUS_POINTS={no:0,limited:1,partial:2,yes:3};
 export function rawPoints(observation){return STATUS_POINTS[observation?.status]??null;}
@@ -45,7 +46,10 @@ export function validateImport(raw,criteria){
  for(const k of keys)if(typeof raw.meta?.[k]==='string')out.meta[k]=raw.meta[k].slice(0,20000);
  if(raw.kind==='dossier'){
   if(validExamDossier(raw.examDossier)){
-   out.examDossier=raw.examDossier;
+   const {title,book,focus,tasks,excerpt,encryptedExcerpt}=raw.examDossier;
+   out.examDossier={title,book,focus,tasks};
+   if(validEncryptedExcerpt(encryptedExcerpt))out.examDossier.encryptedExcerpt=encryptedExcerpt;
+   else out.examDossier.excerpt=excerpt;
    if(Array.isArray(raw.examResponses))out.examResponses=raw.examResponses.slice(0,4).map(
     response=>typeof response==='string'?response.slice(0,20000):''
    );
@@ -62,7 +66,17 @@ export function validateImport(raw,criteria){
  out.ratings=deriveRatings(criteria,out.observations,out);
  return out;
 }
-export function dossierExport(state){return {version:4,rubric:RUBRIC_VERSION,kind:'dossier',...state};}
+export function dossierExport(state){
+ const dossier=state.examDossier;
+ if(dossier && !validEncryptedExcerpt(dossier.encryptedExcerpt))throw Error('Originalauszug zuerst mit dem Passwort verschlüsseln.');
+ const output={version:4,rubric:RUBRIC_VERSION,kind:'dossier',...state};
+ if(dossier){
+  const {title,book,focus,tasks,encryptedExcerpt}=dossier;
+  const {version,salt,iv,data}=encryptedExcerpt;
+  output.examDossier={title,book,focus,tasks,encryptedExcerpt:{version,salt,iv,data}};
+ }
+ return output;
+}
 export function groupExport(state,criteria){
  const out={version:4,rubric:RUBRIC_VERSION,kind:'group',ratings:{},observations:{},legacyRatings:{},notes:{},meta:{},product:state.product,formalReport:validateFormalReport(state.formalReport),evidence:(state.evidence||[]).filter(e=>e.indicatorId.startsWith('p')&&e.source==='product')};
  for(const c of criteria.filter(c=>c.part==='product')){

@@ -1,17 +1,18 @@
-import {readExamDossiers, examTaskHeadings, examTaskIndicators} from './exam-dossiers.js?v=20261103-textschutz';
-import {initFormalCheck} from './formal-ui.js?v=20261103-textschutz';
-import {initWorkbench} from './workbench-ui.js?v=20261103-textschutz';
-import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261103-textschutz';
-import {criteria,questions,books} from './data.js?v=20261103-textschutz';
-import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261103-textschutz';
-import {readTranscript, validateTranscript} from './transcript.js?v=20261103-textschutz';
+import {encryptExcerpt,decryptExcerpt,verifyLegacyPassword} from './excerpt-crypto.js?v=20261103-crypto';
+import {readExamDossiers, examTaskHeadings, examTaskIndicators} from './exam-dossiers.js?v=20261103-crypto';
+import {initFormalCheck} from './formal-ui.js?v=20261103-crypto';
+import {initWorkbench} from './workbench-ui.js?v=20261103-crypto';
+import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261103-crypto';
+import {criteria,questions,books} from './data.js?v=20261103-crypto';
+import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261103-crypto';
+import {readTranscript, validateTranscript} from './transcript.js?v=20261103-crypto';
 const $=id=>document.getElementById(id),key='berlin-rubric-v1';
 let state=emptyDossier();
 let workbench=null;
 let formalCheck=null;
 try{const raw=localStorage.getItem(key);if(raw)state=validateImport(JSON.parse(raw),criteria);}catch{$('saveStatus').textContent='Lokale Daten nicht lesbar – bitte Sicherung importieren.';}
 const metaKeys=['person','group','book','date','examiner','url','recording','strength','next','judgment'];
-function save(){try{localStorage.setItem(key,JSON.stringify(dossierExport(state)));$('saveStatus').textContent='Auf diesem Gerät gespeichert';}catch{$('saveStatus').textContent='Speicherung nicht möglich – bitte JSON exportieren.';}}
+function save(){try{localStorage.setItem(key,JSON.stringify(dossierExport(state)));$('saveStatus').textContent='Auf diesem Gerät gespeichert';}catch{$('saveStatus').textContent=state.examDossier?.excerpt?'Originalauszug zuerst unter «Einzelprüfung» mit dem Passwort verschlüsseln.':'Speicherung nicht möglich – bitte JSON exportieren.';}}
 function node(tag,text,cls){const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;}
 for(const b of ['Roman wählen',...books])$('book').append(new Option(b,b==='Roman wählen'?'':b));
 const examIndicatorHomes = new Map();
@@ -70,15 +71,35 @@ $('examFile').onchange = async event => {
  }
 };
 $('examChoice').onchange = () => { $('examApply').disabled = !$('examChoice').value; };
-$('examApply').onclick = () => {
+$('examApply').onclick = async () => {
  const selected = $('examChoice').value;
  if (!selected || !examChoices[Number(selected)]) return;
  const dossier = examChoices[Number(selected)];
- if (JSON.stringify(state.examDossier) === JSON.stringify(dossier)) return;
- if (!clearExamResponses()) return;
- state.examDossier = dossier;
- renderExamDossier();
- save();
+ const owner = state;
+ const input = $('examImportPassword');
+ const password = input.value;
+ if (!password) {
+  $('examStatus').textContent = 'Bitte das Passwort für den Originalauszug eingeben.';
+  input.focus();
+  return;
+ }
+ $('examApply').disabled = true;
+ input.value = '';
+ try {
+  await verifyLegacyPassword(password);
+  const {excerpt, ...metadata} = dossier;
+  const encryptedExcerpt = await encryptExcerpt(excerpt, password);
+  if (owner !== state || $('examChoice').value !== selected) return;
+  if (!clearExamResponses()) return;
+  state.examDossier = {...metadata, encryptedExcerpt};
+  renderExamDossier();
+  save();
+  $('examStatus').textContent = 'Dossier übernommen. Der Originalauszug ist verschlüsselt.';
+ } catch (error) {
+  $('examStatus').textContent = error.message;
+ } finally {
+  $('examApply').disabled = !$('examChoice').value;
+ }
 };
 $('examRemove').onclick = () => {
  if (!clearExamResponses()) return;
@@ -110,7 +131,7 @@ function renderExamDossier(){
  password.required = true;
  password.autocomplete = 'off';
  passwordLabel.append(password);
- const submit = node('button', 'Originalauszug freigeben');
+ const submit = node('button', dossier.excerpt ? 'Originalauszug verschlüsseln und anzeigen' : 'Originalauszug freigeben');
  const status = node('p');
  status.setAttribute('role', 'status');
  const excerpt = node('section');
@@ -120,18 +141,25 @@ function renderExamDossier(){
   event.preventDefault();
   submit.disabled = true;
   try {
-   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(password.value));
-   const hash = Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('');
-   if (hash !== '8b6ccebf19cae0a6d1e5d33b51b48e60742a26d9eb4437d7d76cc00cd79b0e37') {
-    status.textContent = 'Das Passwort stimmt nicht.';
-    return;
+   const secret = password.value;
+   let text;
+   if (dossier.encryptedExcerpt) {
+    text = await decryptExcerpt(dossier.encryptedExcerpt, secret);
+   } else {
+    await verifyLegacyPassword(secret);
+    text = dossier.excerpt;
+    const encryptedExcerpt = await encryptExcerpt(text, secret);
+    if (state.examDossier !== dossier || !unlock.isConnected) return;
+    dossier.encryptedExcerpt = encryptedExcerpt;
+    delete dossier.excerpt;
+    save();
    }
    if (state.examDossier !== dossier || !unlock.isConnected) return;
-   excerpt.append(node('h4', 'Originalauszug und Fundstelle'), node('p', dossier.excerpt, 'target-rule'));
+   excerpt.append(node('h4', 'Originalauszug und Fundstelle'), node('p', text, 'target-rule'));
    excerpt.hidden = false;
    unlock.hidden = true;
-  } catch {
-   status.textContent = 'Die Passwortprüfung ist in diesem Browser nicht verfügbar.';
+  } catch (error) {
+   status.textContent = error.message;
   } finally {
    password.value = '';
    submit.disabled = false;
@@ -198,7 +226,7 @@ function renderLinkedEvidence(id){const root=$('linked-'+id);if(!root)return;roo
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>showPanel(b.dataset.tab)));
 
 function download(data,name){const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=node('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-$('export').onclick=()=>download(dossierExport(state),'berlin-bewertung.json');
+$('export').onclick=()=>{try{download(dossierExport(state),'berlin-bewertung.json');}catch(error){$('feedback').textContent=error.message;}};
 $('groupExport').onclick=()=>download(groupExport(state,criteria),'berlin-gruppenbewertung.json');
 $('import').onchange=async e=>{
  const file=e.target.files[0];if(!file)return;
@@ -212,7 +240,7 @@ $('import').onchange=async e=>{
 };
 $('wordExport').onclick=async()=>{
  const button=$('wordExport');button.disabled=true;$('feedback').textContent='Word-Dokument wird erstellt …';
- try{const {exportWord}=await import('./word-export.js?v=20261103-textschutz');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
+ try{const {exportWord}=await import('./word-export.js?v=20261103-crypto');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
 };
 
 let elapsed=0,started=null,interval=null;

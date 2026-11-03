@@ -1,3 +1,4 @@
+import {validEncryptedExcerpt} from './excerpt-crypto.js?v=20261103-crypto';
 const headings = [
   'Genaue Lektüre',
   'Konkreter Bezug zum eigenen Webspecial',
@@ -32,9 +33,10 @@ export function parseExamDossiers(paragraphs) {
 }
 
 export function validExamDossier(dossier) {
-  return Boolean(dossier && ['title', 'book', 'focus', 'excerpt'].every(key =>
+  return Boolean(dossier && ['title', 'book', 'focus'].every(key =>
     typeof dossier[key] === 'string' && dossier[key].trim() && dossier[key].length <= 60000
-  ) && Array.isArray(dossier.tasks) && dossier.tasks.length === 4 &&
+  ) && (validEncryptedExcerpt(dossier.encryptedExcerpt) ||
+  (typeof dossier.excerpt === 'string' && dossier.excerpt.trim() && dossier.excerpt.length <= 60000)) && Array.isArray(dossier.tasks) && dossier.tasks.length === 4 &&
     dossier.tasks.every(task => typeof task === 'string' && task.trim() && task.length <= 5000));
 }
 

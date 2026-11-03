@@ -1,4 +1,4 @@
-import {normalizeSource} from './evidence.js?v=20261103-textschutz';
+import {normalizeSource} from './evidence.js?v=20261103-crypto';
 export function htmlToText(html){
  const template=document.createElement('template');template.innerHTML=html;
  template.content.querySelectorAll('script,style,noscript,template,iframe,object,svg,canvas,head,title,meta,link,base,[hidden],[aria-hidden="true"]').forEach(el=>el.remove());

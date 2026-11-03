@@ -1,9 +1,9 @@
-import {examTaskHeadings, examTaskIndicators} from './exam-dossiers.js?v=20261103-textschutz';
-import {formalReportLines} from './formal-check.js?v=20261103-textschutz';
-import {auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261103-textschutz';
+import {examTaskHeadings, examTaskIndicators} from './exam-dossiers.js?v=20261103-crypto';
+import {formalReportLines} from './formal-check.js?v=20261103-crypto';
+import {auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261103-crypto';
 import {Document,Packer,Paragraph,TextRun,HeadingLevel,Table,TableRow,TableCell,WidthType,BorderStyle,Header,Footer,PageNumber,AlignmentType,VerticalAlign} from './vendor/docx.mjs';
-import {criteria,questions} from './data.js?v=20261103-textschutz';
-import {calculate,deriveRatings,gradeFor,criterionResult,indicatorDecided,rawPoints,RUBRIC_VERSION} from './scoring.js?v=20261103-textschutz';
+import {criteria,questions} from './data.js?v=20261103-crypto';
+import {calculate,deriveRatings,gradeFor,criterionResult,indicatorDecided,rawPoints,RUBRIC_VERSION} from './scoring.js?v=20261103-crypto';
 const fmt=n=>n.toLocaleString('de-CH');
 // XML 1.0 cannot represent most control characters, including those pasted into notes.
 const clean=value=>String(value??'').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\ufffe\uffff]/g,'');
