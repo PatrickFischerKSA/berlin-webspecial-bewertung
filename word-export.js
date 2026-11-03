@@ -1,9 +1,9 @@
-import {examTaskHeadings} from './exam-dossiers.js?v=20261103-dossier';
-import {formalReportLines} from './formal-check.js?v=20261103-dossier';
-import {auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261103-dossier';
+import {examTaskHeadings, examTaskIndicators} from './exam-dossiers.js?v=20261103-auftraege';
+import {formalReportLines} from './formal-check.js?v=20261103-auftraege';
+import {auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261103-auftraege';
 import {Document,Packer,Paragraph,TextRun,HeadingLevel,Table,TableRow,TableCell,WidthType,BorderStyle,Header,Footer,PageNumber,AlignmentType,VerticalAlign} from './vendor/docx.mjs';
-import {criteria,questions} from './data.js?v=20261103-dossier';
-import {calculate,deriveRatings,gradeFor,criterionResult,indicatorDecided,rawPoints,RUBRIC_VERSION} from './scoring.js?v=20261103-dossier';
+import {criteria,questions} from './data.js?v=20261103-auftraege';
+import {calculate,deriveRatings,gradeFor,criterionResult,indicatorDecided,rawPoints,RUBRIC_VERSION} from './scoring.js?v=20261103-auftraege';
 const fmt=n=>n.toLocaleString('de-CH');
 // XML 1.0 cannot represent most control characters, including those pasted into notes.
 const clean=value=>String(value??'').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\ufffe\uffff]/g,'');
@@ -52,7 +52,23 @@ export function buildAssessmentDocument(state,{includeTranscript=false}={}){
  const dossier=state.examDossier;
  if(dossier){
   children.push(heading('Individuelles Prüfungsdossier'),para(dossier.title),para(dossier.book),para(dossier.focus));
-  dossier.tasks.forEach((task,index)=>children.push(labelled(examTaskHeadings[index],task)));
+  dossier.tasks.forEach((task,index)=>{
+   children.push(heading((index+1)+' '+examTaskHeadings[index],HeadingLevel.HEADING_2),para(task));
+   children.push(para('Antwortprotokoll',{keepNext:true}),...multiline(state.examResponses?.[index]));
+   for(const id of examTaskIndicators[index]){
+    const criterion=criteria.find(c=>c.indicators.some(i=>i.id===id));
+    const indicator=criterion.indicators.find(i=>i.id===id);
+    const observation=observations[id];
+    const stale=(state.evidence||[]).some(ref=>ref.indicatorId===id&&!evidenceValid(ref,state));
+    const verdict=indicatorDecided(observation)&&!stale?rawPoints(observation)+'/3 Rohpunkte':'Offen';
+    children.push(labelled(id.toUpperCase()+' '+indicator.title,verdict));
+    if(observation?.evidence)children.push(labelled('Fundstelle und Begründung',observation.evidence));
+    if(observation?.gap)children.push(labelled('Abstand zur nächsten Stufe',observation.gap));
+    for(const ref of (state.evidence||[]).filter(ref=>ref.indicatorId===id)){
+     children.push(labelled('Originalbeleg',citationLabel(ref)),...multiline(ref.quote));
+    }
+   }
+  });
  }
  const selected=(state.selected||[]).filter(i=>questions[i]);
  if(selected.length||state.marks?.length)children.push(heading('Prüfungsprotokoll',HeadingLevel.HEADING_1));

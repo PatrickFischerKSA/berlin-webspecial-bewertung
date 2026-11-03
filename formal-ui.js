@@ -1,5 +1,5 @@
-import {fetchMarkup} from './source-import.js?v=20261103-dossier';
-import {makeFormalReport,failedFormalReport,validateFormalReport,formalReportLines} from './formal-check.js?v=20261103-dossier';
+import {fetchMarkup} from './source-import.js?v=20261103-auftraege';
+import {makeFormalReport,failedFormalReport,validateFormalReport,formalReportLines} from './formal-check.js?v=20261103-auftraege';
 export function initFormalCheck({getState,onChange}){
  const $=id=>document.getElementById(id);let busy=false;
  function refresh(){const report=getState().formalReport,box=$('formalReport');box.replaceChildren();for(const line of formalReportLines(report,getState().meta.url)){const p=document.createElement('p');p.textContent=line;box.append(p);}$('formalDownload').disabled=!report;}

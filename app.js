@@ -1,10 +1,10 @@
-import {readExamDossiers, examTaskHeadings} from './exam-dossiers.js?v=20261103-dossier';
-import {initFormalCheck} from './formal-ui.js?v=20261103-dossier';
-import {initWorkbench} from './workbench-ui.js?v=20261103-dossier';
-import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261103-dossier';
-import {criteria,questions,books} from './data.js?v=20261103-dossier';
-import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261103-dossier';
-import {readTranscript, validateTranscript} from './transcript.js?v=20261103-dossier';
+import {readExamDossiers, examTaskHeadings, examTaskIndicators} from './exam-dossiers.js?v=20261103-auftraege';
+import {initFormalCheck} from './formal-ui.js?v=20261103-auftraege';
+import {initWorkbench} from './workbench-ui.js?v=20261103-auftraege';
+import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261103-auftraege';
+import {criteria,questions,books} from './data.js?v=20261103-auftraege';
+import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261103-auftraege';
+import {readTranscript, validateTranscript} from './transcript.js?v=20261103-auftraege';
 const $=id=>document.getElementById(id),key='berlin-rubric-v1';
 let state=emptyDossier();
 let workbench=null;
@@ -14,6 +14,8 @@ const metaKeys=['person','group','book','date','examiner','url','recording','str
 function save(){try{localStorage.setItem(key,JSON.stringify(dossierExport(state)));$('saveStatus').textContent='Auf diesem Gerät gespeichert';}catch{$('saveStatus').textContent='Speicherung nicht möglich – bitte JSON exportieren.';}}
 function node(tag,text,cls){const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;}
 for(const b of ['Roman wählen',...books])$('book').append(new Option(b,b==='Roman wählen'?'':b));
+const examIndicatorHomes = new Map();
+const mappedExamIndicators = new Set(examTaskIndicators.flat());
 for(const c of criteria){
  const card=node('article',undefined,'criterion');
  const heading=node('div',undefined,'criterion-heading');heading.append(node('span',c.id.slice(1).padStart(2,'0'),'number'),node('h3',c.title),node('span',c.weight+' Punkte','weight'));card.append(heading,node('p',c.aim,'aim'));
@@ -25,6 +27,11 @@ for(const c of criteria){
   const row=node('div',undefined,'indicator-inputs'),statusLabel=node('label','Urteil'),select=node('select');select.id='check-'+i.id;select.setAttribute('aria-label',i.id.toUpperCase()+' Urteil');
   select.append(new Option('Offen / nicht geprüft',''));for(const option of scoreOptions(c,i))select.append(new Option(option.label,option.value));statusLabel.append(select);
   const evidenceLabel=node('label','Fundstelle und Erklärung / fehlender Bestandteil'),note=node('textarea');note.id='evidence-'+i.id;note.rows=2;note.maxLength=20000;note.placeholder=c.part==='oral'?'Zeitmarke + Antwortkern; bei Nichterfüllung Frage und konkret fehlendes Element.':'Produktstation / Quellenstelle + Befund; bei Nichterfüllung geprüftes Material und konkret fehlendes Element.';note.setAttribute('aria-label',i.id.toUpperCase()+' Beleg oder Fehlstelle');evidenceLabel.append(note);row.append(statusLabel,evidenceLabel);box.append(row);const gapLabel=node('label','Fehlender Bestandteil zur nächsthöheren Punktestufe (bei 0–2 erforderlich)'),gap=node('textarea');gap.id='gap-'+i.id;gap.rows=2;gap.maxLength=20000;gap.setAttribute('aria-label',i.id.toUpperCase()+' Abstand zur nächsten Stufe');gapLabel.append(gap);box.append(gapLabel);const previous=node('p','','warning');previous.id='previous-'+i.id;previous.hidden=true;box.append(previous);card.append(box);
+  if (mappedExamIndicators.has(i.id)) {
+   const home = document.createComment(i.id);
+   box.before(home);
+   examIndicatorHomes.set(i.id, {box, home});
+  }
   const update=()=>{state.observations[i.id]={...state.observations[i.id],status:select.value,evidence:note.value,gap:gap.value};state.ratings=deriveRatings(criteria,state.observations,state);updateDescriptor(c);renderResults();save();workbench?.refresh();};
   select.addEventListener('change',update);note.addEventListener('input',update);gap.addEventListener('input',update);
   const links=node('div',undefined,'linked-evidence');links.id='linked-'+i.id;const linkButton=node('button','Originalbeleg suchen / zuordnen','secondary');linkButton.type='button';linkButton.onclick=()=>{showPanel('workbench');workbench.openIndicator(i.id);};box.append(links,linkButton);
@@ -66,18 +73,32 @@ $('examChoice').onchange = () => { $('examApply').disabled = !$('examChoice').va
 $('examApply').onclick = () => {
  const selected = $('examChoice').value;
  if (!selected || !examChoices[Number(selected)]) return;
- state.examDossier = examChoices[Number(selected)];
+ const dossier = examChoices[Number(selected)];
+ if (JSON.stringify(state.examDossier) === JSON.stringify(dossier)) return;
+ if (!clearExamResponses()) return;
+ state.examDossier = dossier;
  renderExamDossier();
  save();
 };
 $('examRemove').onclick = () => {
+ if (!clearExamResponses()) return;
  state.examDossier = null;
  renderExamDossier();
  save();
 };
+function clearExamResponses() {
+ if (state.examResponses?.some(response => response?.trim()) &&
+     !confirm('Die Antwortprotokolle gehören zum bisherigen Dossier. Vor dem Wechsel bei Bedarf als JSON sichern. Dossier wechseln?')) return false;
+ state.examResponses = [];
+ return true;
+}
+let displayedExamDossier;
 function renderExamDossier(){
  const dossier = state.examDossier;
+ if (displayedExamDossier === dossier) return;
+ displayedExamDossier = dossier;
  const content = $('examContent');
+ for (const {box, home} of examIndicatorHomes.values()) home.after(box);
  content.replaceChildren();
  $('examRemove').hidden = !dossier;
  if (!dossier) return;
@@ -85,10 +106,29 @@ function renderExamDossier(){
  const excerpt = node('details');
  excerpt.append(node('summary', 'Originalauszug und Fundstelle'), node('p', dossier.excerpt, 'target-rule'));
  content.append(excerpt);
+ content.append(node('p', 'Zu jedem Auftrag stehen die passenden Nachweise aus dem Bewertungsraster. Weitere Nachweise können im Gespräch durch gezielte Nachfragen erhoben werden. Die Bewertung zählt pro Nachweis einmal.'));
  const tasks = node('ol');
  dossier.tasks.forEach((task, index) => {
   const item = node('li');
   item.append(node('strong', examTaskHeadings[index]), node('p', task));
+  const label = node('label', 'Antwortprotokoll mit Zeitmarke');
+  const response = node('textarea');
+  response.rows = 3;
+  response.maxLength = 20000;
+  response.value = state.examResponses?.[index] || '';
+  response.placeholder = 'Zeitmarke, Antwortkern und allfällige Nachfrage';
+  response.setAttribute('aria-label', 'Antwortprotokoll Auftrag ' + (index + 1));
+  response.oninput = () => {
+   state.examResponses ||= [];
+   state.examResponses[index] = response.value;
+   save();
+  };
+  label.append(response);
+  item.append(label);
+  const linked = node('details');
+  linked.append(node('summary', 'Bewerten · ' + examTaskIndicators[index].map(id => id.toUpperCase()).join(', ')));
+  for (const id of examTaskIndicators[index]) linked.append(examIndicatorHomes.get(id).box);
+  item.append(linked);
   tasks.append(item);
  });
  content.append(tasks);
@@ -140,7 +180,7 @@ $('import').onchange=async e=>{
 };
 $('wordExport').onclick=async()=>{
  const button=$('wordExport');button.disabled=true;$('feedback').textContent='Word-Dokument wird erstellt …';
- try{const {exportWord}=await import('./word-export.js?v=20261103-dossier');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
+ try{const {exportWord}=await import('./word-export.js?v=20261103-auftraege');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
 };
 
 let elapsed=0,started=null,interval=null;
@@ -192,6 +232,6 @@ $('transcriptClear').onclick=()=>{if(!confirm('Transkript aus diesem Dossier ent
 // Normal text blocks let long transcript and evidence text wrap across printed pages.
 window.addEventListener('beforeprint',()=>{document.querySelectorAll('textarea').forEach(t=>{const block=node('div',t.value||'—','print-value');t.after(block);});});
 window.addEventListener('afterprint',()=>document.querySelectorAll('.print-value').forEach(b=>b.remove()));
-workbench=initWorkbench({criteria,getState:()=>state,onChange:()=>{state.ratings=deriveRatings(criteria,state.observations,state);hydrate();save();},onNavigate:(panel,id)=>{showPanel(panel);const target=$('check-'+id)||$(id);target?.scrollIntoView({block:'center'});target?.focus();}});
+workbench=initWorkbench({criteria,getState:()=>state,onChange:()=>{state.ratings=deriveRatings(criteria,state.observations,state);hydrate();save();},onNavigate:(panel,id)=>{showPanel(panel);const target=$('check-'+id)||$(id);const details=target?.closest('details');if(details)details.open=true;target?.scrollIntoView({block:'center'});target?.focus();}});
 formalCheck=initFormalCheck({getState:()=>state,onChange:save});
 hydrate();tick();

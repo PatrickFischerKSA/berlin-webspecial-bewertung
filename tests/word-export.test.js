@@ -44,3 +44,21 @@ test('Word report preserves original evidence, locator, question and audit',asyn
 });
 
 test('Word dokumentiert automatisch erfasste Befunde, Herkunft und Prüfgrenzen',async()=>{const {failedFormalReport}=await import('../formal-check.js');const s=emptyDossier();s.formalReport={...failedFormalReport('https://example.org/',''),outcome:'captured',url:'https://example.org/',httpStatus:200,contentType:'text/html',bytes:200,sha256:'PRUEFSUMME',rows:[{id:'images',label:'Bildbeschreibungen',status:'hinweis',finding:'1 Bild ohne alt',method:'Attributprüfung; kein Qualitätsurteil',evidence:['<img src="bild.jpg">']}]};const xml=zipText(await Packer.toBuffer(buildAssessmentDocument(s)),'word/document.xml');for(const term of ['Automatisch erfasster Formalcheck','PRUEFSUMME','1 Bild ohne alt','kein Qualitätsurteil','Keine automatische Punktevergabe','&lt;img'])assert.ok(xml.includes(term),term);});
+
+test('Individuelle Aufgaben verbinden Antwortprotokoll und bestehende Rasterbewertung im Word-Export', async () => {
+ const state = emptyDossier();
+ state.examDossier = {
+  title: 'Prüfungsdossier Muster', book: 'Roman', focus: 'Schwerpunkt',
+  excerpt: 'Originalauszug', tasks: ['Musterfrage Lektüre', 'Produktfrage', 'Geschichtsfrage', 'Medienfrage']
+ };
+ state.examResponses = ['01:42 Antwortkern zur Lektüre'];
+ state.observations['o1-1'] = {status:'yes', evidence:'Fundstelle im Original'};
+ const xml = zipText(await Packer.toBuffer(buildAssessmentDocument(state)), 'word/document.xml');
+ const start = xml.indexOf('Musterfrage Lektüre');
+ const end = xml.indexOf('Produktfrage', start);
+ assert.ok(start >= 0 && end > start);
+ const task = xml.slice(start, end);
+ for (const text of ['01:42 Antwortkern', 'O1-1', '3/3 Rohpunkte', 'Fundstelle im Original', 'O1-2', 'Offen']) {
+  assert.ok(task.includes(text), text);
+ }
+});

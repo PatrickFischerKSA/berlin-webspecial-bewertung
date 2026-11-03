@@ -88,3 +88,11 @@ export async function readExamDossiers(file) {
   }
   throw Error('Der Word-Inhalt konnte nicht gelesen werden.');
 }
+
+// Only link indicators directly elicited by these question types.
+export const examTaskIndicators = [
+  ['o1-1', 'o1-2'],
+  ['o2-1', 'o2-2'],
+  ['o1-3'],
+  ['o2-3', 'o3-3']
+];
