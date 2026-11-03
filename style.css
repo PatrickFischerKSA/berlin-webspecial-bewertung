@@ -11,3 +11,5 @@
 .point-levels{padding-left:24px}.point-levels li{font-size:14px;margin:12px 0;line-height:1.55}.indicator select{max-width:100%}.target-rule{max-height:330px;overflow:auto;padding-right:8px}.indicator-inputs{grid-template-columns:minmax(170px,230px) minmax(0,1fr)}@media(max-width:700px){.indicator-inputs{grid-template-columns:1fr}}
 
 .formal-check{margin:2rem 0;padding:1.5rem;border:1px solid var(--ink,#183c45);border-radius:6px}.formal-report{max-height:620px;overflow:auto;overflow-wrap:anywhere;background:#fff;padding:1rem}.formal-report p{white-space:pre-wrap;margin:.8rem 0}
+
+.exam-excerpt{margin:1.5rem 0;padding:1rem 1.25rem;background:#fffdf7;border-left:3px solid var(--ink);overflow-wrap:anywhere}.exam-excerpt p{max-width:78ch;white-space:pre-line;line-height:1.65}

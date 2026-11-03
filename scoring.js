@@ -1,7 +1,7 @@
-import {validExamDossier} from './exam-dossiers.js?v=20261103-auftraege';
-import {validateFormalReport} from './formal-check.js?v=20261103-auftraege';
-import {normalizeSource,validateEvidence,validateOpportunities,evidenceValid} from './evidence.js?v=20261103-auftraege';
-import {validateTranscript} from './transcript.js?v=20261103-auftraege';
+import {validExamDossier} from './exam-dossiers.js?v=20261103-textstellen';
+import {validateFormalReport} from './formal-check.js?v=20261103-textstellen';
+import {normalizeSource,validateEvidence,validateOpportunities,evidenceValid} from './evidence.js?v=20261103-textstellen';
+import {validateTranscript} from './transcript.js?v=20261103-textstellen';
 export const RUBRIC_VERSION='Auftragsabgeglichenes Bewertungsraster 4.1 · 30.10.2026';
 export const STATUS_POINTS={no:0,limited:1,partial:2,yes:3};
 export function rawPoints(observation){return STATUS_POINTS[observation?.status]??null;}
