@@ -1,6 +1,7 @@
-import {validateFormalReport} from './formal-check.js?v=20261030-formal';
-import {normalizeSource,validateEvidence,validateOpportunities,evidenceValid} from './evidence.js?v=20261030-formal';
-import {validateTranscript} from './transcript.js?v=20261030-formal';
+import {validExamDossier} from './exam-dossiers.js?v=20261103-dossier';
+import {validateFormalReport} from './formal-check.js?v=20261103-dossier';
+import {normalizeSource,validateEvidence,validateOpportunities,evidenceValid} from './evidence.js?v=20261103-dossier';
+import {validateTranscript} from './transcript.js?v=20261103-dossier';
 export const RUBRIC_VERSION='Auftragsabgeglichenes Bewertungsraster 4.1 · 30.10.2026';
 export const STATUS_POINTS={no:0,limited:1,partial:2,yes:3};
 export function rawPoints(observation){return STATUS_POINTS[observation?.status]??null;}
@@ -43,6 +44,7 @@ export function validateImport(raw,criteria){
  const keys=['person','group','book','date','examiner','url','recording','strength','next','judgment'];
  for(const k of keys)if(typeof raw.meta?.[k]==='string')out.meta[k]=raw.meta[k].slice(0,20000);
  if(raw.kind==='dossier'){
+  if(validExamDossier(raw.examDossier))out.examDossier=raw.examDossier;
   out.selected=Array.isArray(raw.selected)?raw.selected.filter(n=>Number.isInteger(n)&&n>=0&&n<10):[];
   out.marks=Array.isArray(raw.marks)?raw.marks.filter(m=>m&&Number.isFinite(m.seconds)&&m.seconds>=0&&typeof m.text==='string').map(m=>({seconds:m.seconds,text:m.text.slice(0,20000)})):[];
   out.transcript=validateTranscript(raw.transcript);

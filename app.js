@@ -1,9 +1,10 @@
-import {initFormalCheck} from './formal-ui.js?v=20261030-formal';
-import {initWorkbench} from './workbench-ui.js?v=20261030-formal';
-import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261030-formal';
-import {criteria,questions,books} from './data.js?v=20261030-formal';
-import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261030-formal';
-import {readTranscript, validateTranscript} from './transcript.js?v=20261030-formal';
+import {readExamDossiers, examTaskHeadings} from './exam-dossiers.js?v=20261103-dossier';
+import {initFormalCheck} from './formal-ui.js?v=20261103-dossier';
+import {initWorkbench} from './workbench-ui.js?v=20261103-dossier';
+import {replaceSource,auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261103-dossier';
+import {criteria,questions,books} from './data.js?v=20261103-dossier';
+import {calculate,validateImport,gradeFor,emptyDossier,deriveRatings,criterionResult,indicatorDecided,dossierExport,groupExport,mergeGroup,scoreOptions,rawPoints} from './scoring.js?v=20261103-dossier';
+import {readTranscript, validateTranscript} from './transcript.js?v=20261103-dossier';
 const $=id=>document.getElementById(id),key='berlin-rubric-v1';
 let state=emptyDossier();
 let workbench=null;
@@ -37,7 +38,63 @@ function updateDescriptor(c){
 }
 questions.forEach(([cat,q,follow],i)=>{const box=node('article',undefined,'question'),label=node('label'),check=node('input');check.type='checkbox';check.id='q'+i;label.append(check,node('small',cat+' · zur Prüfung auswählen'));box.append(label,node('p',q),node('p','Nachfrage: '+follow));$('questions').append(box);check.addEventListener('change',()=>{state.selected=check.checked?[...new Set([...state.selected,i])]:state.selected.filter(n=>n!==i);save();});});
 for(const id of metaKeys)$(id).addEventListener('input',()=>{state.meta[id]=$(id).value;save();if(id==='url')formalCheck?.refresh();});
+let examChoices = [];
+$('examFile').onchange = async event => {
+ const file = event.target.files[0];
+ if (!file) return;
+ const choice = $('examChoice');
+ const owner = state;
+ event.target.disabled = true;
+ $('examApply').disabled = true;
+ choice.disabled = true;
+ try {
+  const dossiers = await readExamDossiers(file);
+  if (owner !== state) return;
+  examChoices = dossiers;
+  choice.replaceChildren(new Option('Bitte auswählen', ''), ...dossiers.map((dossier, index) =>
+   new Option(dossier.title + ' · ' + dossier.book, String(index))));
+  choice.disabled = false;
+  $('examStatus').textContent = dossiers.length + ' Dossiers lokal gelesen.';
+ } catch (error) {
+  $('examStatus').textContent = error.message;
+ } finally {
+  event.target.value = '';
+  event.target.disabled = false;
+ }
+};
+$('examChoice').onchange = () => { $('examApply').disabled = !$('examChoice').value; };
+$('examApply').onclick = () => {
+ const selected = $('examChoice').value;
+ if (!selected || !examChoices[Number(selected)]) return;
+ state.examDossier = examChoices[Number(selected)];
+ renderExamDossier();
+ save();
+};
+$('examRemove').onclick = () => {
+ state.examDossier = null;
+ renderExamDossier();
+ save();
+};
+function renderExamDossier(){
+ const dossier = state.examDossier;
+ const content = $('examContent');
+ content.replaceChildren();
+ $('examRemove').hidden = !dossier;
+ if (!dossier) return;
+ content.append(node('h4', dossier.title), node('p', dossier.book), node('p', dossier.focus));
+ const excerpt = node('details');
+ excerpt.append(node('summary', 'Originalauszug und Fundstelle'), node('p', dossier.excerpt, 'target-rule'));
+ content.append(excerpt);
+ const tasks = node('ol');
+ dossier.tasks.forEach((task, index) => {
+  const item = node('li');
+  item.append(node('strong', examTaskHeadings[index]), node('p', task));
+  tasks.append(item);
+ });
+ content.append(tasks);
+}
 function hydrate(){
+ renderExamDossier();
  for(const id of metaKeys)$(id).value=state.meta[id]||'';
  for(const c of criteria){
   for(const i of c.indicators){const o=state.observations[i.id];$('check-'+i.id).value=o?.status||'';$('evidence-'+i.id).value=o?.evidence||'';$('gap-'+i.id).value=o?.gap||'';renderLinkedEvidence(i.id);const previous=$('previous-'+i.id);previous.hidden=!o?.legacyStatus&&!o?.previousScore;previous.textContent=o?.previousScore?'Frühere Einstufung: '+rawPoints({status:o.previousScore})+'/3 Rohpunkte vor dem Auftragsabgleich. Belege und Begründungen bleiben erhalten; dieses geänderte Teilkriterium neu prüfen.':o?.legacyStatus?'Früheres binäres Urteil: '+(o.legacyStatus==='yes'?'nachgewiesen':'nicht nachgewiesen')+'. Keine automatische Umrechnung; neue Punktestufe anhand der Deskriptoren festlegen.':'';}
@@ -83,7 +140,7 @@ $('import').onchange=async e=>{
 };
 $('wordExport').onclick=async()=>{
  const button=$('wordExport');button.disabled=true;$('feedback').textContent='Word-Dokument wird erstellt …';
- try{const {exportWord}=await import('./word-export.js?v=20261030-formal');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
+ try{const {exportWord}=await import('./word-export.js?v=20261103-dossier');await exportWord(state,{includeTranscript:$('wordTranscript').checked});$('feedback').textContent='Word-Datei erstellt. Offene Urteile sind im Dokument als offen gekennzeichnet.';}catch(err){$('feedback').textContent='Word-Export fehlgeschlagen: '+err.message;}finally{button.disabled=false;}
 };
 
 let elapsed=0,started=null,interval=null;

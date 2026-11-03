@@ -1,6 +1,6 @@
-import {scoreOptions} from './scoring.js?v=20261030-formal';
-import {findMatches,passage,evidenceValid,citationLabel,auditDossier,replaceSource,newRevision} from './evidence.js?v=20261030-formal';
-import {productFromText,fetchProduct} from './source-import.js?v=20261030-formal';
+import {scoreOptions} from './scoring.js?v=20261103-dossier';
+import {findMatches,passage,evidenceValid,citationLabel,auditDossier,replaceSource,newRevision} from './evidence.js?v=20261103-dossier';
+import {productFromText,fetchProduct} from './source-import.js?v=20261103-dossier';
 export function initWorkbench({criteria,getState,onChange,onNavigate}){
  const $=id=>document.getElementById(id),el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
  let active='product',pending=null,renderKey='',searchData={product:{matches:[],total:0},transcript:{matches:[],total:0}},queryTimer,searchRevision='',currentDossier=null;

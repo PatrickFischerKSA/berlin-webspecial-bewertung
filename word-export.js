@@ -1,8 +1,9 @@
-import {formalReportLines} from './formal-check.js?v=20261030-formal';
-import {auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261030-formal';
+import {examTaskHeadings} from './exam-dossiers.js?v=20261103-dossier';
+import {formalReportLines} from './formal-check.js?v=20261103-dossier';
+import {auditDossier,evidenceValid,citationLabel} from './evidence.js?v=20261103-dossier';
 import {Document,Packer,Paragraph,TextRun,HeadingLevel,Table,TableRow,TableCell,WidthType,BorderStyle,Header,Footer,PageNumber,AlignmentType,VerticalAlign} from './vendor/docx.mjs';
-import {criteria,questions} from './data.js?v=20261030-formal';
-import {calculate,deriveRatings,gradeFor,criterionResult,indicatorDecided,rawPoints,RUBRIC_VERSION} from './scoring.js?v=20261030-formal';
+import {criteria,questions} from './data.js?v=20261103-dossier';
+import {calculate,deriveRatings,gradeFor,criterionResult,indicatorDecided,rawPoints,RUBRIC_VERSION} from './scoring.js?v=20261103-dossier';
 const fmt=n=>n.toLocaleString('de-CH');
 // XML 1.0 cannot represent most control characters, including those pasted into notes.
 const clean=value=>String(value??'').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\ufffe\uffff]/g,'');
@@ -47,6 +48,11 @@ export function buildAssessmentDocument(state,{includeTranscript=false}={}){
    }
   }
   if(notes[c.id]?.trim())children.push(heading('Ergänzende Begründung und Transkriptbelege',HeadingLevel.HEADING_2),...multiline(notes[c.id]));
+ }
+ const dossier=state.examDossier;
+ if(dossier){
+  children.push(heading('Individuelles Prüfungsdossier'),para(dossier.title),para(dossier.book),para(dossier.focus));
+  dossier.tasks.forEach((task,index)=>children.push(labelled(examTaskHeadings[index],task)));
  }
  const selected=(state.selected||[]).filter(i=>questions[i]);
  if(selected.length||state.marks?.length)children.push(heading('Prüfungsprotokoll',HeadingLevel.HEADING_1));
